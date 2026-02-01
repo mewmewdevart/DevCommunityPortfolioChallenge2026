@@ -63,6 +63,9 @@
       "@context/*": [
         "./src/context/*"
       ],
+      "@content/*": [
+        "./src/content/*"
+      ],
       "@utils/*": [
         "./src/utils/*"
       ],

@@ -29,7 +29,7 @@ const validateProjectMetadata = (data: unknown): { success: true; data: ProjectD
   };
 };
 
-const markdownFiles = import.meta.glob('./operatingSystemData/*.md', {
+const markdownFiles = import.meta.glob('../content/projects/*.md', {
   query: '?raw',
   import: 'default',
   eager: true

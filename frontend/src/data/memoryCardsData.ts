@@ -34,7 +34,7 @@ const IMAGE_MAP: Record<string, { src: string; srcWebP: string }> = {
 };
 
 // Load MD files from videoGameData directory
-const markdownFiles = import.meta.glob('./videoGameData/*.md', {
+const markdownFiles = import.meta.glob('../content/games/*.md', {
     query: '?raw',
     import: 'default',
     eager: true,

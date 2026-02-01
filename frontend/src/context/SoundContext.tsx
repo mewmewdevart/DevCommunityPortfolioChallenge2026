@@ -21,14 +21,14 @@ import gameSfxPs2Startup from '@/assets/sounds/game/Play2Startup.wav';
 import gameSfxPs2Title from '@/assets/sounds/game/Play2Title.wav';
 
 // Generated Chiptune Sounds
-import sfxDesktopStartup from '@/assets/sounds/generated/desktop_startup.wav';
-import sfxSystemShutdown from '@/assets/sounds/generated/system_shutdown.wav';
-import sfxUiClick from '@/assets/sounds/generated/ui_click.wav';
-import sfxUiHover from '@/assets/sounds/generated/ui_hover.wav';
-import sfxUiError from '@/assets/sounds/generated/ui_error.wav';
-import sfxSaveSuccess from '@/assets/sounds/generated/save_success.wav';
-import sfxGameJump from '@/assets/sounds/generated/game_jump.wav';
-import sfxGameCollect from '@/assets/sounds/generated/game_collect.wav';
+import sfxDesktopStartup from '@/assets/sounds/desktop/desktop_startup.wav';
+import sfxSystemShutdown from '@/assets/sounds/desktop/system_shutdown.wav';
+import sfxUiClick from '@/assets/sounds/desktop/ui_click.wav';
+import sfxUiHover from '@/assets/sounds/desktop/ui_hover.wav';
+import sfxUiError from '@/assets/sounds/desktop/ui_error.wav';
+import sfxSaveSuccess from '@/assets/sounds/game/save_success.wav';
+import sfxGameJump from '@/assets/sounds/game/game_jump.wav';
+import sfxGameCollect from '@/assets/sounds/game/game_collect.wav';
 
 export type SfxType =
     // Desktop
