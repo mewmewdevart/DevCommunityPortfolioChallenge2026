@@ -1,0 +1,19 @@
+@import "../../styles/globals.css";
+
+/* ===============================
+   ROOT / CONTAINER
+   =============================== */
+.notepad-root {
+  @apply flex flex-col h-full w-full text-lg;
+  @apply font-(--font-tiny);
+  @apply bg-(--gray-300);
+}
+
+/* ===============================
+   TEXTAREA (Editor)
+   =============================== */
+.notepad-textarea {
+  @apply flex-1 w-full h-full resize-none outline-none border-none p-2 text-lg font-(--font-tiny);
+  @apply text-(--dark-800);
+  /* font-family: "Pixelify Sans", sans-serif; */
+}

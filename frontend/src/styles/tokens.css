@@ -1,0 +1,112 @@
+@custom-media --h-small (max-height: 700px);
+
+:root {
+  /* ===================== DARK ===================== */
+  --dark-800: rgb(18, 11, 25);
+  --dark-700: rgb(66, 30, 66);
+  --dark-600: rgb(78, 49, 97);
+  --dark-500: rgb(91, 82, 128);
+
+  /* ===================== BLUE ===================== */
+  --blue-900: rgb(80, 98, 150);
+  --blue-700: rgb(107, 154, 207);
+  --blue-500: rgb(139, 189, 230);
+  --blue-300: rgb(170, 224, 243);
+
+  /* ===================== GREEN ===================== */
+  --green-700: rgb(105, 155, 140);
+  --green-500: rgb(135, 194, 147);
+  --green-300: rgb(178, 219, 160);
+
+  /* ===================== GRAY ===================== */
+  --gray-700: rgb(92, 96, 99);
+  --gray-500: rgb(180, 190, 194);
+  --gray-300: rgb(221, 230, 224);
+
+  /* ===================== ROSE ===================== */
+  --rose-900: rgb(97, 36, 71);
+  --rose-700: rgb(117, 60, 106);
+  --rose-500: rgb(189, 113, 130);
+  --rose-300: rgb(223, 182, 174);
+
+  /* ===================== WARM ===================== */
+  --warm-700: rgb(209, 139, 121);
+  --warm-500: rgb(219, 172, 140);
+  --warm-300: rgb(230, 207, 161);
+  --warm-100: rgb(245, 248, 220);
+
+  /* ===================== FONT FAMILY ===================== */
+  --font-tiny: "Pixelify Sans", sans-serif;
+
+  /* ===================== TYPOGRAPHY SCALE ===================== */
+  --text-xs: 0.75rem;
+  /* 12px */
+  --text-lg: 0.875rem;
+  /* 14px */
+  --text-base: 1rem;
+  /* 16px */
+  --text-md: 1.125rem;
+  /* 18px */
+  --text-lg: 1.25rem;
+  /* 20px */
+  --text-xl: 1.5rem;
+  /* 24px */
+  --text-2xl: 1.875rem;
+  /* 30px */
+  --text-3xl: 2.25rem;
+  /* 36px */
+
+  /* ===================== SPACING SCALE ===================== */
+  /* Based on 4px grid (0.25rem) */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  /* 4px */
+  --space-2: 0.5rem;
+  /* 8px */
+  --space-3: 0.75rem;
+  /* 12px */
+  --space-4: 1rem;
+  /* 16px */
+  --space-5: 1.25rem;
+  /* 20px */
+  --space-6: 1.5rem;
+  /* 24px */
+  --space-8: 2rem;
+  /* 32px */
+  --space-10: 2.5rem;
+  /* 40px */
+  --space-12: 3rem;
+  /* 48px */
+  --space-16: 4rem;
+  /* 64px */
+
+  /* ===================== ANIMATION TIMING ===================== */
+  --duration-instant: 0ms;
+  --duration-fast: 100ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 500ms;
+
+  /* Easing functions */
+  --ease-default: ease;
+  --ease-in: ease-in;
+  --ease-out: ease-out;
+  --ease-in-out: ease-in-out;
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* ===================== BORDERS ===================== */
+  --border-thin: 1px;
+  --border-medium: 2px;
+  --border-thick: 4px;
+
+  /* ===================== Z-INDEX SCALE ===================== */
+  --z-base: 0;
+  --z-desktop-icons: 10;
+  --z-window: 20;
+  --z-window-active: 30;
+  --z-taskbar: 40;
+  --z-overlay: 50;
+  --z-modal: 100;
+  --z-cursor: 9999;
+  --z-crt: 10000;
+}

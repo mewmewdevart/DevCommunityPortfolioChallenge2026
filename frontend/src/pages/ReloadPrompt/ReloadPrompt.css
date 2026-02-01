@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* =====================================================
+   TOAST NOTIFICATION
+   ===================================================== */
+.reload-prompt__toast {
+    @apply fixed top-4 right-4 p-4 flex flex-col gap-2 max-w-xs bg-(--warm-300) text-(--dark-800) z-9999;
+}
+
+.reload-prompt__message {
+    @apply font-bold;
+}
+
+/* =====================================================
+   ACTIONS
+   ===================================================== */
+.reload-prompt__actions {
+    @apply flex gap-2 mt-2;
+}
+
+.reload-prompt__btn {
+    @apply px-3 py-1 transition-colors text-lg;
+}
+
+.reload-prompt__btn--reload {
+    @apply bg-blue-600 hover:bg-blue-700 font-bold text-white;
+}
+
+.reload-prompt__btn--close {
+    @apply bg-yellow-500 hover:bg-gray-700;
+}

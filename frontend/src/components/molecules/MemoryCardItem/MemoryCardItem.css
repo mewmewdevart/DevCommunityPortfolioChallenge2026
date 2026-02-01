@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+.memory-card-item {
+    @apply relative cursor-pointer flex flex-col items-center gap-4;
+}
+
+.memory-card-item:focus-visible {
+    @apply outline-none;
+}
+
+/* Selection Arrow */
+.memory-card-item__arrow-wrapper {
+    @apply h-4 w-4 transition-all duration-75;
+    @apply opacity-0 -translate-y-2;
+}
+
+.memory-card-item__arrow-wrapper--selected {
+    @apply opacity-100 translate-y-0;
+}
+
+.memory-card-item__arrow {
+    @apply w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-l-transparent border-r-transparent border-t-(--blue-500) animate-bounce;
+}
+
+/* Card Container */
+.memory-card-item__container {
+    @apply relative w-32 h-44 transition-all duration-75;
+}
+
+.memory-card-item__container--selected {
+    @apply -translate-y-2;
+}
+
+/* The Card Shape (Pixel Art) */
+.memory-card-item__shape {
+    @apply w-full h-full bg-[#222] flex flex-col items-center justify-between p-2 border-4;
+    @apply border-(--gray-700);
+    box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.8);
+}
+
+.memory-card-item__shape--selected {
+    @apply border-(--blue-500);
+    box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Top Label */
+.memory-card-item__header {
+    @apply w-full h-6 border-b-4 border-(--gray-700) flex items-center justify-center bg-(--dark-800);
+}
+
+.memory-card-item__header--selected {
+    @apply bg-(--warm-700)/30;
+}
+
+.memory-card-item__header-text {
+    @apply text-[10px] font-(--font-tiny) text-(--gray-500);
+}
+
+/* Icon Box */
+.memory-card-item__icon-box {
+    @apply w-16 h-16 flex items-center justify-center border-4 border-(--gray-700) bg-black;
+}
+
+.memory-card-item__icon-box--selected {
+    @apply border-(--warm-500);
+}
+
+.memory-card-item__icon {
+    @apply w-8 h-8 opacity-50;
+    image-rendering: pixelated;
+}
+
+.memory-card-item__icon--active {
+    @apply opacity-100;
+}
+
+.memory-card-item__icon--corrupt {
+    @apply text-(--rose-500);
+}
+
+/* Grip Lines */
+.memory-card-item__grip-lines {
+    @apply flex flex-col gap-1 w-full px-2;
+}
+
+.memory-card-item__grip-line {
+    @apply h-1 w-full bg-(--gray-700);
+}
+
+/* Text Label */
+.memory-card-item__label {
+    @apply text-center min-h-[3rem] px-2 py-1 opacity-50;
+}
+
+.memory-card-item__label--selected {
+    @apply bg-(--blue-900)/80 border-2 border-(--blue-300) opacity-100;
+}
+
+.memory-card-item__title {
+    @apply text-sm font-(--font-tiny) uppercase tracking-widest leading-none text-(--gray-500);
+}
+
+.memory-card-item__title--selected {
+    @apply text-white;
+}
+
+.memory-card-item__size {
+    @apply text-[10px] font-['Press_Start_2P'] text-(--blue-300) mt-1;
+}

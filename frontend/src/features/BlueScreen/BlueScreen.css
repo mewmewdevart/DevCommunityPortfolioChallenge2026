@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* =====================================================
+   BLOCK: BLUE SCREEN
+   ===================================================== */
+
+.blue-screen {
+    @apply fixed inset-0 bg-(--blue-900) text-(--gray-300) p-10 flex flex-col justify-center items-center select-none cursor-none;
+    @apply z-[999999];
+}
+
+.blue-screen__content {
+    @apply max-w-3xl text-left;
+}
+
+.blue-screen__title {
+    @apply bg-(--gray-500) text-(--blue-700) inline-block px-1 mb-4 font-bold;
+}
+
+.blue-screen__message {
+    @apply mb-4;
+}
+
+.blue-screen__list {
+    @apply list-disc pl-5 mb-4 space-y-1;
+}
+
+.blue-screen__prompt {
+    @apply mt-8 text-center animate-pulse;
+}

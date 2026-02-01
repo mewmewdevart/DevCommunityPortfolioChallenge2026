@@ -1,0 +1,74 @@
+@import "../../styles/globals.css";
+
+/* Container */
+.paint-container {
+  @apply flex flex-col h-full bg-(--gray-500) select-none;
+}
+
+/* Body */
+.paint-body {
+  @apply flex flex-1 overflow-hidden;
+}
+
+/* Toolbar */
+.paint-toolbar {
+  @apply w-12 bg-(--gray-500) border-r border-(--gray-700) flex flex-col gap-1 items-center overflow-y-auto pr-1;
+}
+
+.paint-tool-btn {
+  @apply w-8 h-8 flex items-center justify-center p-0 mb-1 shrink-0;
+}
+
+.paint-linewidth {
+  @apply mt-4 border-t border-(--gray-400) w-full pt-2 flex flex-col items-center gap-2 shrink-0;
+}
+
+.paint-linewidth-btn {
+  @apply w-full h-4 flex items-center justify-center;
+}
+
+.paint-linewidth-btn.active {
+  @apply bg-(--gray-300) text-(--gray-300);
+}
+
+.paint-linewidth-inner {
+  @apply w-4 bg-(--dark-800);
+}
+
+/* Canvas Container */
+.paint-canvas-container {
+  @apply flex-1 bg-(--gray-700) p-[2px] overflow-auto relative flex items-center justify-center touch-none;
+}
+
+.paint-canvas-wrapper {
+  @apply border border-(--gray-300) cursor-crosshair shrink-0;
+}
+
+.paint-canvas {
+  @apply bg-(--gray-300) block touch-none;
+}
+
+/* Footer */
+.paint-footer {
+  @apply min-h-10 border-t border-(--gray-300) p-1 flex items-center gap-2 bg-(--gray-500) flex-wrap sm:flex-nowrap;
+}
+
+.paint-current-colors {
+  @apply w-8 h-8 relative border-4 border-b-(--gray-300) border-r-(--gray-300) border-t-(--gray-700) border-l-(--gray-700) bg-(--gray-500) shrink-0;
+}
+
+.paint-current-colors .secondary-color {
+  @apply absolute top-2 left-2 w-4 h-4 border border-(--gray-500) z-0;
+}
+
+.paint-current-colors .primary-color {
+  @apply absolute top-1 left-1 w-4 h-4 border border-(--gray-500) z-10;
+}
+
+.paint-color-grid {
+  @apply flex flex-wrap max-w-[260px] gap-[1px];
+}
+
+.paint-color {
+  @apply w-4 h-4 border border-(--gray-700) border-t-(--dark-800) border-l-(--dark-800) border-b-(--gray-300) border-r-(--gray-300) touch-manipulation;
+}

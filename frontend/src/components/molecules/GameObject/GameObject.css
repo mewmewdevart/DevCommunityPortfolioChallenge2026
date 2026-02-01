@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+.game-object {
+    @apply absolute;
+    @apply transition-all duration-[var(--duration-normal)] ease-[var(--ease-default)];
+    image-rendering: pixelated;
+}
+
+
+.game-object__image {
+    @apply w-full h-full object-contain;
+    image-rendering: pixelated;
+}
+
+.game-object--computer:hover,
+.game-object--videoGame:hover {
+    cursor: url('../../../assets/icons/cursor/cursor_hand_pointer.png'), pointer;
+}
+
+.game-object--catJoao .game-object__sprite,
+.game-object--catMaria .game-object__sprite {
+    @apply absolute left-0 bottom-0 h-full w-full bg-no-repeat;
+    image-rendering: pixelated;
+    @apply bg-[size:400%_100%] bg-[position:0_0];
+    will-change: background-image, background-position;
+    @apply animate-[cat-anim_0.8s_step-end_infinite];
+}
+
+.game-object__love-icon {
+    /* Dimensions from .game-canvas__chat-indicator */
+    @apply absolute -top-[45px] h-[45px] w-[55px] bg-contain bg-center bg-no-repeat z-50;
+    left: calc(50% - 24px);
+    transform-origin: bottom center;
+    image-rendering: pixelated;
+    @apply animate-[pop-anim_0.3s_ease-out];
+}
+
+@keyframes cat-anim {
+    0% {
+        background-position: 0 0;
+    }
+
+    25% {
+        background-position: 33.3333% 0;
+    }
+
+    50% {
+        background-position: 66.6666% 0;
+    }
+
+    75% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes pop-anim {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+.shutdown-screen {
+    @apply fixed top-0 left-0 w-full h-[100dvh] bg-black z-9999 flex items-center justify-center cursor-none pb-[env(safe-area-inset-bottom)];
+}
+
+.shutdown-screen__content {
+    @apply flex flex-col items-center justify-center p-8 text-center max-w-lg;
+}
+
+.shutdown-screen__title {
+    @apply text-(--rose-500) font-bold text-3xl mb-8 tracking-widest uppercase;
+    @apply font-(--font-tiny);
+    /* Classic look */
+}
+
+.shutdown-screen__message {
+    @apply text-(--rose-500) font-bold text-xl mb-12;
+    @apply font-(--font-tiny);
+}
+
+.shutdown-screen__button {
+    @apply border-2 border-[var(--gray-400)] text-[var(--gray-400)] px-6 py-2 bg-transparent uppercase font-bold text-lg tracking-wider cursor-pointer transition-colors duration-200;
+}
+
+.shutdown-screen__button:hover {
+    @apply border-white text-white bg-[var(--gray-800)];
+}
+
+.shutdown-screen__hint {
+    @apply text-[var(--warm-500)] text-lg mb-12 max-w-md leading-relaxed;
+    @apply font-(--font-tiny);
+}

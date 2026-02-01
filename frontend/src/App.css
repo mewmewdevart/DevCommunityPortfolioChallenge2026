@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+/* ===============================
+     APP LAYOUT
+     =============================== */
+
+.app-loader {
+    @apply flex items-center justify-center h-screen w-screen bg-(--dark-800) font-(--font-tiny);
+}
+
+body {
+    @apply bg-(--dark-800);
+    image-rendering: pixelated;
+}

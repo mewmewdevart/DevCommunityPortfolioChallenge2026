@@ -1,0 +1,95 @@
+@import "../../styles/globals.css";
+
+/* =====================================================
+   ROOT
+   ===================================================== */
+.pdf-root {
+    @apply w-full h-full flex flex-col bg-(--gray-300) overflow-y-auto;
+}
+
+.pdf-empty-state {
+    @apply flex items-center justify-center h-full bg-(--gray-300) text-(--gray-700);
+}
+
+.pdf-fallback-content {
+    @apply p-4;
+}
+
+/* =====================================================
+   HEADER BAR
+   ===================================================== */
+.pdf-header-bar {
+    @apply bg-(--gray-500) border-b border-(--gray-300) p-1 flex gap-2 text-lg shrink-0 sticky top-0 z-10;
+}
+
+.pdf-header-text {
+    @apply self-center text-(--gray-700) truncate;
+}
+
+/* =====================================================
+   CONTENT
+   ===================================================== */
+.pdf-content-container {
+    @apply p-6 flex flex-col gap-6;
+}
+
+.pdf-title {
+    @apply text-3xl text-(--dark-800);
+}
+
+.pdf-subtitle {
+    @apply text-lg text-(--gray-700);
+}
+
+.pdf-banner-box {
+    @apply border-4 border-(--dark-800) p-1 bg-(--gray-300);
+}
+
+.pdf-banner-img {
+    @apply w-full h-auto object-cover max-h-[300px];
+}
+
+/* =====================================================
+   SECTIONS
+   ===================================================== */
+.pdf-section-title {
+    @apply text-lg uppercase text-(--gray-700) mb-2 border-b;
+}
+
+.pdf-skills-list {
+    @apply flex flex-wrap gap-2;
+}
+
+.pdf-skill-tag {
+    @apply bg-(--blue-500) text-(--dark-800) text-lg px-2;
+}
+
+.pdf-description {
+    @apply text-(--dark-800) leading-relaxed text-lg;
+}
+
+/* =====================================================
+   FOOTER / LINKS
+   ===================================================== */
+.pdf-footer {
+    @apply mt-4;
+}
+
+.pdf-link-btn {
+    @apply inline-block px-4 py-2 bg-(--blue-900) text-(--gray-300) text-lg hover:bg-(--blue-700) active:translate-y-px;
+}
+
+/* =====================================================
+   STATUS BAR
+   ===================================================== */
+.pdf-status-bar {
+    @apply bg-(--gray-500) border-t border-(--gray-300) px-2 py-0.5 flex justify-between text-(--gray-700) shadow-[0_-1px_0_var(--gray-700)] shrink-0 z-20;
+}
+
+.pdf-status-item {
+    @apply px-2 bg-(--gray-500) truncate border border-(--gray-700) w-1/2;
+}
+
+.pdf-status-item-right {
+    @apply px-2 w-1/3 bg-(--gray-500) flex justify-between border border-(--gray-700);
+}

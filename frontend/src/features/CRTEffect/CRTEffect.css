@@ -1,0 +1,116 @@
+@import "../../styles/globals.css";
+
+.crt-overlay {
+    @apply fixed inset-0 w-screen h-screen pointer-events-none z-[9999];
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%,
+            rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg,
+            rgba(255, 0, 0, 0.06),
+            rgba(0, 255, 0, 0.02),
+            rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    @apply animate-[flicker_0.15s_infinite];
+}
+
+.crt-overlay::after {
+    @apply content-[''] block absolute inset-0 opacity-0 z-2 pointer-events-none;
+    background-color: rgba(18, 16, 16, 0.1);
+    @apply animate-[flicker_0.15s_infinite];
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 0.0279;
+    }
+
+    5% {
+        opacity: 0.0489;
+    }
+
+    10% {
+        opacity: 0.0249;
+    }
+
+    15% {
+        opacity: 0.0543;
+    }
+
+    20% {
+        opacity: 0.0101;
+    }
+
+    25% {
+        opacity: 0.0496;
+    }
+
+    30% {
+        opacity: 0.0660;
+    }
+
+    35% {
+        opacity: 0.0664;
+    }
+
+    40% {
+        opacity: 0.0524;
+    }
+
+    45% {
+        opacity: 0.0454;
+    }
+
+    50% {
+        opacity: 0.0381;
+    }
+
+    55% {
+        opacity: 0.0505;
+    }
+
+    60% {
+        opacity: 0.0305;
+    }
+
+    65% {
+        opacity: 0.0319;
+    }
+
+    70% {
+        opacity: 0.0688;
+    }
+
+    75% {
+        opacity: 0.0300;
+    }
+
+    80% {
+        opacity: 0.0583;
+    }
+
+    85% {
+        opacity: 0.0309;
+    }
+
+    90% {
+        opacity: 0.0272;
+    }
+
+    95% {
+        opacity: 0.0694;
+    }
+
+    100% {
+        opacity: 0.0279;
+    }
+}
+
+/* Optional: Slight curvature vignette */
+/* .crt-vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9998;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.4) 100%);
+} */

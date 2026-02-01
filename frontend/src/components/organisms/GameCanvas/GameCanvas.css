@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+/* =====================================================
+   ROOT CANVAS
+===================================================== */
+.game-canvas {
+  @apply relative flex h-screen w-screen items-center justify-center overflow-hidden bg-[var(--dark-800)];
+}
+
+.game-canvas__viewport {
+  @apply relative overflow-hidden outline-none z-2;
+  @apply transition-all duration-[var(--duration-slow)] ease-[var(--ease-in-out)];
+}
+
+.game-canvas__viewport:focus .game-canvas__focus-hint {
+  @apply translate-y-0 opacity-100;
+}
+
+.game-canvas__focus-hint {
+  @apply pointer-events-none absolute left-[var(--space-4)] top-[var(--space-4)] z-50 rounded border border-[var(--warm-100)] bg-[var(--dark-800)] px-[var(--space-3)] py-[var(--space-1)] font-bold text-[var(--text-xs)] text-[var(--warm-100)] -translate-y-2 opacity-0 transition-all duration-300;
+}
+
+/* =====================================================
+   GAME AREA
+===================================================== */
+.game-canvas__area {
+  @apply relative h-full w-full outline-none;
+  @apply touch-none bg-transparent transition-transform duration-[var(--duration-slow)] ease-[var(--ease-in-out)];
+}
+
+.game-canvas__grid {
+  @apply pointer-events-none absolute inset-0 opacity-0;
+}
+
+.game-canvas__floor-tile {
+  @apply pointer-events-none absolute object-fill;
+  image-rendering: pixelated;
+}
+
+/* =====================================================
+   WORLD LAYERS
+===================================================== */
+.game-canvas__static-layer,
+.game-canvas__dynamic-layer {
+  @apply pointer-events-none absolute inset-0 h-full w-full;
+}
+
+.game-canvas__tile-layer-1 {
+  @apply z-1;
+}
+
+.game-canvas__tile-layer-2 {
+  @apply z-2;
+}
+
+.game-canvas__tile-layer-3 {
+  @apply z-3;
+}
+
+/* =====================================================
+   PATH INDICATORS
+===================================================== */
+.game-canvas__path-dot {
+  @apply pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 rounded-full;
+  @apply bg-[var(--warm-100)] w-5 h-5 z-5;
+}
+
+.game-canvas__hover-path {
+  @apply pointer-events-none absolute object-fill z-2;
+  image-rendering: pixelated;
+  background-color: color-mix(in srgb, var(--dark-600), transparent 50%);
+}
+
+.game-canvas__nearby-indicator {
+  @apply pointer-events-none absolute bg-[var(--dark-500)] z-15;
+}
+
+/* =====================================================
+   PLAYER
+===================================================== */
+.game-canvas__player {
+  @apply absolute overflow-visible z-(--z-window);
+  @apply transition-all duration-150 ease-linear;
+}
+
+.game-canvas__player-visual {
+  @apply absolute left-1/2 bottom-0 h-[150%] w-[150%] -translate-x-1/2 bg-no-repeat;
+  image-rendering: pixelated;
+  @apply bg-[size:400%_100%] bg-[position:0_0];
+  will-change: background-image, background-position;
+  @apply animate-[player-anim_0.6s_step-end_infinite];
+}
+
+@keyframes player-anim {
+  0% {
+    background-position: 0 0;
+  }
+
+  25% {
+    background-position: 33.3333% 0;
+  }
+
+  50% {
+    background-position: 66.6666% 0;
+  }
+
+  75% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* =====================================================
+   CHAT INDICATOR
+===================================================== */
+.game-canvas__chat-indicator {
+  @apply pointer-events-none absolute left-1/2 h-[45px] w-[55px] -translate-x-1/2 bg-no-repeat;
+  @apply bottom-[150%] mb-2.5 bg-[size:220px_45px] animate-[chat-anim_1s_steps(1)_infinite] z-(--z-overlay);
+  image-rendering: pixelated;
+}
+
+@keyframes chat-anim {
+  0% {
+    background-position: 0 0;
+  }
+
+  25% {
+    background-position: -55px 0;
+  }
+
+  50% {
+    background-position: -110px 0;
+  }
+
+  75% {
+    background-position: -165px 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* =====================================================
+   OVERLAYS
+===================================================== */
+.game-canvas__overlay {
+  @apply fixed inset-0 z-50 flex items-center justify-center;
+}
+
+.game-canvas__overlay--start {
+  background-color: color-mix(in srgb, var(--dark-800), transparent 40%);
+}
+
+.game-canvas__overlay--menu {
+  background-color: color-mix(in srgb, var(--dark-800), transparent 20%);
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+.game-canvas__sr-text {
+  @apply sr-only;
+}

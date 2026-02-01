@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* =========================
+   BLOCK: WELCOME APP
+========================= */
+
+.welcome {
+    @apply p-4 flex flex-col items-center h-full text-center;
+    @apply bg-(--gray-500);
+}
+
+/* =========================
+   ELEMENT: HEADER
+========================= */
+
+.welcome__header {
+    @apply mb-4;
+}
+
+.welcome__title {
+    @apply text-2xl font-bold italic mb-2;
+}
+
+.welcome__subtitle {
+    @apply text-lg;
+}
+
+/* =========================
+   ELEMENT: CONTENT BOX
+========================= */
+
+.welcome__content {
+    @apply text-left w-full text-lg flex flex-col gap-2 p-4 overflow-y-auto;
+    @apply bg-(--gray-300);
+    @apply border-4 border-t-(--gray-700) border-l-(--gray-700) border-r-(--gray-300) border-b-(--gray-300);
+}
+
+.welcome__text {
+    @apply text-(--dark-800);
+}
+
+.welcome__list {
+    @apply list-disc pl-4;
+}
+
+.welcome__footer {
+    @apply mt-4 text-(--gray-700);
+}

@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* =========================
+   WRAPPER
+========================= */
+.paper-wrapper {
+  @apply min-h-screen flex items-center justify-center;
+}
+
+/* =========================
+   PAPER BASE
+========================= */
+.paper-fold {
+  @apply relative w-full max-w-2xl mx-4 min-h-[70vh] md:min-h-[44rem] bg-(--gray-300);
+  border: 4px solid var(--dark-800);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.5);
+  image-rendering: pixelated;
+  font-family: var(--font-tiny);
+  aspect-ratio: 3/4;
+}
+
+/* red margin line */
+.paper-fold::after {
+  content: "";
+  @apply absolute top-0 left-10 w-[4px] h-full bg-(--rose-500)/50;
+}
+
+/* =========================
+   FOLD CORNER (UNWRAP)
+========================= */
+.paper-fold::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  border-style: solid;
+  border-width: 0 4rem 4rem 0;
+  border-color: transparent var(--gray-500) transparent transparent;
+  box-shadow: -4px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s steps(4);
+  transform-origin: top right;
+}
+
+
+
+/* =========================
+   NOTEBOOK LINES
+========================= */
+/* .paper-lines {
+  @apply absolute inset-0 pt-10;
+  background-image: repeating-linear-gradient(white 0px,
+      white 31px,
+      var(--blue-700) 32px);
+  background-attachment: local;
+} */
+
+/* =========================
+   TEXT
+========================= */
+.paper-text {
+  @apply absolute top-[4rem] left-12 right-6 bottom-8 overflow-y-auto outline-none;
+  line-height: 32px;
+}
+
+/* =========================
+   HOLES
+========================= */
+.paper-hole {
+  @apply absolute left-3 w-4 h-4 md:w-6 md:h-6 bg-(--dark-800);
+  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.hole-top {
+  top: 12%;
+}
+
+.hole-middle {
+  top: 50%;
+}
+
+.hole-bottom {
+  bottom: 12%;
+}

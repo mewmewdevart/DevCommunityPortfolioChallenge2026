@@ -1,0 +1,268 @@
+@import "tailwindcss";
+
+.game-menu {
+    @apply absolute inset-0 z-50 flex flex-col items-center justify-center;
+    @apply animate-[fade-in_var(--duration-slow)_var(--ease-out)];
+}
+
+.game-menu--start {
+    @apply bg-transparent gap-8;
+}
+
+.game-menu__lang-wrapper {
+    @apply absolute top-8 right-8;
+}
+
+.game-menu__actions-left {
+    @apply absolute top-8 left-8 flex flex-col gap-2 items-start;
+    @apply opacity-0 pointer-events-none transition-opacity duration-300;
+}
+
+.game-menu__actions-left:focus-within {
+    @apply opacity-100 pointer-events-auto;
+}
+
+.game-menu__action-btn {
+    @apply text-lg text-(--gray-300) hover:text-white transition-colors text-left;
+    @apply focus-visible:outline-2 focus-visible:outline-dotted focus-visible:outline-(--gray-300) focus-visible:outline-offset-8;
+
+    /* Touch target */
+    @apply min-h-[44px] px-4 py-2 touch-manipulation;
+}
+
+.game-menu__lang-btn {
+    @apply hover:scale-105 focus-visible:outline-2 focus-visible:outline-dotted focus-visible:outline-(--gray-300);
+    @apply animate-[lang-idle_3s_ease-in-out_infinite];
+}
+
+.game-menu__header {
+    @apply text-center flex flex-col items-center gap-2 px-4;
+}
+
+.game-menu__logo {
+    @apply mx-auto w-fit;
+    animation: logo-enter 800ms var(--ease-out) both, logo-float 4s ease-in-out infinite;
+}
+
+.game-menu__title {
+    @apply text-lg md:text-4xl text-(--gray-300);
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes logo-enter {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes logo-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Main Action Button (formerly just title text) */
+.game-menu__start-btn {
+    @apply text-lg md:text-4xl text-(--gray-300);
+    @apply bg-transparent border-none cursor-pointer;
+    @apply focus-visible:outline-2 focus-visible:outline-dotted focus-visible:outline-(--gray-300) focus-visible:outline-offset-8;
+
+    /* Touch target improvements */
+    @apply min-h-[44px] min-w-[44px] px-5 py-3 touch-manipulation;
+}
+
+.game-menu__start-btn:active {
+    @apply scale-[0.97] opacity-85;
+}
+
+.game-menu__title-text {
+    @apply inline-block;
+    animation: title-enter 1s var(--ease-out) 200ms both, title-pulse 2.5s ease-in-out 1.5s infinite;
+}
+
+@keyframes title-enter {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes title-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.65;
+    }
+}
+
+.game-menu__lang-option {
+    @apply text-white flex flex-row items-center gap-2;
+}
+
+.game-menu__lang-label {
+    @apply text-lg;
+}
+
+.game-menu__lang-label--flex {
+    @apply flex flex-row items-center gap-2;
+}
+
+.game-menu__icon-switch {
+    filter: brightness(0) invert(1);
+}
+
+@keyframes lang-idle {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Level Selection Screen */
+/* =========================================================
+   LEVEL SELECTION — LAYOUT
+   ========================================================= */
+
+.game-menu--level-select {
+    @apply min-h-screen gap-4 bg-(--dark-800) backdrop-blur-md px-4;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    /* iOS smooth scroll */
+}
+
+
+.level-selection__grid {
+    @apply grid gap-4 grid-cols-2 lg:grid-cols-4;
+}
+
+.level-selection__item {
+    @apply flex flex-col items-center justify-center gap-4 transition-all duration-200 hover:scale-110 active:scale-[0.98];
+}
+
+/* =========================================================
+   LEVEL SELECTION — CONTENT
+   ========================================================= */
+
+.level-selection__image {
+    width: 160px;
+    height: 135px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    flex-shrink: 0;
+}
+
+.level-selection__item:hover .level-selection__image,
+.level-selection__item:focus-visible .level-selection__image {
+    background-position: -160px 0;
+}
+
+.level-selection__label {
+    @apply text-lg md:text-xl lg:text-2xl text-(--gray-300);
+}
+
+/* =========================================================
+   TITLES
+   ========================================================= */
+
+.game-menu__title--level-select {
+    @apply font-bold text-white text-2xl lg:text-3xl;
+}
+
+/* =========================================================
+   ACCESSIBILITY / FOCUS
+   ========================================================= */
+
+.level-selection__item:focus-visible {
+    @apply outline-2 outline-white outline-offset-2;
+}
+
+/* =========================================================
+   FOOTER / SOCIAL
+   ========================================================= */
+
+.game-menu__footer {
+    @apply flex flex-col items-center justify-center gap-2 text-lg text-(--gray-300);
+}
+
+.game-menu__footer ul {
+    @apply flex items-center gap-0 text-center;
+}
+
+/* =========================================================
+   SOCIAL LINKS (SPRITE BASED)
+   ========================================================= */
+
+.game-menu__social-link {
+    @apply relative block overflow-hidden rounded-lg transition-transform duration-200 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4 scale-60;
+    width: 90px;
+    height: 90px;
+}
+
+.game-menu__social-link:hover,
+.game-menu__social-link:focus-visible {
+    @apply scale-80;
+}
+
+.game-menu__social-sprite {
+    @apply absolute inset-0 h-[90px] w-[180px];
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    transition: background-position 0s;
+    /* instant frame switch */
+}
+
+.game-menu__social-link:hover .game-menu__social-sprite,
+.game-menu__social-link:focus-visible .game-menu__social-sprite {
+    background-position: -90px 0;
+}
+
+/* =========================================================
+   CREDITS
+   ========================================================= */
+
+.game-menu__credits-text {
+    @apply absolute bottom-4 text-center text-lg text-(--gray-500);
+}

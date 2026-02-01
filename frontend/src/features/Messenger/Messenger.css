@@ -1,0 +1,324 @@
+@import "../../styles/globals.css";
+
+/* =====================================================
+   ROOT
+   ===================================================== */
+.messenger {
+    @apply h-full w-full font-(--font-tiny) select-none bg-(--gray-500) flex flex-col;
+}
+
+.messenger-content {
+    @apply flex-1;
+}
+
+/* =====================================================
+   LOGIN VIEW
+   ===================================================== */
+.messenger-login {
+    @apply flex flex-col items-center justify-center h-full bg-(--gray-500) p-8 font-(--font-tiny);
+}
+
+.messenger-login__header {
+    @apply mb-6 flex flex-col items-center;
+}
+
+.messenger-login__title {
+    @apply text-2xl text-(--dark-800) tracking-wide;
+}
+
+.messenger-login__subtitle {
+    @apply text-lg text-(--gray-700);
+}
+
+.messenger-login__icon {
+    @apply w-16;
+}
+
+.messenger-login__form {
+    @apply w-full max-w-70 space-y-4;
+}
+
+.messenger-label {
+    @apply text-lg block mb-1 text-(--dark-800);
+}
+
+.messenger-input {
+    @apply w-full p-1 h-8 outline-none text-(--dark-800);
+    @apply border-4 border-t-(--gray-700) border-l-(--gray-700) border-r-(--gray-300) border-b-(--gray-300) bg-(--gray-300);
+}
+
+.messenger-checkbox-group {
+    @apply flex items-center gap-2 mt-2;
+}
+
+.messenger-btn-container {
+    @apply flex items-center justify-center pt-4;
+}
+
+/* =====================================================
+   CONTACTS VIEW
+   ===================================================== */
+.messenger-contacts {
+    @apply flex flex-col h-full bg-(--gray-500) font-(--font-tiny);
+}
+
+.messenger-user-status {
+    @apply p-2 flex items-center gap-3 mb-1;
+}
+
+.messenger-avatar-box {
+    @apply w-12 h-12 flex items-center justify-center bg-(--blue-500) border-4 border-(--gray-700);
+}
+
+.messenger-user-info {
+    @apply flex flex-col flex-1;
+}
+
+.messenger-status-dropdown {
+    @apply flex items-center gap-1 text-base text-(--gray-700) hover:text-(--blue-900);
+}
+
+.messenger-contact-list {
+    @apply flex-1 overflow-y-auto p-1 mx-1 mb-1 bg-(--gray-300);
+    @apply border-4 border-t-(--gray-700) border-l-(--gray-700) border-r-(--gray-300) border-b-(--gray-300);
+}
+
+.messenger-group-header {
+    @apply flex items-center gap-1 px-2 py-1 mb-1;
+}
+
+.messenger-contact-item {
+    @apply flex items-center gap-2 py-1 px-2 border border-transparent hover:border-dotted hover:border-(--gray-300) hover:bg-(--blue-900) hover:text-(--gray-300);
+}
+
+.messenger-contact-item.active {
+    @apply bg-(--blue-900) text-(--gray-300);
+}
+
+.messenger-contact-avatar {
+    @apply relative;
+}
+
+.messenger-status-dot {
+    @apply absolute -bottom-1 -right-1 w-2.5 h-2.5 border border-(--gray-300) rounded-full;
+}
+
+.messenger-contact-name {
+    @apply text-lg leading-none text-(--dark-800);
+}
+
+.messenger-contact-item:hover .messenger-contact-name {
+    @apply text-(--gray-300);
+}
+
+.messenger-contact-status {
+    @apply text-lg italic leading-none text-(--gray-700);
+}
+
+.messenger-contact-item:hover .messenger-contact-status {
+    @apply text-(--gray-300);
+}
+
+.messenger-ad-banner {
+    @apply h-14 mx-1 mb-1 bg-(--warm-100) border border-(--gray-700) flex items-center justify-center text-lg text-(--gray-700) shadow-inner;
+}
+
+/* =====================================================
+   CHAT VIEW
+   ===================================================== */
+.messenger-chat {
+    @apply flex flex-col h-full bg-(--gray-500) font-(--font-tiny);
+}
+
+.messenger-chat--nudged {
+    @apply animate-bounce;
+}
+
+.messenger-chat__header {
+    @apply flex justify-between items-center px-2 py-2 mb-1 bg-(--gray-300);
+    @apply border-t border-(--gray-700) border-b border-(--gray-300);
+}
+
+.messenger-chat__log {
+    @apply flex-1 m-1 p-2 overflow-y-auto select-text cursor-text bg-(--gray-300);
+    @apply border-4 border-t-(--gray-700) border-l-(--gray-700) border-r-(--gray-300) border-b-(--gray-300);
+}
+
+.messenger-chat__disclaimer {
+    @apply text-(--gray-700) text-lg mb-4 border-b border-(--gray-300) pb-1 text-center italic;
+}
+
+.messenger-message-sender {
+    @apply text-lg mb-0.5;
+}
+
+.messenger-message-text {
+    @apply pl-2 text-lg text-(--dark-800);
+}
+
+.messenger-toolbar {
+    @apply h-32 m-1 mt-0 flex flex-col gap-1;
+}
+
+.messenger-toolbar__actions {
+    @apply flex items-center bg-(--gray-500) px-1 gap-1 h-8 border-t border-(--gray-300);
+}
+
+.messenger-toolbar__btn {
+    @apply hover:bg-(--gray-300) active:bg-(--gray-700) p-1 border border-transparent active:border-(--gray-700);
+}
+
+.messenger-toolbar__input-area {
+    @apply flex-1 flex gap-1;
+}
+
+.messenger-textarea {
+    @apply flex-1 resize-none p-1 text-lg outline-none font-(--font-tiny) select-text text-(--dark-800);
+    @apply border-4 border-t-(--gray-700) border-l-(--gray-700) border-r-(--gray-300) border-b-(--gray-300) bg-(--gray-300);
+}
+
+.messenger-status-bar {
+    @apply bg-(--gray-500) px-2 py-0.5 text-lg text-(--dark-800) border-b-0;
+    @apply border-t border-(--gray-700) border-b border-(--gray-300);
+}
+
+/* =====================================================
+   ADDITIONAL UTILITIES
+   ===================================================== */
+.messenger-checkbox {
+    @apply accent-(--blue-900);
+}
+
+.messenger-checkbox-label {
+    @apply text-lg text-(--dark-800);
+}
+
+.messenger-btn-login {
+    @apply px-8 py-1 min-w-[100px];
+}
+
+.messenger-user-icon {
+    @apply text-(--dark-800);
+}
+
+.messenger-user-name {
+    @apply text-lg text-(--dark-800);
+}
+
+.messenger-status-dot-icon {
+    @apply text-(--green-700) text-lg;
+}
+
+.messenger-group-chevron {
+    @apply text-(--dark-800);
+}
+
+.messenger-group-title {
+    @apply text-lg uppercase text-(--dark-800);
+}
+
+.messenger-contact-list-container {
+    @apply pl-4;
+}
+
+.messenger-avatar-small {
+    @apply w-5 h-5 border border-(--gray-700);
+}
+
+.messenger-contact-details {
+    @apply flex flex-col;
+}
+
+/* Status dot modifiers */
+.messenger-status-dot--online {
+    @apply bg-(--green-500);
+}
+
+.messenger-status-dot--busy {
+    @apply bg-(--rose-500);
+}
+
+.messenger-status-dot--offline {
+    @apply bg-(--gray-500);
+}
+
+/* Chat header layout */
+.messenger-chat__user-row {
+    @apply flex items-center gap-2;
+}
+
+.messenger-avatar-wrapper {
+    @apply relative;
+}
+
+.messenger-avatar-medium {
+    @apply w-8 h-8 border border-(--gray-700);
+}
+
+.messenger-chat-user-details {
+    @apply flex flex-col leading-tight;
+}
+
+.messenger-chat-username {
+    @apply text-lg text-(--dark-800);
+}
+
+.messenger-chat-email {
+    @apply text-lg text-(--gray-700);
+}
+
+.messenger-back-btn {
+    @apply px-3 py-0 h-8 bg-(--rose-500);
+}
+
+.messenger-message-item {
+    @apply mb-3;
+}
+
+.messenger-sender-me {
+    @apply text-(--gray-700);
+}
+
+.messenger-sender-them {
+    @apply text-(--blue-700);
+}
+
+.messenger-message-nudge {
+    @apply text-(--rose-700) italic;
+}
+
+.messenger-typing-indicator {
+    @apply mb-2 flex items-end;
+}
+
+.messenger-typing-text {
+    @apply text-lg text-(--gray-700) italic;
+}
+
+.messenger-icon {
+    @apply text-(--dark-800);
+}
+
+.messenger-toolbar-separator {
+    @apply w-1 h-5 bg-(--gray-700) mx-1 border-r border-(--gray-300);
+}
+
+.messenger-toolbar-text-btn {
+    @apply font-(--font-tiny) text-(--dark-800) px-1;
+}
+
+.messenger-toolbar-emoji-btn {
+    @apply text-lg;
+}
+
+.messenger-send-wrapper {
+    @apply flex flex-col gap-1 w-20;
+}
+
+.messenger-send-btn {
+    @apply h-full flex flex-col items-center justify-center gap-1;
+}
+
+.messenger-send-text {
+    @apply text-lg;
+}

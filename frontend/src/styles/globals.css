@@ -1,0 +1,274 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+* {
+  @apply m-0 p-0 box-border;
+}
+
+:focus-visible {
+  outline: 3px solid var(--blue-700);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.9);
+}
+
+html,
+body {
+  @apply text-(--dark-800) w-full h-full m-0 p-0 overflow-hidden touch-manipulation relative;
+
+  font-size: 1rem;
+  font-family: var(--font-tiny);
+  cursor: url('../assets/icons/cursor/cursor_pointer.png'), auto;
+}
+
+/* Custom Cursor for interactive elements */
+/* Custom Cursor for interactive elements */
+a,
+button,
+label,
+select,
+summary,
+area,
+[role="button"],
+[role="checkbox"],
+[role="radio"],
+[role="option"],
+[role="tab"],
+[role="link"],
+[role="menuitem"],
+[type="checkbox"],
+[type="radio"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="file"]::file-selector-button,
+.pointer,
+.clickable,
+.btn,
+.game-canvas__computer-sprite,
+.mc-card,
+.mc-action-btn,
+.mc-info-actions {
+  cursor: url('../assets/icons/cursor/cursor_hand_pointer.png'), pointer !important;
+}
+
+/* Text Selection */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+textarea,
+.text {
+  cursor: url('../assets/icons/cursor/cursor_type.png'), text !important;
+}
+
+/* Move */
+.move,
+[draggable="true"] {
+  cursor: url('../assets/icons/cursor/cursor_move.png'), move !important;
+}
+
+/* Wait/Loading */
+.wait,
+.loading {
+  cursor: url('../assets/icons/cursor/cursor_wait.png'), wait !important;
+}
+
+/* Not Allowed / Disabled */
+:disabled,
+.disabled,
+.not-allowed {
+  cursor: url('../assets/icons/cursor/cursor_cancel.png'), not-allowed !important;
+}
+
+/* Help */
+.help {
+  cursor: url('../assets/icons/cursor/cursor_alert.png'), help !important;
+}
+
+/* Zoom */
+.zoom-in {
+  cursor: url('../assets/icons/cursor/cursor_zoom_in.png'), zoom-in !important;
+}
+
+.zoom-out {
+  cursor: url('../assets/icons/cursor/cursor_zoom_out.png'), zoom-out !important;
+}
+
+/* Grab */
+.grab {
+  cursor: url('../assets/icons/cursor/cursor_hand_grab.png'), grab !important;
+}
+
+/* Resize - Arrows */
+.resize-n {
+  cursor: url('../assets/icons/cursor/cursor_arrow_up.png'), n-resize !important;
+}
+
+.resize-s {
+  cursor: url('../assets/icons/cursor/cursor_arrow_down.png'), s-resize !important;
+}
+
+.resize-w {
+  cursor: url('../assets/icons/cursor/cursor_arrow_left.png'), w-resize !important;
+}
+
+.resize-e {
+  cursor: url('../assets/icons/cursor/cursor_arrow_right.png'), e-resize !important;
+}
+
+/* Resize - Divide/Maximize/Minimize */
+.resize-col,
+.resize-row {
+  cursor: url('../assets/icons/cursor/cursor_divide.png'), col-resize !important;
+}
+
+.maximize {
+  cursor: url('../assets/icons/cursor/cursor_maximize.png'), zoom-in !important;
+}
+
+.minimize {
+  cursor: url('../assets/icons/cursor/cursor_minimize_or_subtract.png'), zoom-out !important;
+}
+
+.close {
+  cursor: url('../assets/icons/cursor/cursor_close_or_multiply.png'), pointer !important;
+}
+
+
+.no-scrollbar {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE / Edge */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome / Safari */
+}
+
+/* =====================================================
+   CRT EFFECT
+   ===================================================== */
+
+body.crt-enabled::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: var(--z-crt) !important;
+  background: repeating-linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0.025) 2px,
+      rgba(0, 0, 0, 0.05) 2px,
+      rgba(0, 0, 0, 0.05) 6px);
+  mix-blend-mode: overlay;
+}
+
+body.crt-enabled::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9999 !important;
+  background: repeating-radial-gradient(circle at 50% 50%,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.03) 1px,
+      rgba(0, 0, 0, 0.03) 2px);
+  opacity: 0.25;
+  animation: vhs-flicker 0.12s infinite;
+}
+
+@keyframes vhs-flicker {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.22;
+  }
+
+  20% {
+    transform: translate(-1px, 1px);
+  }
+
+  40% {
+    transform: translate(1px, -1px);
+    opacity: 0.3;
+  }
+
+  60% {
+    transform: translate(-2px, 0);
+  }
+
+  80% {
+    transform: translate(2px, 1px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.22;
+  }
+}
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes sp-wobble {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-8deg) translateY(-2px);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(8deg) translateY(-2px);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-sp-wobble {
+  animation: sp-wobble 0.3s infinite linear;
+}
+
+/* =====================================================
+   REDUCED MOTION PREFERENCE (WCAG 2.3.3)
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  /* Disable CRT flicker animation */
+  body.crt-enabled::after {
+    animation: none;
+    opacity: 0.1;
+  }
+
+  /* Disable all custom animations */
+  .animate-sp-wobble,
+  .animate-pulse,
+  .vhs-flicker {
+    animation: none !important;
+  }
+
+  /* Reduce any transition durations */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

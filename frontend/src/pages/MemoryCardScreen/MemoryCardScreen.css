@@ -1,0 +1,216 @@
+@import "../../styles/globals.css";
+
+/* ROOT: PS2 Style */
+.mc-screen {
+    @apply fixed top-0 left-0 w-full h-[100dvh] z-[100] overflow-hidden flex flex-col items-center justify-between text-(--gray-300) pb-[env(safe-area-inset-bottom)] select-none;
+    @apply bg-(--dark-800);
+    @apply font-(--font-tiny);
+    image-rendering: pixelated;
+}
+
+.mc-screen__bg {
+    @apply absolute inset-0 z-[-1] bg-(--dark-800);
+    background-image: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #000 100%);
+}
+
+/* Dither Overlay */
+/* .mc-screen::after {
+    @apply content-[''] absolute inset-0 z-50 pointer-events-none opacity-40;
+    background-image: radial-gradient(circle, transparent 20%, #000 120%),
+        repeating-linear-gradient(0deg, transparent 0, transparent 2px, rgba(0, 0, 0, 0.3) 3px),
+        repeating-linear-gradient(90deg, transparent 0, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+    background-size: 100% 100%, 4px 4px, 4px 4px;
+} */
+
+/* Header */
+.mc-header-container {
+    @apply w-full max-w-5xl flex flex-col gap-4 mb-2 flex-shrink-0 px-8 pt-8 z-10;
+}
+
+.mc-header {
+    @apply w-full flex flex-col md:flex-row justify-between items-end border-b-4 border-solid border-(--gray-500) pb-2;
+}
+
+.mc-header__title {
+    @apply text-2xl uppercase tracking-[0.1em] font-bold text-(--blue-300);
+}
+
+.mc-header__info {
+    @apply flex flex-col items-end text-xs font-(--font-tiny) uppercase text-(--gray-300);
+}
+
+/* Info Panel */
+.mc-info-panel {
+    @apply w-full min-h-[10rem] p-4 border-4 border-dashed border-(--blue-300) bg-(--dark-800) transition-all duration-100;
+}
+
+.mc-info-panel.invisible {
+    @apply invisible;
+}
+
+.mc-info-content {
+    @apply flex items-start gap-6 h-full;
+}
+
+.mc-info-image-wrapper {
+    @apply w-32 h-32 flex-shrink-0 flex items-center justify-center;
+}
+
+.mc-info-image {
+    @apply w-full h-full object-contain;
+    image-rendering: pixelated;
+}
+
+.mc-info-text {
+    @apply flex flex-col flex-1 gap-2;
+}
+
+.mc-info-header {
+    @apply flex items-baseline gap-4;
+}
+
+.mc-info-title {
+    @apply text-xl font-bold uppercase text-(--gray-300);
+    @apply drop-shadow-[2px_2px_0_#000];
+}
+
+.mc-info-size {
+    @apply text-xs font-(--font-tiny) text-(--blue-300);
+}
+
+.mc-info-description {
+    @apply text-lg font-(--font-tiny) leading-tight max-w-2xl text-(--gray-300);
+}
+
+.mc-info-actions {
+    @apply flex gap-4 mt-auto;
+}
+
+/* Buttons */
+.mc-btn {
+    @apply px-4 py-1 text-lg font-bold uppercase tracking-wide focus:outline-none transition-none active:translate-y-[2px] active:shadow-none border-2 border-solid border-(--gray-500) bg-(--gray-700) text-(--gray-300);
+}
+
+.mc-btn:hover {
+    @apply bg-(--gray-600);
+}
+
+.mc-btn:active,
+.mc-btn:focus-visible {
+    @apply border-t-[3px] border-l-[3px] border-r-[3px] border-b-[3px] border-t-(--dark-800) border-l-(--dark-800) border-r-(--gray-400) border-b-(--gray-400) bg-(--dark-700);
+}
+
+.mc-btn--primary {
+    @apply bg-(--blue-700) border-t-(--blue-400) border-l-(--blue-400) border-r-(--blue-900) border-b-(--blue-900);
+}
+
+.mc-btn--primary:hover {
+    @apply bg-(--blue-600);
+}
+
+/* Grid */
+.mc-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-5xl flex-grow content-start overflow-y-auto px-8 py-4 z-10;
+}
+
+.mc-grid::-webkit-scrollbar {
+    @apply w-4 bg-(--dark-800) border-l-2 border-(--gray-500);
+}
+
+.mc-grid::-webkit-scrollbar-thumb {
+    @apply bg-(--gray-600) border-2 border-(--gray-400) border-r-(--dark-800) border-b-(--dark-800);
+}
+
+/* Cards */
+.mc-card {
+    @apply relative flex flex-col items-center justify-center p-2 bg-transparent border-2 border-transparent outline-none transition-all duration-100;
+}
+
+.mc-card:hover {
+    @apply bg-(--gray-300)/5;
+}
+
+/* Selected / Focused Card */
+.mc-card:focus,
+.mc-card--selected {
+    @apply border-4 border-dashed border-(--blue-300) outline-2 outline-offset-2 outline-(--blue-300) bg-(--gray-300)/10;
+    @apply animate-[blink-border_1s_steps(2)_infinite];
+}
+
+.mc-card--selected .mc-card__visual {
+    @apply animate-[step-float_1s_steps(4)_infinite_alternate];
+}
+
+@keyframes blink-border {
+
+    0%,
+    100% {
+        border-color: var(--blue-300);
+    }
+
+    50% {
+        border-color: white;
+    }
+}
+
+@keyframes step-float {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-4px);
+    }
+}
+
+.mc-card__image {
+    @apply w-full h-full object-contain;
+    image-rendering: pixelated;
+}
+
+.mc-card__footer {
+    @apply flex flex-col items-center text-center;
+}
+
+.mc-card__title {
+    @apply text-lg uppercase tracking-wider text-(--gray-300);
+    @apply drop-shadow-[1px_1px_0_#000];
+}
+
+.mc-card__size {
+    @apply text-sm text-(--gray-400);
+}
+
+/* Footer Controls */
+.mc-controls {
+    @apply w-full flex justify-center gap-12 py-3 border-t-4 border-solid border-(--gray-500) z-20 mt-auto;
+}
+
+.mc-controls__group {
+    @apply flex items-center gap-3 text-lg font-bold uppercase tracking-widest text-(--gray-300);
+}
+
+.mc-key {
+    @apply w-12 h-12 flex items-center justify-center font-bold text-center rounded-full border-4 border-solid border-(--gray-500);
+}
+
+/* .mc-key {
+    @apply w-6 h-6 flex items-center justify-center font-bold  text-center  rounded-full;
+    @apply bg-gradient-to-t from-[#ddd] to-[#999] shadow-[2px_2px_0_#000];
+} */
+
+.mc-controls__group:first-child .mc-key {
+    @apply flex items-center justify-center text-(--blue-500);
+}
+
+.mc-controls__group:nth-child(2) .mc-key {
+    @apply text-(--green-500);
+}
+
+.mc-controls__group:last-child .mc-key {
+    @apply text-(--red-500);
+}
+
+.mc-controls__btn {
+    @apply bg-transparent border-none p-0 cursor-pointer;
+}

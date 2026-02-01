@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+.shutdown-dialog-overlay {
+    @apply fixed top-0 left-0 w-full h-full bg-(--dark-800)/50 z-9999 flex items-center justify-center px-2;
+}
+
+.shutdown-dialog {
+    @apply flex flex-col gap-2 w-full min-h-50 max-w-[500px] bg-(--gray-500) w-[350px] border-l-4 border-l-(--gray-300) border-t-4 border-t-(--gray-300) border-r-4 border-r-(--dark-800) border-b-4 border-b-(--dark-800);
+}
+
+.shutdown-dialog__header {
+    @apply min-h-12.5 bg-(--blue-900) text-(--gray-300) px-2 py-1 flex justify-between items-center;
+}
+
+.shutdown-dialog__title {
+    @apply font-bold tracking-wider uppercase;
+}
+
+.shutdown-dialog__content {
+    @apply flex flex-row gap-4 p-2 px-4 pb-4;
+}
+
+.shutdown-dialog__close {
+    @apply bg-(--gray-500) text-(--dark-800) w-4 h-4 flex items-center justify-center font-bold text-xs leading-none border border-(--gray-300) border-b-(--dark-800) border-r-(--dark-800) hover:bg-(--gray-400);
+}
+
+.shutdown-dialog__icon {
+    @apply w-8 h-8 flex-shrink-0;
+}
+
+.shutdown-dialog__options {
+    @apply flex flex-col gap-2 flex-grow;
+}
+
+.shutdown-dialog__label {
+    @apply text-lg mb-2;
+}
+
+.shutdown-dialog__radio-group {
+    @apply flex flex-col gap-2 pl-2;
+}
+
+.shutdown-dialog__radio-option {
+    @apply flex items-center gap-2 text-lg cursor-pointer;
+}
+
+.shutdown-dialog__radio-input {
+    @apply w-5 h-5 relative appearance-none bg-red-500;
+}
+
+.shutdown-dialog__radio-input:checked {
+    @apply bg-(--gray-500);
+    @apply after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:w-1 after:h-1 after:bg-(--dark-800) after:rounded-full;
+}
+
+/* Custom radio styling for pixel art feel */
+.shutdown-dialog__radio-input:checked::before {
+    @apply content-[''] absolute top-[2px] left-[2px] w-1 h-1 bg-(--dark-800) rounded-full;
+}
+
+.shutdown-dialog__buttons {
+    @apply flex justify-end gap-2 px-4 pb-2;
+}
+
+.shutdown-dialog__button {
+    @apply min-w-20 px-3 py-1 text-lg bg-(--gray-500) border-t-4 border-t-(--gray-300) border-l-4 border-l-(--gray-300) border-r-4 border-r-(--dark-800) border-b-4 border-b-(--dark-800) active:border-t-(--dark-800) active:border-l-(--dark-800) active:border-r-(--gray-300) active:border-b-(--gray-300) active:bg-(--gray-400);
+}

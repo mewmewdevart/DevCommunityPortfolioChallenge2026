@@ -1,0 +1,247 @@
+@import "../../styles/globals.css";
+
+.videogame-screen {
+	@apply absolute inset-0 z-9999 [container-type:size] [perspective:40cqw];
+	@apply font-(--font-tiny) bg-(--dark-800) w-full h-[100dvh] fixed overflow-hidden pb-[env(safe-area-inset-bottom)];
+	image-rendering: pixelated;
+	image-rendering: crisp-edges;
+
+	/* Global Dither Overlay */
+	&::after {
+		@apply content-[''] absolute inset-0 z-900 opacity-60 pointer-events-none;
+		background-image: radial-gradient(circle, transparent 20%, #000 120%),
+			repeating-linear-gradient(0deg, transparent 0, transparent 2px, rgba(0, 0, 0, 0.3) 3px),
+			repeating-linear-gradient(90deg, transparent 0, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+		background-size: 100% 100%, 4px 4px, 4px 4px;
+	}
+}
+
+.videogame-screen__loader {
+	@apply bg-(--dark-800) w-full h-full absolute inset-0 z-9999;
+}
+
+.videogame-preserve-3d {
+	transform-style: preserve-3d;
+}
+
+/* Back Button */
+.videogame-back-btn {
+	@apply absolute top-4 left-4 z-300 px-4 py-2 bg-white/20 text-white border-0 rounded-lg backdrop-blur-sm cursor-pointer transition-colors duration-200 ease-out;
+}
+
+.videogame-back-btn:hover {
+	@apply bg-white/30;
+}
+
+/* Content Overlay */
+.videogame-content {
+	@apply absolute inset-0 w-full h-full text-center text-white z-200 pointer-events-none grid place-items-center animate-[content_16s_steps(8)_infinite];
+}
+
+.videogame-copyright {
+	grid-area: 1 / 1;
+	@apply text-[length:2.5cqw];
+	@apply drop-shadow-[0_0_0.3cqw_black] opacity-0 animate-[copyright_16s_linear_infinite];
+}
+
+.videogame-branding {
+	grid-area: 1 / 1;
+	@apply text-[length:5cqw] whitespace-nowrap;
+	@apply opacity-0 animate-[branding_16s_steps(8)_infinite];
+}
+
+.videogame-branding-small {
+	@apply text-[0.3em] align-top ml-1;
+}
+
+/* 3D Scene */
+/* Isometric Scene Layout */
+.videogame-scene {
+	@apply absolute top-1/2 left-1/2 h-[60vmin] w-[60vmin];
+
+	/* Larger on mobile portrait for better visibility */
+	@media (orientation: portrait) {
+		@apply h-[80vmin] w-[80vmin];
+	}
+
+	@apply grid gap-0 content-center p-0;
+	grid-template-columns: repeat(14, 1fr);
+	transform-style: preserve-3d;
+	transform: translate(-50%, -50%) rotateX(60deg) rotateZ(45deg);
+	will-change: transform;
+}
+
+/* Background Nebula */
+.videogame-nebula {
+	@apply absolute top-0 left-0 w-full h-full z-[-1] opacity-80 bg-cover bg-center bg-(--dark-800);
+	transform: translateZ(-30cqw) scale(1.4);
+}
+
+/* Particles */
+.videogame-particles {
+	@apply absolute top-0 left-0 w-full h-full z-200 pointer-events-none;
+}
+
+.videogame-particle {
+	@apply block absolute w-px h-px bg-white;
+}
+
+.videogame-particle--red {
+	@apply left-[70%] top-[70%] shadow-[0_0_0_2px_var(--rose-500)];
+	@apply animate-[particle-1_8s_steps(16)_infinite];
+}
+
+.videogame-particle--green {
+	@apply left-[70%] top-[50%] shadow-[0_0_0_2px_var(--green-500)];
+	@apply animate-[particle-2_8s_steps(20)_infinite];
+}
+
+.videogame-particle--blue {
+	@apply left-[15%] top-[75%] shadow-[0_0_0_2px_var(--blue-500)];
+	@apply animate-[particle-3_8s_steps(24)_infinite];
+}
+
+/* Box Grid */
+/* Isometric Pillars */
+.videogame-box {
+	@apply w-full aspect-square relative bg-(--blue-600) transition-transform duration-200 ease-out;
+	transform-style: preserve-3d;
+}
+
+.videogame-box:hover {
+	@apply z-100 bg-(--blue-400);
+	transform: translateZ(20px);
+}
+
+/* Fake 3D Sides using Pseudo-elements */
+.videogame-box::before {
+	@apply content-[''] absolute top-full left-0 w-full h-[200px] bg-(--dark-800) opacity-80 origin-top;
+	transform: rotateX(-90deg);
+}
+
+.videogame-box::after {
+	@apply content-[''] absolute top-0 left-full w-[200px] h-full bg-(--dark-800) opacity-60 origin-left;
+	transform: rotateY(90deg);
+}
+
+.videogame-box--hidden {
+	@apply opacity-0 invisible;
+}
+
+/* Keyframe Animations */
+
+
+@keyframes copyright {
+
+	0%,
+	5% {
+		opacity: 0;
+	}
+
+	10%,
+	35% {
+		opacity: 1;
+	}
+
+	40%,
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes content {
+	0% {
+		background-color: var(--dark-800);
+	}
+
+	5%,
+	43% {
+		background: transparent;
+	}
+
+	48%,
+	100% {
+		background-color: var(--dark-800);
+	}
+}
+
+@keyframes branding {
+
+	0%,
+	65% {
+		opacity: 0;
+		transform: scale(1.5);
+	}
+
+	68%,
+	93% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	96%,
+	100% {
+		opacity: 0;
+		transform: scale(1.5);
+	}
+}
+
+@keyframes particle-1 {
+	0% {
+		opacity: 0;
+		transform: translate(0, 0);
+	}
+
+	20% {
+		opacity: 1;
+	}
+
+	80% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translate(-20vmin, -20vmin);
+		opacity: 0;
+	}
+}
+
+@keyframes particle-2 {
+	0% {
+		opacity: 0;
+		transform: translate(0, 0);
+	}
+
+	20% {
+		opacity: 1;
+	}
+
+	80% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translate(-30vmin, 10vmin);
+		opacity: 0;
+	}
+}
+
+@keyframes particle-3 {
+	0% {
+		opacity: 0;
+		transform: translate(0, 0);
+	}
+
+	20% {
+		opacity: 1;
+	}
+
+	80% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translate(30vmin, -20vmin);
+		opacity: 0;
+	}
+}

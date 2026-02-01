@@ -1,0 +1,147 @@
+@import "../../styles/globals.css";
+
+/* =====================================================
+   ROOT
+   ===================================================== */
+.ie-root {
+  @apply flex flex-col h-full w-full bg-(--gray-500);
+}
+
+/* =====================================================
+   TOOLBAR
+   ===================================================== */
+.ie-toolbar {
+  @apply flex flex-wrap gap-1 p-1 border-b border-(--gray-700);
+}
+
+.ie-toolbar-btn {
+  @apply p-1;
+}
+
+.ie-toolbar-divider {
+  @apply mx-1 hidden sm:block w-px bg-(--gray-700);
+}
+
+/* =====================================================
+   ADDRESS BAR
+   ===================================================== */
+.ie-address-bar {
+  @apply flex items-center gap-2 p-1 border-b border-(--gray-300) text-lg sm:text-base;
+}
+
+.ie-address-label {
+  @apply select-none whitespace-nowrap;
+}
+
+.ie-address-form {
+  @apply flex-1 min-w-0;
+}
+
+.ie-address-input {
+  @apply w-full h-6 p-1 outline-none bg-(--gray-300) text-lg sm:text-base;
+}
+
+/* =====================================================
+   CONTENT
+   ===================================================== */
+.ie-content {
+  @apply flex-1 relative border-t border-(--gray-700) flex flex-col gap-2;
+}
+
+/* =====================================================
+   LOADING OVERLAY
+   ===================================================== */
+.ie-loading-overlay {
+  @apply absolute inset-0 z-10 flex items-center justify-center bg-(--gray-300);
+}
+
+.ie-loading-box {
+  @apply text-center text-lg sm:text-base;
+}
+
+/* =====================================================
+   STATUS BAR
+   ===================================================== */
+.ie-status-bar {
+  @apply p-1 border-t border-(--gray-700) text-xs sm:text-lg;
+}
+
+/* =====================================================
+   PAGE CONTENT (Simulated)
+   ===================================================== */
+.ie-page-container {
+  @apply bg-(--gray-300) p-3 sm:p-6 space-y-4 sm:space-y-6 break-words overflow-hidden flex flex-col gap-0;
+}
+
+.ie-page-header {
+  @apply text-center;
+}
+
+.ie-page-welcome {
+  @apply block text-lg sm:text-base;
+}
+
+.ie-page-title {
+  @apply font-bold leading-tight text-xl sm:text-2xl;
+}
+
+.ie-page-subtitle {
+  @apply text-lg sm:text-lg;
+}
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+.ie-page-nav {
+  @apply flex flex-wrap justify-center gap-2 sm:gap-4 text-lg sm:text-lg;
+}
+
+@media (max-width: 480px) {
+  .ie-page-nav {
+    @apply flex-col items-center;
+  }
+}
+
+/* =====================================================
+   LINKS
+   ===================================================== */
+.ie-nav-link {
+  @apply underline text-(--blue-900) hover:text-(--rose-700) break-all;
+}
+
+/* =====================================================
+   SECTIONS
+   ===================================================== */
+.ie-section-box {
+  @apply border border-(--gray-500) p-3 sm:p-4;
+}
+
+.ie-section-title {
+  @apply font-bold mb-2 text-base sm:text-lg;
+}
+
+/* =====================================================
+   TEXT CONTENT
+   ===================================================== */
+.ie-page-text {
+  @apply leading-relaxed text-lg sm:text-lg break-words;
+}
+
+.ie-list {
+  @apply list-disc list-inside space-y-1 text-lg sm:text-lg;
+}
+
+.ie-project-list {
+  @apply space-y-2 text-lg sm:text-lg break-words;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.ie-footer {
+  @apply text-center text-(--gray-600) text-xs sm:text-lg;
+}
+
+.ie-project-title {
+  @apply font-semibold;
+}

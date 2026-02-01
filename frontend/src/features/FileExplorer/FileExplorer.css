@@ -1,0 +1,90 @@
+@import "../../styles/globals.css";
+
+/* =====================================================
+     FILE EXPLORER BASE
+     ===================================================== */
+.file-explorer {
+  @apply flex flex-col h-full w-full;
+}
+
+/* =====================================================
+     TOOLBAR
+     ===================================================== */
+.file-explorer-toolbar {
+  @apply flex items-center gap-1 p-1 border-b border-(--gray-700) bg-(--gray-500);
+}
+
+.file-explorer-address {
+  @apply pt-1 px-1;
+}
+
+.file-explorer-up-btn {
+  @apply ml-auto px-2 py-0 h-5 flex items-center;
+}
+
+/* =====================================================
+     GRID / CONTENT
+     ===================================================== */
+.file-explorer-grid {
+  @apply flex-1 p-2 grid content-start gap-4 overflow-auto bg-(--gray-300);
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+}
+
+.file-explorer-empty {
+  @apply col-span-full text-center text-lg mt-4 text-(--gray-700);
+}
+
+/* =====================================================
+     ITEM
+     ===================================================== */
+.file-item {
+  @apply flex flex-col items-center gap-1 p-1 border border-transparent text-(--dark-800);
+}
+
+.file-item:hover {
+  @apply bg-(--blue-100)/50;
+}
+
+.file-item-selected {
+  @apply bg-(--blue-900);
+}
+
+.file-item-selected .file-item-name {
+  @apply text-(--gray-300);
+}
+
+.file-item-icon {
+  @apply p-1;
+}
+
+.file-item-icon__svg {
+  @apply text-(--dark-800);
+}
+
+.file-item-icon__svg--folder {
+  @apply fill-(--warm-500) text-(--dark-800);
+}
+
+.file-item-selected .file-item-icon__svg {
+  @apply text-(--gray-300);
+}
+
+.file-item-selected .file-item-icon__svg--folder {
+  @apply fill-(--gray-300);
+}
+
+.file-item-name {
+  @apply text-center px-1 truncate w-full font-(--font-tiny);
+}
+
+.file-explorer_action-icon {
+  @apply text-(--dark-800) w-6 h-6;
+}
+
+
+/* =====================================================
+     STATUS BAR
+     ===================================================== */
+.file-explorer-status {
+  @apply bg-(--gray-500) border-t border-(--gray-300) p-1 shadow-[inset_0_1px_0_var(--gray-700)];
+}

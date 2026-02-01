@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* =========================
+   BLOCK: ERROR-BOUNDARY
+========================= */
+
+.error-boundary {
+    @apply w-full h-screen bg-(--blue-900) text-(--gray-300) flex flex-col items-center justify-center px-8 gap-4;
+}
+
+.error-boundary__title {
+    @apply text-2xl bg-(--gray-300) text-(--blue-900) px-2;
+}
+
+.error-boundary__message {
+    @apply text-center max-w-2xl;
+}
+
+.error-boundary__details {
+    @apply text-left bg-(--blue-900) border border-(--gray-300) p-4 w-full max-w-2xl;
+}
+
+.error-boundary__error-text {
+    font-weight: inherit;
+}
+
+.error-boundary__hint {
+    @apply mt-2 text-lg opacity-80;
+}
+
+.error-boundary__restart-btn {
+    @apply flex items-center gap-2 px-4 py-2 border-2 border-(--gray-300) hover:bg-(--gray-300) hover:text-(--blue-900) transition-colors;
+}
+
+.error-boundary__contact-text a {
+    @apply underline;
+}
+
+
+.error-boundary__action-icon {
+    @apply text-(--dark-800) w-6 h-6;
+}

@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* =========================
+   BLOCK: START MENU
+========================= */
+.start-menu {
+  @apply absolute bottom-2.5 md:bottom-1 left-0 flex z-9999 min-h-75;
+}
+
+/* =========================
+   ELEMENT: SIDEBAR
+========================= */
+
+.start-menu__sidebar {
+  @apply w-10 md:w-12 bg-(--blue-900) text-(--gray-300) flex items-end justify-center relative h-auto border-l-4 border-l-(--gray-300) border-t-4 border-t-(--gray-300);
+}
+
+.start-menu__sidebar::after {
+  @apply content-[''] absolute bottom-0 -right-[5px] w-[100px] h-1 bg-(--dark-800) pointer-events-none;
+}
+
+.start-menu__sidebar::before {
+  @apply content-[''] absolute -top-1 -right-1.25 w-5 h-1 bg-(--gray-300) pointer-events-none;
+}
+
+.start-menu__sidebar-text {
+  @apply transform -rotate-90 text-xl md:text-2xl font-bold tracking-widest mb-24 whitespace-nowrap;
+}
+
+/* =========================
+   ELEMENT: CONTENT AREA
+========================= */
+
+.start-menu__content {
+  @apply bg-(--gray-500) flex-col min-h-75 p-1 relative h-full border-t-4 border-t-(--gray-300) border-r-4 border-b-4 border-b-(--dark-800) border-r-(--dark-800)
+}
+
+.start-menu__item-wrapper {
+  @apply relative;
+}
+
+.start-menu__item {
+  @apply h-12 w-46 justify-start gap-3 px-2 hover:text-(--gray-300);
+}
+
+.start-menu__label {
+  @apply flex-1 text-left text-lg;
+}
+
+.start-menu__icon,
+.start-menu__chevron {
+  @apply w-8 h-8 text-(--dark-800);
+}
+
+/* =========================
+   ELEMENT: SUBMENU
+========================= */
+.start-menu__submenu {
+  @apply absolute md:left-full -bottom-40 md:min-w-50 p-1 flex-col md:border-t-4 md:border-l-4 md:border-t-(--gray-300) md:border-l-(--gray-300) md:border-r-4 md:border-b-4 md:border-b-(--dark-800) md:border-r-(--dark-800) z-10000 bg-(--gray-500) max-h-[calc(100vh-80px)] overflow-y-auto top-auto left-[50%] border-t-4 border-l-4 border-t-(--gray-300) border-l-(--gray-300) border-r-4 border-b-4 border-b-(--dark-800) border-r-(--dark-800);
+}
+
+
+.start-menu__divider {
+  @apply h-0.5 bg-(--gray-700) border-b border-(--gray-500) my-1 mx-1;
+}
+
+.start-menu__brand-name {
+  @apply font-extrabold;
+}
+
+.start-menu__item-icon {
+  @apply w-8 h-8;
+}

@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* =====================================================
+   BLOCK: TASKBAR
+   ===================================================== */
+.taskbar {
+  @apply fixed bottom-0 left-0 right-0 h-[var(--space-16)] bg-(--gray-500) border-t-[var(--border-thick)] border-(--dark-800) shadow-[inset_0_1px_0_var(--gray-500)] flex items-center p-[var(--space-1)] pl-2 gap-2 z-[999] select-none touch-none;
+}
+
+/* =====================================================
+   ELEMENT: START MENU
+   ===================================================== */
+.taskbar__start-menu-wrapper {
+  @apply relative;
+}
+
+.taskbar__start-popup {
+  @apply absolute bottom-full left-0 mb-[var(--space-1)] z-[9001];
+}
+
+.taskbar__start-btn {
+  @apply flex items-center gap-1 md:gap-2 px-2 max-h-12.5 min-h-12.5 min-w-30 md:min-w-28;
+}
+
+.taskbar__icon {
+  @apply w-8 h-auto opacity-80;
+}
+
+.taskbar__start-text {
+  @apply text-lg md:text-2xl tracking-wide text-(--dark-800) uppercase;
+}
+
+/* =====================================================
+   ELEMENT: DIVIDER
+   ===================================================== */
+.taskbar__divider {
+  @apply w-1 h-12.5 border-l border-r border-(--gray-300);
+}
+
+/* =====================================================
+   ELEMENT: WINDOWS LIST
+   ===================================================== */
+.taskbar__windows {
+  @apply flex-1 flex items-center gap-2 overflow-x-auto h-full;
+  @apply [scrollbar-width:none] [-ms-overflow-style:none];
+}
+
+.taskbar__windows::-webkit-scrollbar {
+  @apply hidden;
+}
+
+.taskbar__window-item {
+  @apply relative h-full flex items-center;
+}
+
+.taskbar__window-btn {
+  @apply flex items-center gap-2 px-2 h-12.5 w-12.5 md:w-46 truncate;
+}
+
+.taskbar__window-text {
+  @apply hidden md:block w-12.5 md:w-fit truncate;
+}
+
+.taskbar__tooltip {
+  @apply absolute left-20 bottom-4 bg-(--warm-300) text-(--dark-800) px-2 py-1 text-lg whitespace-nowrap h-12.5 flex justify-center items-center z-[10000] pointer-events-none;
+}
+
+/* =====================================================
+   ELEMENT: TRAY
+   ===================================================== */
+.taskbar__tray {
+  @apply bg-(--gray-500) border-4 border-t-(--gray-700) border-l-(--gray-700) border-r-(--gray-300) border-b-(--gray-300) flex items-center justify-center gap-4 h-12.5 w-fit px-2;
+}
+
+.taskbar__language-btn {
+  @apply hover:bg-(--blue-900) hover:text-(--gray-300) select-none bg-transparent border-none text-2xl p-0 flex items-center justify-center;
+}
+
+@media (max-width: 768px) {
+  .taskbar {
+    @apply h-20;
+  }
+
+  .taskbar__start-btn,
+  .taskbar__window-btn {
+    @apply h-16 w-16 px-0 justify-center;
+  }
+}
+
+.taskbar__window-icon {
+  @apply w-6 h-6;
+}
