@@ -1,30 +1,30 @@
-FROM node:18-alpine AS builder
-
+# Usa Node 20 Slim (Mais compatível)
+FROM node:20-slim as build
 WORKDIR /app
 
-COPY frontend/package.json frontend/package-lock.json ./frontend/
+# Aumenta memória do Node para 4GB (Evita travamento do Vite)
+ENV NODE_OPTIONS="--max-old-space-size=4096"
+# Garante que instale as ferramentas de desenvolvimento (como o Vite)
+ENV NODE_ENV=development
 
-WORKDIR /app/frontend
+# Copia dependências
+COPY frontend/package.json ./
 
-RUN npm ci
+# Instala TUDO (forçando, para ignorar conflitos de versão)
+RUN npm install --force
 
-COPY frontend ./
+# Copia o código fonte
+COPY frontend/ .
 
-RUN npm run build
+# Roda o build
+RUN npx vite build
 
+# Etapa 2: Servidor Nginx
 FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
 
-COPY --from=builder /app/frontend/dist /usr/share/nginx/html
-
-RUN echo 'server { \
-    listen 80; \
-    location / { \
-    root /usr/share/nginx/html; \
-    index index.html index.htm; \
-    try_files $uri $uri/ /index.html; \
-    } \
-    }' > /etc/nginx/conf.d/default.conf
+# Configuração Anti-Erro 404
+RUN echo 'server {     listen 80;     location / {         root /usr/share/nginx/html;         index index.html index.htm;         try_files $uri $uri/ /index.html;     } }' > /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
-
 CMD ["nginx", "-g", "daemon off;"]
