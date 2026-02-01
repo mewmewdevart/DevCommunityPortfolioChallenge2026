@@ -1,1 +1,0 @@
-import{r,j as t}from"./vendor-CGXhCyq3.js";import{u as n}from"./game-CgryXVu0.js";import"./i18n-CjG_VPcn.js";const m=()=>{const{t:e}=n(),[a,s]=r.useState(e("notepad_default_text"));return t.jsx("div",{className:"notepad-root",children:t.jsx("textarea",{className:"notepad-textarea",value:a,onChange:o=>s(o.target.value),spellCheck:!1,maxLength:1e4})})};export{m as Notepad};

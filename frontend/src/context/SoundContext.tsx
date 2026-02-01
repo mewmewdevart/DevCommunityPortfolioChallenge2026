@@ -20,6 +20,16 @@ import gameSfxCat from '@/assets/sounds/game/Cat_Meow.wav';
 import gameSfxPs2Startup from '@/assets/sounds/game/Play2Startup.wav';
 import gameSfxPs2Title from '@/assets/sounds/game/Play2Title.wav';
 
+// Generated Chiptune Sounds
+import sfxDesktopStartup from '@/assets/sounds/generated/desktop_startup.wav';
+import sfxSystemShutdown from '@/assets/sounds/generated/system_shutdown.wav';
+import sfxUiClick from '@/assets/sounds/generated/ui_click.wav';
+import sfxUiHover from '@/assets/sounds/generated/ui_hover.wav';
+import sfxUiError from '@/assets/sounds/generated/ui_error.wav';
+import sfxSaveSuccess from '@/assets/sounds/generated/save_success.wav';
+import sfxGameJump from '@/assets/sounds/generated/game_jump.wav';
+import sfxGameCollect from '@/assets/sounds/generated/game_collect.wav';
+
 export type SfxType =
     // Desktop
     | 'startup'
@@ -38,7 +48,15 @@ export type SfxType =
     | 'game_step'
     | 'game_cat'
     | 'game_ps2_startup'
-    | 'game_ps2_title';
+    | 'game_ps2_title'
+    // Chiptune
+    | 'ui_click_retro'
+    | 'ui_hover_retro'
+    | 'ui_error'
+    | 'memory_save_success'
+    | 'game_jump'
+    | 'game_collect'
+    | 'system_shutdown';
 
 export type MusicType =
     | 'game_bgm_cozy';
@@ -64,6 +82,15 @@ const SFX_VOLUMES: Record<SfxType, number> = {
     game_cat: 0.95,
     game_ps2_startup: 0.8,
     game_ps2_title: 0.8,
+
+    // Chiptune
+    ui_click_retro: 0.5,
+    ui_hover_retro: 0.3,
+    ui_error: 0.6,
+    memory_save_success: 0.7,
+    game_jump: 0.6,
+    game_collect: 0.7,
+    system_shutdown: 0.75,
 };
 
 interface SoundContextType {
@@ -140,12 +167,12 @@ export const SoundProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
     const sfxMap = React.useMemo<Record<SfxType, string>>(() => ({
         // Desktop
-        startup: soundStartup,
-        click: soundDing,
-        error: soundChord,
-        hover: soundChimes,
+        startup: sfxDesktopStartup, // Retro Win95-ish
+        click: sfxUiClick, // Mapped to Chiptune
+        error: sfxUiError, // Mapped to Chiptune
+        hover: sfxUiHover, // Mapped to Chiptune
         success: soundTada,
-        recycle: soundChimes, // Using chimes for now
+        recycle: sfxUiClick,
 
         // Game
         game_cancel: gameSfxCancel,
@@ -158,6 +185,15 @@ export const SoundProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         game_cat: gameSfxCat,
         game_ps2_startup: gameSfxPs2Startup,
         game_ps2_title: gameSfxPs2Title,
+
+        // Chiptune
+        ui_click_retro: sfxUiClick,
+        ui_hover_retro: sfxUiHover,
+        ui_error: sfxUiError,
+        memory_save_success: sfxSaveSuccess,
+        game_jump: sfxGameJump,
+        game_collect: sfxGameCollect,
+        system_shutdown: sfxSystemShutdown,
     }), []);
 
     const musicMap = React.useMemo<Record<MusicType, string>>(() => ({
@@ -176,7 +212,11 @@ export const SoundProvider: React.FC<{ children: React.ReactNode }> = ({ childre
                 const sfxVolume = SFX_VOLUMES[type] ?? 1.0;
                 audio.volume = volume * sfxVolume;
 
-                audio.play().catch(e => console.warn("SFX play failed", e));
+                audio.play().catch(e => {
+                    if (e.name !== 'NotAllowedError' && e.name !== 'AbortError') {
+                        console.warn("SFX play failed", e);
+                    }
+                });
             }
         } catch (e) {
             console.warn("Audio error", e);
@@ -209,7 +249,11 @@ export const SoundProvider: React.FC<{ children: React.ReactNode }> = ({ childre
                 audio.loop = true; // Music loops by default
                 musicRef.current = audio;
 
-                audio.play().catch(e => console.warn("Music play failed", e));
+                audio.play().catch(e => {
+                    if (e.name !== 'NotAllowedError' && e.name !== 'AbortError') {
+                        console.warn("Music play failed", e);
+                    }
+                });
             }
         } catch (e) {
             console.warn("Music error", e);

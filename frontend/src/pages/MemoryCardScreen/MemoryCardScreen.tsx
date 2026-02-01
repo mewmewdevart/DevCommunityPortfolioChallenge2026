@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from '@/context/LanguageContext';
+import { useSound } from '@/context/SoundContext';
 import { MEMORY_CARDS, type MemoryCardData } from '@/data/memoryCardsData';
 import { useMemoryCardNavigation } from '@/hooks/useMemoryCardNavigation';
 
@@ -18,6 +19,7 @@ interface MemoryCardScreenProps {
 
 const MemoryCardScreen: React.FC<MemoryCardScreenProps> = ({ onBack }) => {
     const { t } = useTranslation();
+    const { playSfx } = useSound();
     const [selectedIndex, setSelectedIndex] = useState(0);
     const isHandlingRef = useRef(false);
 
@@ -34,6 +36,7 @@ const MemoryCardScreen: React.FC<MemoryCardScreenProps> = ({ onBack }) => {
     // Intercept Back Navigation
     const handleBack = () => {
         if (isExiting) return;
+        playSfx('system_shutdown');
         setIsExiting(true);
         // Match animation duration (approx 700ms)
         setTimeout(() => {
@@ -54,6 +57,7 @@ const MemoryCardScreen: React.FC<MemoryCardScreenProps> = ({ onBack }) => {
 
     // "Enter" / "Select" Logic
     const handleInteraction = () => {
+        playSfx('click');
         const card = MEMORY_CARDS[selectedIndex];
 
         if (card.linkToPlay) {
@@ -67,6 +71,7 @@ const MemoryCardScreen: React.FC<MemoryCardScreenProps> = ({ onBack }) => {
             setTimeout(() => {
                 setIsGenerating(false);
                 isHandlingRef.current = false;
+                playSfx('memory_save_success');
             }, 1000);
         }
     };
