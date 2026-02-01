@@ -1,5 +1,6 @@
 import React from 'react';
 import MewMewPhoto from "@assets/images/game/hud-me1.png";
+import MewMewPhotoWebP from "@assets/images/game/hud-me1.webp";
 import { useTranslation } from '@/context/LanguageContext';
 import './NarrativeOverlay.css';
 
@@ -74,11 +75,14 @@ export const NarrativeOverlay: React.FC<NarrativeOverlayProps> = ({
         >
             <div className="narrative-overlay__wrapper">
                 <div className="narrative-overlay__character-container">
-                    <img
-                        src={MewMewPhoto}
-                        alt={t('narrative_avatar_alt')}
-                        className="narrative-overlay__character-image"
-                    />
+                    <picture>
+                        <source srcSet={MewMewPhotoWebP} type="image/webp" />
+                        <img
+                            src={MewMewPhoto}
+                            alt={t('narrative_avatar_alt')}
+                            className="narrative-overlay__character-image"
+                        />
+                    </picture>
                 </div>
 
                 <div className="narrative-overlay__dialogue-box">

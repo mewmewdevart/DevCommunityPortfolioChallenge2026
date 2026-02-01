@@ -1,54 +1,79 @@
 import playerIcon from '@assets/images/game/idleAnim-Sheet.png';
+import playerIconWebP from '@assets/images/game/idleAnim-Sheet.webp';
 import walkDown from '@assets/images/game/walkDownAnim-Sheet.png';
+import walkDownWebP from '@assets/images/game/walkDownAnim-Sheet.webp';
 import walkUp from '@assets/images/game/walkUpAnim-Sheet.png';
+import walkUpWebP from '@assets/images/game/walkUpAnim-Sheet.webp';
 import walkLeft from '@assets/images/game/walkLeftAnim-Sheet.png';
+import walkLeftWebP from '@assets/images/game/walkLeftAnim-Sheet.webp';
 import walkRight from '@assets/images/game/walkRightAnim-Sheet.png';
-import videoGameIcon from '@assets/images/game/videoGameGIF.gif';
+import walkRightWebP from '@assets/images/game/walkRightAnim-Sheet.webp';
+import videoGameIcon from '@assets/images/game/videoGameGIF.gif'; // GIF, no WebP
 import bedIcon from '@assets/images/game/bed.png';
+import bedIconWebP from '@assets/images/game/bed.webp';
 import carpetIcon from '@assets/images/game/carpet.png';
-import computerIcon from '@assets/images/game/computerGIF.gif';
+import carpetIconWebP from '@assets/images/game/carpet.webp';
+import computerIcon from '@assets/images/game/computerGIF.gif'; // GIF
 import iconTalk from '@assets/images/game/icon_talk.png';
+import iconTalkWebP from '@assets/images/game/icon_talk.webp';
 import pictureIcon from '@assets/images/game/pictures.png';
+import pictureIconWebP from '@assets/images/game/pictures.webp';
 import pictureIcon2 from '@assets/images/game/pictures1.png';
+import pictureIcon2WebP from '@assets/images/game/pictures1.webp';
 
 import CatJoaoIdle from '@assets/images/game/cat-joao-Sheet.png';
+import CatJoaoIdleWebP from '@assets/images/game/cat-joao-Sheet.webp';
 import CatMariaIdle from '@assets/images/game/cat-maria-Sheet.png';
+import CatMariaIdleWebP from '@assets/images/game/cat-maria-Sheet.webp';
 import iconLove from '@assets/images/game/icon_love.png';
+import iconLoveWebP from '@assets/images/game/icon_love.webp';
 import backPackSheet from '@assets/images/game/backPack-Sheet.png';
+import backPackSheetWebP from '@assets/images/game/backPack-Sheet.webp';
 
-export const SPRITES = {
-  player: playerIcon, // Idle
-  walkDown, // Walking down
-  walkUp, // Walking up
-  walkLeft, // Walking left
-  walkRight, // Walking right
-  computer: computerIcon,
-  picture: pictureIcon,
-  picture2: pictureIcon2,
-  videoGame: videoGameIcon,
-  carpet: carpetIcon,
-  bed: bedIcon,
-  wall: `https://upload.wikimedia.org/wikipedia/commons/5/50/Black_colour.jpg`,
-  chatIndicator: iconTalk,
-  loveIcon: iconLove,
-  catJoao: CatJoaoIdle,
-  catMaria: CatMariaIdle,
-  backpack: backPackSheet,
+// Define a type for sprite assets to ensure consistency
+export interface SpriteAsset {
+  png: string;
+  webp?: string; // Optional for GIFs or external URLs
+}
+
+export const SPRITES: Record<string, SpriteAsset | string> = {
+  player: { png: playerIcon, webp: playerIconWebP }, // Idle
+  walkDown: { png: walkDown, webp: walkDownWebP },
+  walkUp: { png: walkUp, webp: walkUpWebP },
+  walkLeft: { png: walkLeft, webp: walkLeftWebP },
+  walkRight: { png: walkRight, webp: walkRightWebP },
+  computer: { png: computerIcon }, // GIF logic might vary but keeping object structure
+  picture: { png: pictureIcon, webp: pictureIconWebP },
+  picture2: { png: pictureIcon2, webp: pictureIcon2WebP },
+  videoGame: { png: videoGameIcon }, // GIF
+  carpet: { png: carpetIcon, webp: carpetIconWebP },
+  bed: { png: bedIcon, webp: bedIconWebP },
+  wall: { png: `https://upload.wikimedia.org/wikipedia/commons/5/50/Black_colour.jpg` }, // External
+  chatIndicator: { png: iconTalk, webp: iconTalkWebP },
+  loveIcon: { png: iconLove, webp: iconLoveWebP },
+  catJoao: { png: CatJoaoIdle, webp: CatJoaoIdleWebP },
+  catMaria: { png: CatMariaIdle, webp: CatMariaIdleWebP },
+  backpack: { png: backPackSheet, webp: backPackSheetWebP },
 };
 
 // Preload all player sprites to prevent flickering on first use
 export const preloadPlayerSprites = (): void => {
-  const spriteUrls = [
+  // Casting to SpriteAsset for safety inside this specific helper
+  const assets = [
     SPRITES.player,
     SPRITES.walkUp,
     SPRITES.walkDown,
     SPRITES.walkLeft,
     SPRITES.walkRight,
-  ];
+  ] as SpriteAsset[];
 
-  spriteUrls.forEach((url) => {
+  assets.forEach((asset) => {
     const img = new Image();
-    img.src = url;
+    img.src = asset.png;
+    if (asset.webp) {
+      const imgWebP = new Image();
+      imgWebP.src = asset.webp;
+    }
   });
 };
 
@@ -57,104 +82,116 @@ preloadPlayerSprites();
 
 // Floor sprites for 2x2 tiling pattern
 import walkFloor1 from '@assets/images/game/walkFloor_1.png';
+import walkFloor1WebP from '@assets/images/game/walkFloor_1.webp';
 import walkFloor2 from '@assets/images/game/walkFloor_2.png';
+import walkFloor2WebP from '@assets/images/game/walkFloor_2.webp';
 import walkFloor3 from '@assets/images/game/walkFloor_3.png';
+import walkFloor3WebP from '@assets/images/game/walkFloor_3.webp';
 import walkFloor4 from '@assets/images/game/walkFloor_4.png';
+import walkFloor4WebP from '@assets/images/game/walkFloor_4.webp';
 
 // Bottom row special floor sprites (collision tiles with visual aesthetic)
 import collideBottomWall0 from '@assets/images/game/collideBottomWall_0.png';
+import collideBottomWall0WebP from '@assets/images/game/collideBottomWall_0.webp';
 import collideBottomWall1 from '@assets/images/game/collideBottomWall_1.png';
+import collideBottomWall1WebP from '@assets/images/game/collideBottomWall_1.webp';
 import collideBottomWall2 from '@assets/images/game/collideBottomWall_2.png';
+import collideBottomWall2WebP from '@assets/images/game/collideBottomWall_2.webp';
 
 // Side wall sprites (left and right columns)
 import collideLeftWall0 from '@assets/images/game/collideLeftWall_0.png';
+import collideLeftWall0WebP from '@assets/images/game/collideLeftWall_0.webp';
 import collideRightWall0 from '@assets/images/game/collideRightWall_0.png';
+import collideRightWall0WebP from '@assets/images/game/collideRightWall_0.webp';
 
 // Top wall sprites (stacked vertically from top to bottom)
 import collideTopWall1 from '@assets/images/game/collideTopWall_1.png';
+import collideTopWall1WebP from '@assets/images/game/collideTopWall_1.webp';
 import collideTopWall2 from '@assets/images/game/collideTopWall_2.png';
+import collideTopWall2WebP from '@assets/images/game/collideTopWall_2.webp';
 import collideTopWall3 from '@assets/images/game/collideTopWall_3.png';
+import collideTopWall3WebP from '@assets/images/game/collideTopWall_3.webp';
 
 // Top wall column sprites - Left column (col = 1)
 import collideTopWallColumnLeft1 from '@assets/images/game/collideTopWallColumnLeft_1.png';
+import collideTopWallColumnLeft1WebP from '@assets/images/game/collideTopWallColumnLeft_1.webp';
 import collideTopWallColumnLeft2 from '@assets/images/game/collideTopWallColumnLeft_2.png';
+import collideTopWallColumnLeft2WebP from '@assets/images/game/collideTopWallColumnLeft_2.webp';
 import collideTopWallColumnLeft3 from '@assets/images/game/collideTopWallColumnLeft_3.png';
+import collideTopWallColumnLeft3WebP from '@assets/images/game/collideTopWallColumnLeft_3.webp';
 import collideTopWallColumnLeft4 from '@assets/images/game/collideTopWallColumnLeft_4.png';
+import collideTopWallColumnLeft4WebP from '@assets/images/game/collideTopWallColumnLeft_4.webp';
 
 // Top wall column sprites - Right column (col = 7)
 import collideTopWallColumnRight1 from '@assets/images/game/collideTopWallColumnRight_1.png';
+import collideTopWallColumnRight1WebP from '@assets/images/game/collideTopWallColumnRight_1.webp';
 import collideTopWallColumnRight2 from '@assets/images/game/collideTopWallColumnRight_2.png';
+import collideTopWallColumnRight2WebP from '@assets/images/game/collideTopWallColumnRight_2.webp';
 import collideTopWallColumnRight3 from '@assets/images/game/collideTopWallColumnRight_3.png';
+import collideTopWallColumnRight3WebP from '@assets/images/game/collideTopWallColumnRight_3.webp';
 import collideTopWallColumnRight4 from '@assets/images/game/collideTopWallColumnRight_4.png';
+import collideTopWallColumnRight4WebP from '@assets/images/game/collideTopWallColumnRight_4.webp';
 
 // Top wall column BORDER sprites (Row 0, Col 0 and Col 8)
 import collideTopWallColumnBorderLeft1 from '@assets/images/game/collideTopWallColumnBorderLeft_1.png';
+import collideTopWallColumnBorderLeft1WebP from '@assets/images/game/collideTopWallColumnBorderLeft_1.webp';
 import collideTopWallColumnBorderRight1 from '@assets/images/game/collideTopWallColumnBorderRight_1.png';
+import collideTopWallColumnBorderRight1WebP from '@assets/images/game/collideTopWallColumnBorderRight_1.webp';
 
 
-export const FLOOR_SPRITES = [
-  walkFloor1,
-  walkFloor2,
-  walkFloor3,
-  walkFloor4,
-] as const;
+export const FLOOR_SPRITES: SpriteAsset[] = [
+  { png: walkFloor1, webp: walkFloor1WebP },
+  { png: walkFloor2, webp: walkFloor2WebP },
+  { png: walkFloor3, webp: walkFloor3WebP },
+  { png: walkFloor4, webp: walkFloor4WebP },
+];
 
-export const BOTTOM_ROW_SPRITES = {
-  leftCorner: collideBottomWall0,
-  middle: collideBottomWall1,
-  rightCorner: collideBottomWall2,
-} as const;
+export const BOTTOM_ROW_SPRITES: Record<string, SpriteAsset> = {
+  leftCorner: { png: collideBottomWall0, webp: collideBottomWall0WebP },
+  middle: { png: collideBottomWall1, webp: collideBottomWall1WebP },
+  rightCorner: { png: collideBottomWall2, webp: collideBottomWall2WebP },
+};
 
-export const SIDE_WALL_SPRITES = {
-  left: collideLeftWall0,
-  right: collideRightWall0,
-} as const;
+export const SIDE_WALL_SPRITES: Record<string, SpriteAsset> = {
+  left: { png: collideLeftWall0, webp: collideLeftWall0WebP },
+  right: { png: collideRightWall0, webp: collideRightWall0WebP },
+};
 
-export const TOP_WALL_SPRITES = [
-  collideTopWall1,
-  collideTopWall2,
-  collideTopWall3,
-] as const;
+export const TOP_WALL_SPRITES: SpriteAsset[] = [
+  { png: collideTopWall1, webp: collideTopWall1WebP },
+  { png: collideTopWall2, webp: collideTopWall2WebP },
+  { png: collideTopWall3, webp: collideTopWall3WebP },
+];
 
 export const TOP_WALL_ROWS = 3;
 
-export const TOP_WALL_COLUMN_LEFT_SPRITES = [
-  collideTopWallColumnLeft1,
-  collideTopWallColumnLeft2,
-  collideTopWallColumnLeft3,
-  collideTopWallColumnLeft4,
-] as const;
+export const TOP_WALL_COLUMN_LEFT_SPRITES: SpriteAsset[] = [
+  { png: collideTopWallColumnLeft1, webp: collideTopWallColumnLeft1WebP },
+  { png: collideTopWallColumnLeft2, webp: collideTopWallColumnLeft2WebP },
+  { png: collideTopWallColumnLeft3, webp: collideTopWallColumnLeft3WebP },
+  { png: collideTopWallColumnLeft4, webp: collideTopWallColumnLeft4WebP },
+];
 
-export const TOP_WALL_COLUMN_RIGHT_SPRITES = [
-  collideTopWallColumnRight1,
-  collideTopWallColumnRight2,
-  collideTopWallColumnRight3,
-  collideTopWallColumnRight4,
-] as const;
+export const TOP_WALL_COLUMN_RIGHT_SPRITES: SpriteAsset[] = [
+  { png: collideTopWallColumnRight1, webp: collideTopWallColumnRight1WebP },
+  { png: collideTopWallColumnRight2, webp: collideTopWallColumnRight2WebP },
+  { png: collideTopWallColumnRight3, webp: collideTopWallColumnRight3WebP },
+  { png: collideTopWallColumnRight4, webp: collideTopWallColumnRight4WebP },
+];
 
 /**
  * Returns the floor sprite for a given tile position.
  * Uses row/col parity to create a repeating 2x2 pattern.
  */
-export const getFloorSprite = (row: number, col: number): string => {
+export const getFloorSprite = (row: number, col: number): SpriteAsset => {
   const index = (row % 2) * 2 + (col % 2);
   return FLOOR_SPRITES[index];
 };
 
 /**
  * Returns the appropriate sprite for the BOTTOM ROW of the grid.
- * This is used for tiles that are collision (value 1) but need visual representation.
- * 
- * Logic:
- * - col === 0                    → leftCorner (collideBottomWall_0.png)
- * - col === GRID_COLS - 1        → rightCorner (collideBottomWall_2.png)
- * - all other columns            → middle (collideBottomWall_1.png)
- * 
- * @param col - Column index in the grid
- * @param gridCols - Total number of columns in the grid
- * @returns The sprite path for this bottom row tile
  */
-export const getBottomRowSprite = (col: number, gridCols: number): string => {
+export const getBottomRowSprite = (col: number, gridCols: number): SpriteAsset => {
   if (col === 0) {
     return BOTTOM_ROW_SPRITES.leftCorner;
   }
@@ -166,21 +203,8 @@ export const getBottomRowSprite = (col: number, gridCols: number): string => {
 
 /**
  * Returns the appropriate sprite for SIDE WALLS (left and right columns).
- * This is used for tiles that are collision (value 1) but need visual representation.
- * 
- * Logic:
- * - col === 0               → left wall (collideLeftWall_0.png)
- * - col === GRID_COLS - 1   → right wall (collideRightWall_0.png)
- * - otherwise               → null (not a side wall)
- * 
- * IMPORTANT: Bottom row tiles should be handled separately (they have their own sprites).
- * Use this function only for rows that are NOT the bottom row.
- * 
- * @param col - Column index in the grid
- * @param gridCols - Total number of columns in the grid
- * @returns The sprite path for this side wall tile, or null if not a side wall
  */
-export const getSideWallSprite = (col: number, gridCols: number): string | null => {
+export const getSideWallSprite = (col: number, gridCols: number): SpriteAsset | null => {
   if (col === 0) {
     return SIDE_WALL_SPRITES.left;
   }
@@ -192,9 +216,8 @@ export const getSideWallSprite = (col: number, gridCols: number): string | null 
 
 /**
  * Returns the appropriate sprite for the TOP WALL section of the grid.
- * Priority: Side walls > Top wall > Bottom wall > Floor.
  */
-export const getTopWallSprite = (row: number, col: number, gridCols: number): string | null => {
+export const getTopWallSprite = (row: number, col: number, gridCols: number): SpriteAsset | null => {
   if (row < 0 || row >= TOP_WALL_ROWS) {
     return null;
   }
@@ -209,25 +232,8 @@ export const getTopWallSprite = (row: number, col: number, gridCols: number): st
 
 /**
  * Returns the appropriate sprite for TOP WALL COLUMN colliders.
- * These are vertical columns at specific positions that extend downward from the top wall.
- * 
- * Grid Diagram (columns 1 and 7, rows 3-6):
- *   Col: 0  1  2  3  4  5  6  7  8
- *   Row 3: S  L  .  .  .  .  .  R  S   (L=Left column sprite, R=Right column sprite, S=Side wall)
- *   Row 4: S  L  .  .  .  .  .  R  S
- *   Row 5: S  L  .  .  .  .  .  R  S
- *   Row 6: S  L  .  .  .  .  .  R  S
- * 
- * Logic:
- *   - col === TOP_WALL_COLUMN_CONFIG.leftCol (1) → use LEFT column sprites
- *   - col === TOP_WALL_COLUMN_CONFIG.rightCol (7) → use RIGHT column sprites
- * Logic:
- *  - Scans DOWNWARDS (Bottom-Up base anchor).
- *  - Excludes Bottom Row (Row 9).
- *  - Base of column -> Sprite 4.
- *  - Upwards -> 3, 2, 1.
  */
-export const getTopWallColumnSprite = (row: number, col: number, collisionMap: number[][]): string | null => {
+export const getTopWallColumnSprite = (row: number, col: number, collisionMap: number[][]): SpriteAsset | null => {
   const gridRows = collisionMap.length;
   const gridCols = collisionMap[0].length;
 
@@ -257,23 +263,15 @@ export const getTopWallColumnSprite = (row: number, col: number, collisionMap: n
 
 /**
  * Returns the appropriate sprite for TOP WALL COLUMN BORDERS.
- * These are visual overlays for the top-most corners (Row 0, Col 0 and Col 8).
- * 
- * Logic:
- *  - Row === 0
- *  - Col === 0 -> Left Border
- *  - Col === GRID_COLS - 1 -> Right Border
- * 
- * Priority: Highest (Visual Overlay)
  */
-export const getTopWallColumnBorderSprite = (row: number, col: number, gridCols: number): string | null => {
+export const getTopWallColumnBorderSprite = (row: number, col: number, gridCols: number): SpriteAsset | null => {
   if (row !== 0) return null;
 
   if (col === 0) {
-    return collideTopWallColumnBorderLeft1;
+    return { png: collideTopWallColumnBorderLeft1, webp: collideTopWallColumnBorderLeft1WebP };
   }
   if (col === gridCols - 1) {
-    return collideTopWallColumnBorderRight1;
+    return { png: collideTopWallColumnBorderRight1, webp: collideTopWallColumnBorderRight1WebP };
   }
 
   return null;

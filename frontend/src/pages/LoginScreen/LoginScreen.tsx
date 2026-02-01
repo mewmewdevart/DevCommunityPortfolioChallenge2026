@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { WinButton } from '@atoms/WinButton/WinButton';
+import MewIconProfileWebP from '@assets/icons/me-with-cat.webp'
 import MewIconProfile from '@assets/icons/me-with-cat.png'
 import { useTranslation } from '@/context/LanguageContext';
 import { useSound } from '@/context/SoundContext';
@@ -69,15 +70,18 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin, onCancel }) =
                 <div className="login-screen__content">
                     {/* Icon */}
                     <div className="login-screen__icon-wrapper">
-                        <img
-                            src={MewIconProfile}
-                            alt={t('login_icon_alt')}
-                            aria-hidden="true"
-                            className="login-screen__icon"
-                            width={140}
-                            height={140}
-                            onError={(e) => e.currentTarget.style.display = 'none'}
-                        />
+                        <picture>
+                            <source srcSet={MewIconProfileWebP} type="image/webp" />
+                            <img
+                                src={MewIconProfile}
+                                alt={t('login_icon_alt')}
+                                aria-hidden="true"
+                                className="login-screen__icon"
+                                width={140}
+                                height={140}
+                                onError={(e) => e.currentTarget.style.display = 'none'}
+                            />
+                        </picture>
                     </div>
 
                     {/* Form */}

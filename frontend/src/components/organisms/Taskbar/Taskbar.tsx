@@ -8,6 +8,7 @@ import { Clock } from '@/components/atoms/Clock/Clock';
 import { VolumeControl } from '@/components/atoms/VolumeControl/VolumeControl';
 
 import iconWindows from '@assets/icons/icon-window-default.png';
+import iconWindowsWebP from '@assets/icons/icon-window-default.webp';
 import { StartMenu } from '@organisms/StartMenu/StartMenu';
 
 import './Taskbar.css';
@@ -159,17 +160,20 @@ export const Taskbar: React.FC<TaskbarProps> = ({ availableApps }) => {
           aria-expanded={isStartOpen}
           aria-label={t('start_menu')}
         >
-          <img
-            src={iconWindows}
-            alt=""
-            className="taskbar__icon"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-            }}
-            aria-hidden="true"
-            width={16}
-            height={16}
-          />
+          <picture>
+            <source srcSet={iconWindowsWebP} type="image/webp" />
+            <img
+              src={iconWindows}
+              alt=""
+              className="taskbar__icon"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+              aria-hidden="true"
+              width={16}
+              height={16}
+            />
+          </picture>
           <span className="taskbar__start-text">{t('start')}</span>
         </WinButton>
       </div>

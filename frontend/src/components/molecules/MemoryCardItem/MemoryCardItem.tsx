@@ -37,7 +37,10 @@ const MemoryCardItem: React.FC<Props> = ({ card, isSelected, onSelect, onClick }
                 {/* The Card Shape */}
                 <div className={`memory-card-item__shape ${isSelected ? 'memory-card-item__shape--selected' : ''}`}>
 
-                    <img src={imageSrc} className={`memory-card-item__icon ${classMod || ''}`} alt="" />
+                    <picture>
+                        {card.imageWebP && <source srcSet={card.imageWebP} type="image/webp" />}
+                        <img src={imageSrc} className={`memory-card-item__icon ${classMod || ''}`} alt="" />
+                    </picture>
 
                 </div>
             </div>

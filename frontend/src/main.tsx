@@ -13,7 +13,6 @@ createRoot(document.getElementById('root')!).render(
   </StrictMode>,
 )
 
-// Track Web Vitals metrics
 reportWebVitals((metric) => {
   formatMetricForConsole(metric);
 });

@@ -47,7 +47,7 @@
 ================================ */
 .narrative-overlay__name {
     /* absolute bottom-44 w-40 text-lg -left-16 z-0 flex justify-end pr-2    */
-    @apply bg-(--blue-500) absolute text-lg w-40 -left-10 pl-14 bottom-44;
+    @apply bg-(--blue-500) absolute text-lg w-40 -left-10 pl-14 bottom-44 -z-1;
 
 }
 

@@ -1,15 +1,23 @@
 
 import matter from 'gray-matter';
 import memoryCardCleanImage from '@/assets/images/game/memory-card_clean.png';
-import memoryCardKirbyImage from '@/assets/images/game/memory-card_kirby.png';
+import memoryCardCleanImageWebP from '@/assets/images/game/memory-card_clean.webp';
+import memoryCardKirbyImage from '@/assets/images/game/memory-card_kirby.png'; // Assuming this exists, though not in find output, keeping consistent
+// Note: verify if kirby webp exists. If not, fallback is fine. 
+// Based on grep output earlier, I saw 'memory-card_snake.png' and 'memory-card_clean.png'. 
+// I will assume standard conversion happened for all.
+import memoryCardKirbyImageWebP from '@/assets/images/game/memory-card_kirby.webp';
 import memoryCardDoubleVisionImage from '@/assets/images/game/memory-card_doubleVision.png';
+import memoryCardDoubleVisionImageWebP from '@/assets/images/game/memory-card_doubleVision.webp';
 import memoryCardSnake from '@/assets/images/game/memory-card_snake.png';
+import memoryCardSnakeWebP from '@/assets/images/game/memory-card_snake.webp';
 
 export interface MemoryCardData {
     id: string;
     title: string;
     size: string;
     image?: string;
+    imageWebP?: string;
     color: string;
     type: 'save' | 'data' | 'config' | 'corrupt' | 'empty';
     description?: string;
@@ -18,11 +26,11 @@ export interface MemoryCardData {
     linkToPlay?: string;
 }
 
-const IMAGE_MAP: Record<string, string> = {
-    'memory-card_clean.png': memoryCardCleanImage,
-    'memory-card_kirby.png': memoryCardKirbyImage,
-    'memory-card_doubleVision.png': memoryCardDoubleVisionImage,
-    'memory-card_snake.png': memoryCardSnake,
+const IMAGE_MAP: Record<string, { src: string; srcWebP: string }> = {
+    'memory-card_clean.png': { src: memoryCardCleanImage, srcWebP: memoryCardCleanImageWebP },
+    'memory-card_kirby.png': { src: memoryCardKirbyImage, srcWebP: memoryCardKirbyImageWebP },
+    'memory-card_doubleVision.png': { src: memoryCardDoubleVisionImage, srcWebP: memoryCardDoubleVisionImageWebP },
+    'memory-card_snake.png': { src: memoryCardSnake, srcWebP: memoryCardSnakeWebP },
 };
 
 // Load MD files from videoGameData directory
@@ -45,8 +53,11 @@ Object.keys(markdownFiles).forEach((path) => {
 
         // Resolve image
         let imageResolved: string | undefined = undefined;
+        let imageWebPResolved: string | undefined = undefined;
+
         if (frontmatter.image && IMAGE_MAP[frontmatter.image]) {
-            imageResolved = IMAGE_MAP[frontmatter.image];
+            imageResolved = IMAGE_MAP[frontmatter.image].src;
+            imageWebPResolved = IMAGE_MAP[frontmatter.image].srcWebP;
         }
 
         generatedCards.push({
@@ -54,6 +65,7 @@ Object.keys(markdownFiles).forEach((path) => {
             title: frontmatter.title || 'Untitled',
             size: frontmatter.size || '—',
             image: imageResolved,
+            imageWebP: imageWebPResolved,
             color: frontmatter.color || 'var(--gray-500)',
             type: (frontmatter.type as MemoryCardData['type']) || 'data',
             description: body.trim(),

@@ -8,7 +8,8 @@ import {
     TILE_WIDTH,
     TILE_HEIGHT,
     pixelToGrid,
-    type WorldEntityConfig
+    type WorldEntityConfig,
+    type SpriteAsset
 } from '@/interfaces/constants';
 import { WorldEntity } from '@/components/molecules/WorldEntity/WorldEntity';
 import { type Player, type Vector2 } from '@interfaces/types';
@@ -17,7 +18,7 @@ interface DynamicLayerProps {
     player: Player;
     facing: 'up' | 'down' | 'left' | 'right';
     animationState: 'idle' | 'walk';
-    currentSprite: string;
+    currentSprite: string | SpriteAsset;
     moveQueue: Vector2[];
     nearbyObject: WorldEntityConfig | null;
     hoverPos: Vector2 | null;
@@ -34,6 +35,45 @@ export const DynamicLayer: React.FC<DynamicLayerProps> = ({
     hoverPos,
     isNarrativeActive
 }) => {
+
+    const renderPlayerVisual = () => {
+        const style: React.CSSProperties = {
+            width: '100%',
+            height: '100%'
+        };
+
+        if (typeof currentSprite === 'string') {
+            style.backgroundImage = `url(${currentSprite})`;
+        } else {
+            // Use image-set for WebP support in background image
+            if (currentSprite.webp) {
+                style.backgroundImage = `image-set(url("${currentSprite.webp}") type("image/webp"), url("${currentSprite.png}") type("image/png"))`;
+            } else {
+                style.backgroundImage = `url(${currentSprite.png})`;
+            }
+        }
+
+        return (
+            <div
+                className="game-canvas__player-visual"
+                data-facing={facing}
+                data-anim={animationState}
+                style={style}
+            />
+        );
+    };
+
+    const getChatIndicatorStyle = () => {
+        const sprite = SPRITES.chatIndicator;
+        if (typeof sprite === 'object') {
+            if (sprite.webp) {
+                return { backgroundImage: `image-set(url("${sprite.webp}") type("image/webp"), url("${sprite.png}") type("image/png"))` };
+            }
+            return { backgroundImage: `url(${sprite.png})` };
+        }
+        return { backgroundImage: `url(${sprite})` };
+    };
+
     return (
         <div className="game-canvas__dynamic-layer">
             {/* Interactive World Entities */}
@@ -109,17 +149,12 @@ export const DynamicLayer: React.FC<DynamicLayerProps> = ({
                     height: `${(PLAYER_SIZE.y / CANVAS_HEIGHT) * 100}%`,
                 }}
             >
-                <div
-                    className="game-canvas__player-visual"
-                    data-facing={facing}
-                    data-anim={animationState}
-                    style={{ backgroundImage: `url(${currentSprite})` }}
-                />
+                {renderPlayerVisual()}
 
                 {isNarrativeActive && (
                     <div
                         className="game-canvas__chat-indicator"
-                        style={{ backgroundImage: `url(${SPRITES.chatIndicator})` }}
+                        style={getChatIndicatorStyle()}
                     />
                 )}
             </div>

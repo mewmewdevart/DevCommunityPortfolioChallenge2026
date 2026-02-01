@@ -11,9 +11,13 @@ import { LoadingSpinner } from '@/components/atoms/LoadingSpinner/LoadingSpinner
 import { AssistantWindow } from './AssistantWindow';
 
 import MinusIcon from "@assets/icons/mini_icon_min.png";
+import MinusIconWebP from "@assets/icons/mini_icon_min.webp";
 import ResizeIcon from "@assets/icons/mini_icon_resize.png";
+import ResizeIconWebP from "@assets/icons/mini_icon_resize.webp";
 import SquareIcon from "@assets/icons/icon-window-maximize.png";
+import SquareIconWebP from "@assets/icons/icon-window-maximize.webp";
 import CloseIcon from "@assets/icons/icon-window-close.png";
+import CloseIconWebP from "@assets/icons/icon-window-close.webp";
 
 import './Window.css';
 
@@ -226,7 +230,10 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
             aria-label={t('minimize')}
             onClick={() => minimizeWindow(data.id)}
           >
-            <img src={MinusIcon} className="window__action-icon" alt="" />
+            <picture>
+              <source srcSet={MinusIconWebP} type="image/webp" />
+              <img src={MinusIcon} className="window__action-icon" alt="" />
+            </picture>
           </WinButton>
 
           <WinButton
@@ -234,9 +241,15 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
             onClick={() => maximizeWindow(data.id)}
           >
             {data.isMaximized ? (
-              <img src={ResizeIcon} className="window__action-icon" alt="" />
+              <picture>
+                <source srcSet={ResizeIconWebP} type="image/webp" />
+                <img src={ResizeIcon} className="window__action-icon" alt="" />
+              </picture>
             ) : (
-              <img src={SquareIcon} className="window__action-icon" alt="" />
+              <picture>
+                <source srcSet={SquareIconWebP} type="image/webp" />
+                <img src={SquareIcon} className="window__action-icon" alt="" />
+              </picture>
             )}
           </WinButton>
 
@@ -244,7 +257,10 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
             aria-label={t('close')}
             onClick={() => closeWindow(data.id)}
           >
-            <img src={CloseIcon} className="window__action-icon" alt="" />
+            <picture>
+              <source srcSet={CloseIconWebP} type="image/webp" />
+              <img src={CloseIcon} className="window__action-icon" alt="" />
+            </picture>
           </WinButton>
         </div>
       </div>

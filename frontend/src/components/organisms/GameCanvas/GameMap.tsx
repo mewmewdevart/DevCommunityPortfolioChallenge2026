@@ -4,7 +4,8 @@ import {
     CANVAS_HEIGHT,
     TILE_WIDTH,
     TILE_HEIGHT,
-    type WorldEntityConfig
+    type WorldEntityConfig,
+    type SpriteAsset
 } from '@/interfaces/constants';
 import { type Player, type Vector2 } from '@interfaces/types';
 import { StaticMap } from './StaticMap';
@@ -14,7 +15,7 @@ interface GameMapProps {
     player: Player;
     facing: 'up' | 'down' | 'left' | 'right';
     animationState: 'idle' | 'walk';
-    currentSprite: string;
+    currentSprite: string | SpriteAsset;
     moveQueue: Vector2[];
     nearbyObject: WorldEntityConfig | null;
     hoverPos: Vector2 | null;

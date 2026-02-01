@@ -2,9 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import { useTranslation } from '@context/LanguageContext';
 import { useSound } from '@/context/SoundContext';
 import logoGame from '@assets/images/game/PortfolioWebXP.png';
+import logoGameWebP from '@assets/images/game/PortfolioWebXP.webp';
 import USAIcon from '@assets/images/game/flags_USA.png';
+import USAIconWebP from '@assets/images/game/flags_USA.webp';
 import BRIcon from '@assets/images/game/flags_BR.png';
+import BRIconWebP from '@assets/images/game/flags_BR.webp';
 import ESPIcon from '@assets/images/game/flags_ESP.png';
+import ESPIconWebP from '@assets/images/game/flags_ESP.webp';
 import iconSwitch from 'pixelarticons/svg/switch.svg';
 import iconEmail from '@assets/icons/socials_email-Sheet.png';
 import iconGithub from '@assets/icons/socials_github-Sheet.png';
@@ -115,12 +119,15 @@ export const StartMenu: React.FC<MenuProps> = ({
         >
           {language === 'en' && (
             <div className="game-menu__lang-option">
-              <img
-                src={USAIcon}
-                alt={t('icon_usa_alt')}
-                width="64"
-                height="64"
-              />
+              <picture>
+                <source srcSet={USAIconWebP} type="image/webp" />
+                <img
+                  src={USAIcon}
+                  alt={t('icon_usa_alt')}
+                  width="64"
+                  height="64"
+                />
+              </picture>
               <p className="game-menu__lang-label game-menu__lang-label--flex">English<IconRenderer
                 icon={iconSwitch}
                 className="game-menu__icon-switch"
@@ -129,12 +136,15 @@ export const StartMenu: React.FC<MenuProps> = ({
           )}
           {language === 'pt-BR' && (
             <div className="game-menu__lang-option">
-              <img
-                src={BRIcon}
-                alt={t('icon_brazil_alt')}
-                width="64"
-                height="64"
-              />
+              <picture>
+                <source srcSet={BRIconWebP} type="image/webp" />
+                <img
+                  src={BRIcon}
+                  alt={t('icon_brazil_alt')}
+                  width="64"
+                  height="64"
+                />
+              </picture>
               <p className="game-menu__lang-label game-menu__lang-label--flex">
                 Português Brasileiro{' '}
                 <IconRenderer
@@ -146,12 +156,15 @@ export const StartMenu: React.FC<MenuProps> = ({
           )}
           {language === 'es' && (
             <div className="game-menu__lang-option">
-              <img
-                src={ESPIcon}
-                alt={t('icon_spain_alt')}
-                width="64"
-                height="64"
-              />
+              <picture>
+                <source srcSet={ESPIconWebP} type="image/webp" />
+                <img
+                  src={ESPIcon}
+                  alt={t('icon_spain_alt')}
+                  width="64"
+                  height="64"
+                />
+              </picture>
               <p className="game-menu__lang-label game-menu__lang-label--flex">
                 Español{' '}
                 <IconRenderer
@@ -167,13 +180,16 @@ export const StartMenu: React.FC<MenuProps> = ({
       {/* Navigation buttons removed - moved to LevelSelectionScreen */}
 
       <section className="game-menu__header">
-        <img
-          src={logoGame}
-          alt={t('game_menu_logo_alt')}
-          width={550}
-          height={225}
-          className="game-menu__logo"
-        />
+        <picture>
+          <source srcSet={logoGameWebP} type="image/webp" />
+          <img
+            src={logoGame}
+            alt={t('game_menu_logo_alt')}
+            width={550}
+            height={225}
+            className="game-menu__logo"
+          />
+        </picture>
 
         <button
           id="start-title"
