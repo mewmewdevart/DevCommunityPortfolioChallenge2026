@@ -1,7 +1,16 @@
 @import "tailwindcss";
 
 .welcome {
-    @apply flex flex-col h-full w-full p-4 bg-(--gray-500) text-center;
+    @apply flex flex-col h-full w-full p-4 bg-(--gray-500);
+}
+
+.welcome__hero {
+    @apply flex flex-col md:flex-row items-center gap-6 mb-6 text-left;
+}
+
+.welcome__avatar {
+    @apply w-32 h-32 border-4 border-(--gray-700) flex-shrink-0 bg-(--blue-900);
+    image-rendering: pixelated;
 }
 
 .welcome__header {

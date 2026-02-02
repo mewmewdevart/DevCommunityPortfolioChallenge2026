@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from '@/context/LanguageContext';
 import { useSound } from '@/context/SoundContext';
+import MeWithCat from '@/assets/icons/me-with-cat.webp';
 import './Welcome.css';
 
 type Tab = 'welcome' | 'overview' | 'architecture' | 'accessibility' | 'performance';
@@ -24,7 +25,7 @@ export const Welcome = () => {
 
   return (
     <div className="welcome">
-      <div className="welcome__header">
+      <div className="welcome__header text-center">
         <h1 className="welcome__title">{t('welcome_title')}</h1>
         <p className="welcome__subtitle">{t('welcome_subtitle')}</p>
       </div>
@@ -47,17 +48,29 @@ export const Welcome = () => {
       <div className="welcome__content">
         {activeTab === 'welcome' && (
           <div id="panel-welcome" role="tabpanel">
-            <p className="welcome__text">{t('welcome_intro')}</p>
-            <p className="welcome__text"><strong>{t('welcome_features_title')}</strong></p>
-            <ul className="welcome__list">
-              <li>{t('welcome_feature_1')}</li>
-              <li>{t('welcome_feature_2')}</li>
-              <li>{t('welcome_feature_3')}</li>
-              <li>{t('welcome_feature_4')}</li>
-              <li>{t('welcome_feature_5')}</li>
-              <li>{t('welcome_feature_6')}</li>
-            </ul>
-            <p className="welcome__footer">{t('welcome_footer')}</p>
+            <section className="welcome__section">
+              <div className="welcome__hero">
+                <img
+                  src={MeWithCat}
+                  alt="MewMewDev Avatar"
+                  className="welcome__avatar"
+                />
+                <div className="flex flex-col gap-2">
+                  <p className="welcome__text text-lg">{t('welcome_intro')}</p>
+                  <p className="welcome__footer mt-2 italic">{t('welcome_footer')}</p>
+                </div>
+              </div>
+
+              <h3 className="welcome__subheading">{t('welcome_features_title')}</h3>
+              <ul className="welcome__list grid grid-cols-1 md:grid-cols-2 gap-2">
+                <li>{t('welcome_feature_1')}</li>
+                <li>{t('welcome_feature_2')}</li>
+                <li>{t('welcome_feature_3')}</li>
+                <li>{t('welcome_feature_4')}</li>
+                <li>{t('welcome_feature_5')}</li>
+                <li>{t('welcome_feature_6')}</li>
+              </ul>
+            </section>
           </div>
         )}
 

@@ -2,7 +2,7 @@
 title: CSS Drawings 4 Fun
 subtitle: Proyecto Experimental de Aprendizaje en Front-End con CSS Art
 skills: ["HTML", "CSS", "CSS Art", "Fundamentos de Front-End", "GitHub Pages"]
-banner: https://github.com/mewmewdevart/DevCommunityPortfolioChallenge2026/blob/main/frontend/src/assets/images/projects/css4fun.png
+banner: https://github.com/mewmewdevart/DevCommunityPortfolioChallenge2026/blob/main/frontend/src/assets/images/projects/css4fun.png?raw=true
 link: https://mewmewdevart.github.io/CSSDrawings4Fun/
 ---
 

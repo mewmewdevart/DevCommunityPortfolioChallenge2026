@@ -2,7 +2,7 @@
 title: Sue The Real – Hit It Back
 subtitle: Landing Page Promocional para um Estúdio de Desenvolvimento de Jogos
 skills: ["React", "TypeScript", "Tailwind CSS", "WordPress", "Figma", "SEO", "Acessibilidade"]
-banner: https://github.com/mewmewdevart/DevCommunityPortfolioChallenge2026/blob/main/frontend/src/assets/images/projects/sue-the-real.png
+banner: https://raw.githubusercontent.com/mewmewdevart/DevCommunityPortfolioChallenge2026/refs/heads/main/frontend/src/assets/images/projects/sue-the-real.png
 link: https://suethereal.com.br/jogo/hit-it-back
 ---
 
