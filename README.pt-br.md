@@ -8,6 +8,10 @@
   <p><strong>Interativo. Nostálgico. Acessível.</strong></p>
   <p>Uma experiência de portfólio gamificada criada para o Desafio Google AI "New Year, New You".</p>
 
+  <p align="center">
+<a href="https://devcommunityportfoliochallenge2026-574008284484.us-central1.run.app/">Play the Project</a>
+</p>
+
   <p>
     <img src="https://img.shields.io/badge/Status-Em_Progresso-6b9acf?style=for-the-badge&logo=headspace&logoColor=white" alt="Status" />
     <img src="https://img.shields.io/badge/Tech-React_19-blue?style=for-the-badge&logo=react&logoColor=white" alt="React" />
@@ -15,7 +19,6 @@
   </p>
 </div>
 
----
 
 ## 👋 Introdução
 
@@ -129,7 +132,6 @@ Este projeto é open-source e feito para a comunidade.
 
 Distribuído sob a **Licença MIT**.
 
----
 
 <div align="center">
   <sub>Feito com 💜 e precisão de pixel por <strong>mewmewdevart</strong>.</sub>
