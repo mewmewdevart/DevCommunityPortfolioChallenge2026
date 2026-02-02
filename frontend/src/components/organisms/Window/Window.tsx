@@ -224,7 +224,7 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
             aria-label={t('minimize')}
             onClick={() => minimizeWindow(data.id)}
           >
-            <img src={MinusIcon} className="window__action-icon" alt="" />
+            <img src={MinusIcon} className="window__action-icon" alt={t('window_btn_minimize_alt')} />
           </WinButton>
 
           <WinButton
@@ -232,9 +232,9 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
             onClick={() => maximizeWindow(data.id)}
           >
             {data.isMaximized ? (
-              <img src={RestoreIcon} className="window__action-icon" alt="" />
+              <img src={RestoreIcon} className="window__action-icon" alt={t('window_btn_restore_alt')} />
             ) : (
-              <img src={ExpandIcon} className="window__action-icon" alt="" />
+              <img src={ExpandIcon} className="window__action-icon" alt={t('window_btn_maximize_alt')} />
             )}
           </WinButton>
 
@@ -242,7 +242,7 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
             aria-label={t('close')}
             onClick={() => closeWindow(data.id)}
           >
-            <img src={CloseIcon} className="window__action-icon" alt="" />
+            <img src={CloseIcon} className="window__action-icon" alt={t('window_btn_close_alt')} />
           </WinButton>
         </div>
       </div>

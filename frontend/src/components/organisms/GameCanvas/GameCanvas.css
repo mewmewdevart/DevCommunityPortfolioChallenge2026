@@ -80,7 +80,7 @@
    PLAYER
 ===================================================== */
 .game-canvas__player {
-  @apply absolute overflow-visible z-(--z-window);
+  @apply absolute overflow-visible z-(--z-window) scale-120;
   @apply transition-all duration-150 ease-linear;
 }
 

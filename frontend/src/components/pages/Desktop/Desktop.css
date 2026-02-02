@@ -10,7 +10,7 @@
 }
 
 .desktop__skip-link:focus {
-  @apply translate-y-0 outline-2 outline-white outline-offset-2;
+  @apply translate-y-0 outline-2 outline-(--gray-300) outline-offset-2;
 }
 
 /* =====================================================

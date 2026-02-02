@@ -1,4 +1,4 @@
-@import "../../styles/globals.css";
+@import "tailwindcss";
 @import "../../../styles/globals.css";
 
 .videogame-screen {
@@ -27,16 +27,16 @@
 
 /* Back Button */
 .videogame-back-btn {
-	@apply absolute top-4 left-4 z-300 px-4 py-2 bg-white/20 text-white border-0 rounded-lg backdrop-blur-sm cursor-pointer transition-colors duration-200 ease-out;
+	@apply absolute top-4 left-4 z-300 px-4 py-2 bg-(--gray-300)/20 text-(--gray-300) border-0 rounded-lg backdrop-blur-sm transition-colors duration-200 ease-out;
 }
 
 .videogame-back-btn:hover {
-	@apply bg-white/30;
+	@apply bg-(--gray-300)/30;
 }
 
 /* Content Overlay */
 .videogame-content {
-	@apply absolute inset-0 w-full h-full text-center text-white z-200 pointer-events-none grid place-items-center animate-[content_16s_steps(8)_infinite];
+	@apply absolute inset-0 w-full h-full text-center text-(--gray-300) z-200 pointer-events-none grid place-items-center animate-[content_16s_steps(8)_infinite];
 }
 
 .videogame-copyright {
@@ -84,7 +84,7 @@
 }
 
 .videogame-particle {
-	@apply block absolute w-px h-px bg-white;
+	@apply block absolute w-px h-px bg-(--gray-300);
 }
 
 .videogame-particle--red {

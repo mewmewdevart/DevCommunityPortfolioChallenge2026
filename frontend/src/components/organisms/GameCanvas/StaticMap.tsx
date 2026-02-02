@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { useTranslation } from '@/context/LanguageContext';
 import {
     CANVAS_WIDTH,
     CANVAS_HEIGHT,
@@ -18,6 +19,8 @@ import {
 
 
 export const StaticMap: React.FC = memo(() => {
+    const { t } = useTranslation();
+
     return (
         <div className="game-canvas__static-layer">
             {/* Top Wall Tiles */}
@@ -32,7 +35,7 @@ export const StaticMap: React.FC = memo(() => {
                             {topWallSprite.webp && <source srcSet={topWallSprite.webp} type="image/webp" />}
                             <img
                                 src={topWallSprite.png}
-                                alt=""
+                                alt={t('alt_static_map_top_wall')}
                                 className="game-canvas__floor-tile game-canvas__tile-layer-1"
                                 style={{
                                     left: `${(col * TILE_WIDTH / CANVAS_WIDTH) * 100}%`,
@@ -57,7 +60,7 @@ export const StaticMap: React.FC = memo(() => {
                             {colSprite.webp && <source srcSet={colSprite.webp} type="image/webp" />}
                             <img
                                 src={colSprite.png}
-                                alt=""
+                                alt={t('alt_static_map_wall_column')}
                                 className="game-canvas__floor-tile game-canvas__tile-layer-2"
                                 style={{
                                     left: `${(col * TILE_WIDTH / CANVAS_WIDTH) * 100}%`,
@@ -82,7 +85,7 @@ export const StaticMap: React.FC = memo(() => {
                             {borderSprite.webp && <source srcSet={borderSprite.webp} type="image/webp" />}
                             <img
                                 src={borderSprite.png}
-                                alt=""
+                                alt={t('alt_static_map_wall_column')}
                                 className="game-canvas__floor-tile game-canvas__tile-layer-3"
                                 style={{
                                     left: `${(col * TILE_WIDTH / CANVAS_WIDTH) * 100}%`,
@@ -106,7 +109,7 @@ export const StaticMap: React.FC = memo(() => {
                             {floorSprite.webp && <source srcSet={floorSprite.webp} type="image/webp" />}
                             <img
                                 src={floorSprite.png}
-                                alt=""
+                                alt={t('alt_static_map_floor')}
                                 className="game-canvas__floor-tile game-canvas__tile-layer-1"
                                 style={{
                                     left: `${(col * TILE_WIDTH / CANVAS_WIDTH) * 100}%`,
@@ -131,7 +134,7 @@ export const StaticMap: React.FC = memo(() => {
                             {bottomSprite.webp && <source srcSet={bottomSprite.webp} type="image/webp" />}
                             <img
                                 src={bottomSprite.png}
-                                alt=""
+                                alt={t('alt_static_map_bottom_wall')}
                                 className="game-canvas__floor-tile game-canvas__tile-layer-1"
                                 style={{
                                     left: `${(col * TILE_WIDTH / CANVAS_WIDTH) * 100}%`,
@@ -157,7 +160,7 @@ export const StaticMap: React.FC = memo(() => {
                             {sideWallSprite.webp && <source srcSet={sideWallSprite.webp} type="image/webp" />}
                             <img
                                 src={sideWallSprite.png}
-                                alt=""
+                                alt={t('alt_static_map_side_wall')}
                                 className="game-canvas__floor-tile game-canvas__tile-layer-1"
                                 style={{
                                     left: `${(col * TILE_WIDTH / CANVAS_WIDTH) * 100}%`,

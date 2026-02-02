@@ -9,11 +9,10 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
-
 const STORAGE_KEY = 'APP_LANGUAGE';
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { t, i18n } = useTranslationHook(); // Rename import in next step or use namespace
+  const { t, i18n } = useTranslationHook();
 
   const setLanguage = useCallback((lang: Language) => {
     i18n.changeLanguage(lang);
@@ -21,7 +20,6 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     document.documentElement.lang = lang;
   }, [i18n]);
 
-  // Sync initial state
   React.useEffect(() => {
     document.documentElement.lang = i18n.language;
   }, [i18n.language]);

@@ -24,7 +24,7 @@
 }
 
 .reload-prompt__btn--reload {
-    @apply bg-blue-600 hover:bg-blue-700 font-bold text-white;
+    @apply bg-blue-600 hover:bg-blue-700 font-bold text-(--gray-300);
 }
 
 .reload-prompt__btn--close {

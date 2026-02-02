@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import iconFileAlt from 'pixelarticons/svg/file-alt.svg';
-import iconArrowUp from 'pixelarticons/svg/arrow-up.svg';
 import { IconRenderer } from '@atoms/IconRenderer/IconRenderer';
 import { useFileSystem } from '@context/FileSystemContext';
 import { useOS } from '@context/OSContext';
 import { WinButton } from '@atoms/WinButton/WinButton';
 import { useTranslation } from '@context/LanguageContext';
 import FolderIcon from '@assets/icons/icon-folder-small.png'
+import iconFileAlt from 'pixelarticons/svg/file-alt.svg';
+import iconArrowUp from 'pixelarticons/svg/arrow-up.svg';
 import './FileExplorer.css';
 
 interface FileExplorerProps {
@@ -33,7 +33,6 @@ export const FileExplorer: React.FC<FileExplorerProps> = ({
     const others: typeof rawItems = [];
 
     rawItems.forEach((item) => {
-      // Check if it's a project file with metadata
       if (
         item.type === 'file' &&
         item.content &&
@@ -53,21 +52,18 @@ export const FileExplorer: React.FC<FileExplorerProps> = ({
       const normalize = (lang: string) => lang.replace('-', '').toLowerCase();
       const currentLang = normalize(language);
 
-      // 1. Exact match (normalized)
       const exact = group.find((i) => {
         const itemLang = (i.content as any).itemLanguage;
         return itemLang && normalize(itemLang) === currentLang;
       });
       if (exact) return exact;
 
-      // 2. English fallback
       const en = group.find((i) => {
         const itemLang = (i.content as any).itemLanguage;
         return itemLang && normalize(itemLang) === 'en';
       });
       if (en) return en;
 
-      // 3. Any fallback
       return group[0];
     });
 
@@ -115,7 +111,7 @@ export const FileExplorer: React.FC<FileExplorerProps> = ({
   return (
     <section
       className="file-explorer"
-      tabIndex={-1} // Container itself usually shouldn't be tab-stop if it has interactive children, but if it captures keys...
+      tabIndex={-1}
       onKeyDown={(e) => {
         if (e.key === 'Delete') handleDelete();
       }}
@@ -164,12 +160,13 @@ export const FileExplorer: React.FC<FileExplorerProps> = ({
             >
               <div className="file-item-icon">
                 {item.type === 'folder' ? (
-                  <img src={FolderIcon} alt="" className='file-explorer_action-icon ' />
+                  <img src={FolderIcon} alt={t('alt_file_explorer_folder')} className='file-explorer_action-icon ' />
                 ) : (
                   <IconRenderer
                     icon={iconFileAlt}
                     size={32}
                     className="file-item-icon__svg file-item-icon__svg--file"
+                    alt={t('alt_file_explorer_file')}
                   />
                 )}
               </div>

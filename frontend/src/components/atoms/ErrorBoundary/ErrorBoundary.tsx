@@ -52,7 +52,7 @@ class ErrorBoundaryInner extends Component<Props, State> {
                         onClick={() => window.location.reload()}
                         className="error-boundary__restart-btn"
                     >
-                        <img src={RefreshIcon} alt="" className="error-boundary__action-icon" />
+                        <img src={RefreshIcon} alt={t('alt_error_refresh_icon')} className="error-boundary__action-icon" />
                         {t('errorBoundary_restart')}
                     </button>
 

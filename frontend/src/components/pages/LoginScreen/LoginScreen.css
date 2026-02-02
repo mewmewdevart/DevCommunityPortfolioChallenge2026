@@ -18,7 +18,7 @@
 }
 
 .login-screen__help-btn {
-    @apply bg-(--gray-300) text-(--dark-800) w-4 h-4 flex items-center justify-center text-lg border border-t-(--gray-300) border-l-(--gray-300) border-r-black border-b-black;
+    @apply bg-(--gray-300) text-(--dark-800) w-4 h-4 flex items-center justify-center text-lg border border-t-(--gray-300) border-l-(--gray-300) border-r-(--dark-800) border-b-(--dark-800);
 }
 
 .login-screen__content {
@@ -62,7 +62,7 @@
 }
 
 .login-screen__tooltip {
-    @apply absolute top-full right-0 mt-2 w-64 p-2 bg-(--warm-300) border-4 border-black text-(--dark-800) text-lg z-50;
+    @apply absolute top-full right-0 mt-2 w-64 p-2 bg-(--warm-300) border-4 border-(--dark-800) text-(--dark-800) text-lg z-50;
 }
 
 .login-screen__help-wrapper {

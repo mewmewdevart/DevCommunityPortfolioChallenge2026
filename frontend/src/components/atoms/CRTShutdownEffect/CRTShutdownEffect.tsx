@@ -22,7 +22,7 @@ export const CRTShutdownEffect: React.FC<Props> = ({ isActive }) => {
             <div className="crt-shutter-x crt-shutter-x-right" />
 
             {/* Center white line collapsing */}
-            <div className="crt-white-bar" />
+            <div className="crt-(--gray-300)-bar" />
         </div>
     );
 };

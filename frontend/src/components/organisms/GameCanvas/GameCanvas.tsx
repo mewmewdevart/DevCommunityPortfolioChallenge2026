@@ -177,18 +177,18 @@ export const GameCanvas: React.FC<GameCanvasProps> = ({ onLoginRequest, onVideoG
 
         {isPaperScreenOpen && (
           <div
-            className="game-canvas__overlay game-canvas__overlay--paper absolute inset-0 z-50 flex items-center justify-center bg-black/50"
+            className="game-canvas__overlay game-canvas__overlay--paper absolute inset-0 z-50 flex items-center justify-center bg-(--dark-800)/50"
             onClick={() => {
               playSfx('game_cancel');
               setIsPaperScreenOpen(false);
             }}
           >
             <div
-              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+              onClick={(e) => e.stopPropagation()} 
               style={{ position: 'relative' }}
             >
               <button
-                className="absolute top-4 right-4 z-[60] bg-red-500 text-white rounded-full p-2 hover:bg-red-600 transition-colors shadow-lg"
+                className="absolute top-4 right-4 z-[60] text-(--gray-300) rounded-full p-2 hover:bg-red-600 transition-colors shadow-lg"
                 onClick={() => {
                   playSfx('game_cancel');
                   setIsPaperScreenOpen(false);

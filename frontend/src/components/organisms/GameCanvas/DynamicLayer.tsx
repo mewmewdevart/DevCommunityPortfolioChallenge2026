@@ -45,7 +45,6 @@ export const DynamicLayer: React.FC<DynamicLayerProps> = ({
         if (typeof currentSprite === 'string') {
             style.backgroundImage = `url(${currentSprite})`;
         } else {
-            // Use image-set for WebP support in background image
             if (currentSprite.webp) {
                 style.backgroundImage = `image-set(url("${currentSprite.webp}") type("image/webp"), url("${currentSprite.png}") type("image/png"))`;
             } else {
@@ -76,20 +75,16 @@ export const DynamicLayer: React.FC<DynamicLayerProps> = ({
 
     return (
         <div className="game-canvas__dynamic-layer">
-            {/* Interactive World Entities */}
             {WORLD_ENTITIES.map((obj) => {
                 const spriteKey = obj.type as keyof typeof SPRITES;
                 const sprite = SPRITES[spriteKey];
 
-                // Dynamic Z-Index Logic for Video Game
                 let dynamicZIndex = obj.zIndex;
                 if (obj.id === 'videoGame') {
                     const pGrid = pixelToGrid(player.position.x, player.position.y);
-                    // "AQUI" positions: Row 3 (Col 2) and Row 4 (Col 2) -> Stronger Z-Index
                     if (pGrid.col === 2 && (pGrid.row === 3 || pGrid.row === 4)) {
                         dynamicZIndex = 30; // Higher than player (20)
                     } else {
-                        // "ALI" positions -> Normal (below player)
                         dynamicZIndex = 5;
                     }
                 }
@@ -100,8 +95,6 @@ export const DynamicLayer: React.FC<DynamicLayerProps> = ({
                     <WorldEntity key={obj.id} object={renderObj} sprite={sprite} />
                 );
             })}
-
-            {/* Hover Indicator */}
             {hoverPos && (
                 <div
                     className='game-canvas__hover-path'
@@ -114,7 +107,6 @@ export const DynamicLayer: React.FC<DynamicLayerProps> = ({
                 />
             )}
 
-            {/* Move Path Dots */}
             {moveQueue.map((pos, idx) => (
                 <div
                     key={`path-${idx}`}
@@ -126,7 +118,6 @@ export const DynamicLayer: React.FC<DynamicLayerProps> = ({
                 />
             ))}
 
-            {/* Nearby Interaction Indicator */}
             {nearbyObject && (
                 <div
                     className="game-canvas__nearby-indicator"

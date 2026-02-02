@@ -41,9 +41,14 @@
   @apply flex flex-col items-center gap-1 p-1 border border-transparent text-(--dark-800);
 }
 
-.file-item:hover {
-  @apply bg-(--blue-100)/50;
+.file-item:hover .file-item-icon__svg--file {
+  filter: invert(1) brightness(2);
 }
+
+.file-item:hover {
+  @apply bg-(--blue-900) text-(--gray-300);
+}
+
 
 .file-item-selected {
   @apply bg-(--blue-900);

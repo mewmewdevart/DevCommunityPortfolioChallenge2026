@@ -41,7 +41,7 @@
 }
 
 .shutdown-dialog__radio-option {
-    @apply flex items-center gap-2 text-lg cursor-pointer;
+    @apply flex items-center gap-2 text-lg;
 }
 
 .shutdown-dialog__radio-input {

@@ -47,7 +47,13 @@ input[type="file"]::file-selector-button,
 .game-canvas__computer-sprite,
 .mc-card,
 .mc-action-btn,
-.mc-info-actions {
+.window__action-icon,
+.window__close-btn,
+.mc-info-actions,
+.volume-control__btn,
+.volume-control__slider-wrapper .volume-control__popup,
+.shutdown-screen__button {
+  /* background-color: red; */
   cursor: url('../assets/icons/cursor/cursor_hand_pointer.png'), pointer !important;
 }
 

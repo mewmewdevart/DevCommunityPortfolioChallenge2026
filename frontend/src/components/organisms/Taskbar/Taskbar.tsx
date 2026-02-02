@@ -164,7 +164,7 @@ export const Taskbar: React.FC<TaskbarProps> = ({ availableApps }) => {
             <source srcSet={iconWindowsWebP} type="image/webp" />
             <img
               src={iconWindows}
-              alt=""
+              alt={t('alt_taskbar_start_icon')}
               className="taskbar__icon"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
@@ -212,7 +212,7 @@ export const Taskbar: React.FC<TaskbarProps> = ({ availableApps }) => {
                   icon={win.icon}
                   size={16}
                   className="taskbar__window-icon"
-                  alt=""
+                  alt={t('alt_taskbar_app_icon')}
                 />
                 <span className="taskbar__window-text">
                   {formatTitle(win.title)}

@@ -2,10 +2,7 @@
 import matter from 'gray-matter';
 import memoryCardCleanImage from '@/assets/images/game/memory-card_clean.png';
 import memoryCardCleanImageWebP from '@/assets/images/game/memory-card_clean.webp';
-import memoryCardKirbyImage from '@/assets/images/game/memory-card_kirby.png'; // Assuming this exists, though not in find output, keeping consistent
-// Note: verify if kirby webp exists. If not, fallback is fine. 
-// Based on grep output earlier, I saw 'memory-card_snake.png' and 'memory-card_clean.png'. 
-// I will assume standard conversion happened for all.
+import memoryCardKirbyImage from '@/assets/images/game/memory-card_kirby.png';
 import memoryCardKirbyImageWebP from '@/assets/images/game/memory-card_kirby.webp';
 import memoryCardDoubleVisionImage from '@/assets/images/game/memory-card_doubleVision.png';
 import memoryCardDoubleVisionImageWebP from '@/assets/images/game/memory-card_doubleVision.webp';
@@ -19,11 +16,12 @@ export interface MemoryCardData {
     image?: string;
     imageWebP?: string;
     color: string;
-    type: 'save' | 'data' | 'config' | 'corrupt' | 'empty';
+    type: 'game' | 'data' | 'config' | 'corrupt' | 'empty';
     description?: string;
     tags?: string[];
     github?: string;
     linkToPlay?: string;
+    linkToCode?: string;
 }
 
 const IMAGE_MAP: Record<string, { src: string; srcWebP: string }> = {
@@ -33,7 +31,6 @@ const IMAGE_MAP: Record<string, { src: string; srcWebP: string }> = {
     'memory-card_snake.png': { src: memoryCardSnake, srcWebP: memoryCardSnakeWebP },
 };
 
-// Load MD files from videoGameData directory
 const markdownFiles = import.meta.glob('../content/games/*.md', {
     query: '?raw',
     import: 'default',
@@ -47,11 +44,9 @@ Object.keys(markdownFiles).forEach((path) => {
         const rawContent = markdownFiles[path] as string;
         const { data: frontmatter, content: body } = matter(rawContent);
 
-        // Derive ID from filename
         const fileName = path.split('/').pop() || 'unknown';
         const id = fileName.replace('.md', '');
 
-        // Resolve image
         let imageResolved: string | undefined = undefined;
         let imageWebPResolved: string | undefined = undefined;
 
@@ -72,18 +67,16 @@ Object.keys(markdownFiles).forEach((path) => {
             tags: frontmatter.tags || [],
             github: frontmatter.github,
             linkToPlay: frontmatter.linkToPlay,
+            linkToCode: frontmatter.github,
         });
     } catch (e) {
         console.warn(`Failed to parse memory card data from ${path}`, e);
     }
 });
 
-// Sort cards if necessary (here we just sort by title to be consistent, or could add an 'order' field)
-// For now, sorting by Title except "Free Space" usually goes last? 
-// Let's just sort alphabetically by ID or keep filesystem order (which is usually alpha).
+
 generatedCards.sort((a, b) => a.id.localeCompare(b.id));
 
-// Fallback if no cards found
 if (generatedCards.length === 0) {
     generatedCards.push({
         id: 'no-data',

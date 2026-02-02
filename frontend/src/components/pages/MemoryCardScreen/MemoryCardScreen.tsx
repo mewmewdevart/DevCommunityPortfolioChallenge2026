@@ -1,15 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from '@/context/LanguageContext';
 import { useSound } from '@/context/SoundContext';
-import { MEMORY_CARDS, type MemoryCardData } from '@/data/memoryCardsData';
+import { MEMORY_CARDS } from '@/data/memoryCardsData';
 import { useMemoryCardNavigation } from '@/hooks/useMemoryCardNavigation';
-
-
+import { CRTShutdownEffect } from '@/components/atoms/CRTShutdownEffect/CRTShutdownEffect';
 import MemoryCardItem from '@/components/molecules/MemoryCardItem/MemoryCardItem';
 import InfoPanel from '@/components/organisms/InfoPanel/InfoPanel';
-
 import RetroControls from '@/components/molecules/RetroControls/RetroControls';
-import { CRTShutdownEffect } from '@/components/atoms/CRTShutdownEffect/CRTShutdownEffect';
 
 import './MemoryCardScreen.css';
 
@@ -53,9 +50,7 @@ const MemoryCardScreen: React.FC<MemoryCardScreenProps> = ({ onBack }) => {
         playSfx('click');
         const card = MEMORY_CARDS[selectedIndex];
 
-        if (card.linkToPlay) {
-            window.open(card.linkToPlay, '_blank');
-        } else if (card.type === 'empty') {
+        if (card.type === 'empty') {
             if (isHandlingRef.current) return;
             isHandlingRef.current = true;
             setIsGenerating(true);
@@ -68,11 +63,21 @@ const MemoryCardScreen: React.FC<MemoryCardScreenProps> = ({ onBack }) => {
         }
     };
 
+    const handleEnter = () => {
+        const card = MEMORY_CARDS[selectedIndex];
+        if (card.linkToPlay) {
+            playSfx('click');
+            window.open(card.linkToPlay, '_blank');
+        } else {
+            handleInteraction();
+        }
+    };
+
 
     useEffect(() => {
         const handleActionKey = (e: KeyboardEvent) => {
             if (e.key === 'Enter' || e.key === ' ') {
-                handleInteraction();
+                handleEnter();
             }
         };
 
@@ -83,24 +88,21 @@ const MemoryCardScreen: React.FC<MemoryCardScreenProps> = ({ onBack }) => {
 
     return (
         <div className="mc-screen">
-            {/* CRT Transition Overlay */}
             <CRTShutdownEffect isActive={isExiting} />
 
             <div className="mc-screen__bg" />
 
-
-            <div className="relative z-10 w-full flex-shrink-0">
+            <div className="mc-screen__info-wrapper">
                 <InfoPanel
                     selectedCard={MEMORY_CARDS[selectedIndex]}
                     isGenerating={isGenerating}
                 />
             </div>
 
-            {/* SCROLLABLE CARD GRID */}
-            <div className="relative z-10 flex-1 overflow-y-auto overflow-x-hidden flex justify-center items-start pt-4 pb-24 scrollbar-hide">
+            <div className="mc-screen__content">
                 <div
                     ref={gridRef}
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 p-4 sm:p-8"
+                    className="mc-grid"
                 >
                     {MEMORY_CARDS.map((card, index) => (
                         <MemoryCardItem
@@ -114,9 +116,8 @@ const MemoryCardScreen: React.FC<MemoryCardScreenProps> = ({ onBack }) => {
                 </div>
             </div>
 
-            {/* FOOTER CONTROLS */}
             <RetroControls
-                onSelect={handleInteraction}
+                onSelect={handleEnter}
                 onBack={handleBack}
             />
         </div>

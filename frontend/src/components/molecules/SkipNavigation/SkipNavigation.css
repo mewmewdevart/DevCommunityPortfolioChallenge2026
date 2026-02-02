@@ -6,7 +6,7 @@
 }
 
 .skip-navigation__link {
-    @apply inline-block px-6 py-4 bg-black text-white no-underline font-bold border-2 border-white -translate-y-[200%] opacity-0 pointer-events-none font-(--font-tiny) cursor-pointer;
+    @apply inline-block px-6 py-4 bg-(--dark-800) text-(--gray-300) no-underline font-bold border-2 border-(--gray-300) -translate-y-[200%] opacity-0 pointer-events-none font-(--font-tiny);
     transition-property: transform, opacity;
     transition-duration: 200ms;
     transition-timing-function: ease-in-out;

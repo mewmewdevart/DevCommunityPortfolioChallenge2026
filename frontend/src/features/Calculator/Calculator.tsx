@@ -119,10 +119,8 @@ export const CalculatorApp = () => {
         {display}
       </div>
 
-      {/* Layout principal */}
       <div className="calculator-main">
 
-        {/* Memória */}
         <div className="calculator-memory">
           <div className="calculator-memory-spacer" />
           <Btn l="MC" onClick={() => { }} red />
@@ -131,7 +129,6 @@ export const CalculatorApp = () => {
           <Btn l="M+" onClick={() => { }} red />
         </div>
 
-        {/* Teclado */}
         <div className="calculator-grid">
 
           <Btn l={t('calc_back')} onClick={backspace} red className="calc-btn-span-2" />

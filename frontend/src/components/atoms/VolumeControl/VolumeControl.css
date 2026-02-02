@@ -6,7 +6,7 @@
 }
 
 .volume-control__btn {
-    @apply flex items-center justify-center p-0 h-full w-8 bg-transparent hover:bg-(--warm-200) active:bg-(--warm-300) cursor-pointer select-none;
+    @apply flex items-center justify-center p-0 h-full w-8 bg-transparent hover:bg-(--warm-200) active:bg-(--warm-300) select-none;
 }
 
 .volume-control__popup {
@@ -23,11 +23,11 @@
 }
 
 .volume-control__slider::-webkit-slider-thumb {
-    @apply appearance-none w-5 h-3 bg-(--gray-500) border-2 border-t-(--gray-300) border-l-(--gray-300) border-r-(--dark-800) border-b-(--dark-800) cursor-pointer shadow-sm;
+    @apply appearance-none w-5 h-3 bg-(--gray-500) border-2 border-t-(--gray-300) border-l-(--gray-300) border-r-(--dark-800) border-b-(--dark-800) shadow-sm;
 }
 
 .volume-control__slider::-moz-range-thumb {
-    @apply w-5 h-3 bg-(--gray-500) border-2 border-t-(--gray-300) border-l-(--gray-300) border-r-(--dark-800) border-b-(--dark-800) cursor-pointer shadow-sm rounded-none;
+    @apply w-5 h-3 bg-(--gray-500) border-2 border-t-(--gray-300) border-l-(--gray-300) border-r-(--dark-800) border-b-(--dark-800) shadow-sm rounded-none;
 }
 
 .volume-control__icon {

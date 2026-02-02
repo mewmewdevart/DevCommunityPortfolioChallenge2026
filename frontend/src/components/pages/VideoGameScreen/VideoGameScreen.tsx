@@ -160,19 +160,15 @@ const VideoGame: React.FC<VideoGameProps> = ({ onBack }) => {
         </h1>
       </header>
 
-      {/* 3D Scene */}
       <div className="videogame-scene" ref={sceneRef}>
-        {/* Background Nebula */}
         <div className="videogame-nebula" />
 
-        {/* Particles */}
         <div className="videogame-particles">
           <span className="videogame-particle videogame-particle--red" />
           <span className="videogame-particle videogame-particle--green" />
           <span className="videogame-particle videogame-particle--blue" />
         </div>
 
-        {/* Boxes */}
         {boxData.map((box) => (
           <div
             key={box.id}

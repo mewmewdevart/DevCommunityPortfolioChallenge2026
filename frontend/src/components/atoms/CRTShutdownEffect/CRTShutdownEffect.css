@@ -11,50 +11,17 @@
 }
 
 .crt-shutdown__fill {
-    @apply absolute inset-0 bg-white opacity-0;
+    @apply absolute inset-0 bg-(--gray-300) opacity-0;
     animation: crt-flash 0.1s ease-out forwards;
 }
 
-/* The black overlay that collapses */
 .crt-shutdown__overlay {
-    @apply absolute inset-0 bg-black;
+    @apply absolute inset-0 bg-(--dark-800);
     animation: crt-turn-off 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
     animation-delay: 0.1s;
-    /* Start fully transparent/open so we can see the content before it closes */
     transform: scale(1, 1);
     opacity: 0;
 }
-
-/* 
-   We actually want to mask the content, not draw black on top.
-   But simpler approach for "turn off":
-   
-   Draw a BLACK container that starts "open" via clip-path or transform is tricky if we want to see underlying content.
-   
-   Better approach:
-   The "content" is visible. We overlay a "curtain" that closes.
-   
-   TV Turn Off:
-   1. Flash white (optional).
-   2. Screen content squashes vertically to a line.
-   3. Line squashes horizontally to a dot.
-   4. Fade to black.
-   
-   To simulate this without complex html scanning:
-   We can just animate a massive black border that closes in? 
-   Or clip-path on the root element?
-   
-   Let's try the "Black overlay with a hole" approach using borders?
-   No, let's use clip-path on the app container? That's invasive.
-   
-   Alternative: 
-   Animate a black div that starts scales Y=0 (invisible line) -> Y=1?
-   No, we want the *content* to shrink.
-   
-   "Simulate ... content compresses" -> this implies transforming the view.
-   
-   If we can't easily transform the whole page, we can fake it by drawing black bars moving in.
-*/
 
 .crt-shutdown__top {
     @apply absolute top-0 left-0 right-0 bg-(--dark-800);
@@ -176,8 +143,8 @@
     animation: shut-x 0.2s ease-out forwards 0.4s;
 }
 
-.crt-white-bar {
-    @apply absolute top-1/2 left-0 right-0 h-1 bg-white z-30 opacity-0;
+.crt-(--gray-300)-bar {
+    @apply absolute top-1/2 left-0 right-0 h-1 bg-(--gray-300) z-30 opacity-0;
     transform: translateY(-50%);
     animation: white-bar-flash 0.4s linear forwards 0.3s;
 }

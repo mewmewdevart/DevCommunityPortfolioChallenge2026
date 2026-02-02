@@ -18,7 +18,7 @@ import { useDesktopSelection } from '@/hooks/desktop/useDesktopSelection';
 import { useFocusTrap } from '@/hooks/useFocusTrap';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
 import { useClippyController } from '@/hooks/desktop/useClippyController';
-import { InstallPrompt } from '@/features/InstallPrompt/InstallPrompt';
+
 import './Desktop.css';
 
 interface DesktopProps {
@@ -60,7 +60,6 @@ export const Desktop: React.FC<DesktopProps> = ({ apps = [] }) => {
   const [contextMenu, setContextMenu] = useState<{ x: number; y: number } | null>(null);
   const { containerRef: contextMenuRef, handleKeyDown: handleTrapKeys } = useFocusTrap(!!contextMenu);
 
-  // Focus Management for Roving TabIndex
   useEffect(() => {
     if (selectedIconIds.length === 1) {
       const id = selectedIconIds[0];
@@ -86,7 +85,6 @@ export const Desktop: React.FC<DesktopProps> = ({ apps = [] }) => {
     },
   });
 
-  // First-time visit onboarding
   const onboardingRef = useRef(false);
   useEffect(() => {
     if (onboardingRef.current) return;
@@ -99,7 +97,6 @@ export const Desktop: React.FC<DesktopProps> = ({ apps = [] }) => {
       const welcomeApp = apps.find(a => a.id === APP_IDS.WELCOME);
 
       if (welcomeApp) {
-        // Short delay to ensure desktop is rendered smooth
         setTimeout(() => openWindow(welcomeApp), 500);
       }
     }
@@ -155,7 +152,6 @@ export const Desktop: React.FC<DesktopProps> = ({ apps = [] }) => {
         ref={desktopRef}
         id="desktop-icons"
         className="desktop__inner"
-      // ...
       >
         <div className="desktop__icons-layer">
           {displayItems.map(item => {
@@ -171,16 +167,9 @@ export const Desktop: React.FC<DesktopProps> = ({ apps = [] }) => {
             };
 
             const isSelected = selectedIconIds.includes(item.id);
-            // If nothing is selected, make specific icon tabbable (e.g. first one)
-            // Or if this icon is selected, make it tabbable
-            // Otherwise, not tabbable
             const isTabbable = selectedIconIds.length > 0
               ? isSelected && selectedIconIds[0] === item.id
-              : false; // If nothing selected, none are tabbable? We need at least one entry point.
-
-            // Fix: if no selection, let the first item receive focus?
-            // Actually, best practice for grid is: if nothing selected, first item is focusable.
-            // But we can simplify: if this is the first item AND no selection, make it tabbable.
+              : false; 
             const isFirst = displayItems[0]?.id === item.id;
             const effectiveTabIndex = (isTabbable || (selectedIconIds.length === 0 && isFirst)) ? 0 : -1;
 
@@ -272,8 +261,6 @@ export const Desktop: React.FC<DesktopProps> = ({ apps = [] }) => {
           <Taskbar availableApps={apps} />
         </div>
       </div>
-
-      <InstallPrompt />
     </main>
   );
 };

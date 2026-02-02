@@ -1,6 +1,7 @@
 import React, { useMemo, forwardRef } from 'react';
 import { useDraggable } from '@/hooks/desktop/useDraggable';
 import { IconRenderer } from '@atoms/IconRenderer/IconRenderer';
+import { useTranslation } from '@/context/LanguageContext';
 import type { AppDefinition } from '@interfaces/types';
 import './DesktopIcon.css';
 
@@ -23,6 +24,7 @@ export const DesktopIcon = forwardRef<HTMLButtonElement, DesktopIconProps>(({
   resetKey,
   tabIndex = 0
 }, ref) => {
+  const { t } = useTranslation();
 
   const boundaryConfig = useMemo(() => ({
     width: 100,
@@ -84,7 +86,7 @@ export const DesktopIcon = forwardRef<HTMLButtonElement, DesktopIconProps>(({
           icon={app.icon}
           size={64}
           className="desktop-icon__img"
-          alt=""
+          alt={t('alt_desktop_app_icon')}
         />
       </div>
 

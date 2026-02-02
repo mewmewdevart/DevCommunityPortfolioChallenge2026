@@ -22,7 +22,7 @@
 }
 
 .game-menu__action-btn {
-    @apply text-lg text-(--gray-300) hover:text-white transition-colors text-left focus-visible:outline-2 focus-visible:outline-dotted focus-visible:outline-(--gray-300) focus-visible:outline-offset-8 min-h-[44px] px-4 py-2 touch-manipulation;
+    @apply text-lg text-(--gray-300) hover:text-(--gray-300) transition-colors text-left focus-visible:outline-2 focus-visible:outline-dotted focus-visible:outline-(--gray-300) focus-visible:outline-offset-8 min-h-[44px] px-4 py-2 touch-manipulation;
 }
 
 .game-menu__lang-btn {
@@ -78,7 +78,7 @@
 
 /* Main Action Button  */
 .game-menu__start-btn {
-    @apply text-lg md:text-4xl text-(--gray-300) bg-transparent border-none cursor-pointer focus-visible:outline-2 focus-visible:outline-dotted focus-visible:outline-(--gray-300) focus-visible:outline-offset-8 min-w-[44px] px-5 py-3 touch-manipulation;
+    @apply text-lg md:text-4xl text-(--gray-300) bg-transparent border-none focus-visible:outline-2 focus-visible:outline-dotted focus-visible:outline-(--gray-300) focus-visible:outline-offset-8 min-w-[44px] px-5 py-3 touch-manipulation;
 }
 
 .game-menu__start-btn:active {
@@ -115,7 +115,7 @@
 }
 
 .game-menu__lang-option {
-    @apply text-white flex flex-row items-center gap-2;
+    @apply text-(--gray-300) flex flex-row items-center gap-2;
 }
 
 .game-menu__lang-label {
@@ -195,7 +195,7 @@
    ========================================================= */
 
 .game-menu__title--level-select {
-    @apply font-bold text-white text-2xl lg:text-3xl;
+    @apply font-bold text-(--gray-300) text-2xl lg:text-3xl;
 }
 
 /* =========================================================
@@ -203,7 +203,7 @@
    ========================================================= */
 
 .level-selection__item:focus-visible {
-    @apply outline-2 outline-white outline-offset-2;
+    @apply outline-2 outline-(--gray-300) outline-offset-2;
 }
 
 /* =========================================================
@@ -223,7 +223,7 @@
    ========================================================= */
 
 .game-menu__social-link {
-    @apply relative block overflow-hidden rounded-lg transition-transform duration-200 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4 scale-60;
+    @apply relative block overflow-hidden rounded-lg transition-transform duration-200 focus-visible:outline-2 focus-visible:outline-(--gray-300) focus-visible:outline-offset-4 scale-60;
     width: 90px;
     height: 90px;
 }

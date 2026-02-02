@@ -47,7 +47,7 @@
 }
 
 .clippy__btn-link {
-  @apply text-xs underline text-blue-800 hover:text-blue-600 cursor-pointer bg-transparent border-none p-0;
+  @apply text-xs underline text-blue-800 hover:text-blue-600 bg-transparent border-none p-0;
 }
 
 /* =====================================================

@@ -26,26 +26,21 @@ const MemoryCardItem: React.FC<Props> = ({ card, isSelected, onSelect, onClick }
             tabIndex={0}
             onFocus={onSelect}
         >
-            {/* Selection Arrow */}
             <div className={`memory-card-item__arrow-wrapper ${isSelected ? 'memory-card-item__arrow-wrapper--selected' : ''}`}>
                 <div className="memory-card-item__arrow"></div>
             </div>
 
-            {/* Pixel Card Container */}
             <div className={`memory-card-item__container ${isSelected ? 'memory-card-item__container--selected' : ''}`}>
-
-                {/* The Card Shape */}
                 <div className={`memory-card-item__shape ${isSelected ? 'memory-card-item__shape--selected' : ''}`}>
 
                     <picture>
                         {card.imageWebP && <source srcSet={card.imageWebP} type="image/webp" />}
-                        <img src={imageSrc} className={`memory-card-item__icon ${classMod || ''}`} alt="" />
+                        <img src={imageSrc} className={`memory-card-item__icon ${classMod || ''}`} alt={t('alt_memory_card_img')} />
                     </picture>
 
                 </div>
             </div>
 
-            {/* Text Label */}
             <div className={`memory-card-item__label ${isSelected ? 'memory-card-item__label--selected' : ''}`}>
                 <h3 className={`memory-card-item__title ${isSelected ? 'memory-card-item__title--selected' : ''}`}>
                     {card.type === 'empty' ? t('mc_no_data') : card.title || t('mc_corrupted')}

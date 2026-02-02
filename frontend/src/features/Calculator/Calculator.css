@@ -1,57 +1,32 @@
 @import "../../styles/globals.css";
 
-/* =====================================================
-   CALCULATOR BASE
-   ===================================================== */
-
 .calculator-container {
   @apply flex flex-col h-full bg-(--gray-500) p-[var(--space-2)] select-none font-(--font-tiny);
 }
 
-/* =====================================================
-   DISPLAY
-   ===================================================== */
-
 .calculator-display {
-  @apply bg-(--gray-500) text-(--dark-800) mb-[var(--space-3)] px-[var(--space-2)] py-[var(--space-1)] text-right text-[var(--text-2xl)] truncate h-[var(--space-10)] flex items-center justify-end tracking-widest;
+  @apply bg-(--gray-500) text-(--dark-800) mb-[var(--space-3)] px-[var(--space-2)] py-[var(--space-1)] text-right text-xl truncate h-[var(--space-10)] flex items-center justify-end tracking-widest;
   box-shadow: inset 4px 4px 0px var(--dark-800), inset -4px -4px 0px var(--gray-300);
 }
-
-/* =====================================================
-   MAIN LAYOUT
-   ===================================================== */
 
 .calculator-main {
   @apply flex gap-[var(--space-2)] flex-1;
 }
 
-/* =====================================================
-   MEMORY COLUMN
-   ===================================================== */
-
 .calculator-memory {
   @apply flex flex-col gap-[var(--space-1)] w-11;
-  /* 42px approx 11 tailwind or keep specific if needed */
 }
 
 .calculator-memory-spacer {
   @apply h-[var(--space-8)] mb-[var(--space-1)];
 }
 
-/* =====================================================
-   KEYPAD GRID
-   ===================================================== */
-
 .calculator-grid {
   @apply flex-1 grid grid-cols-4 gap-[var(--space-1)];
 }
 
-/* =====================================================
-   BUTTON VARIANTS
-   ===================================================== */
-
 .calc-btn {
-  @apply text-[var(--text-lg)] h-[var(--space-8)] px-[var(--space-1)];
+  @apply text-base h-8 px-1 flex items-center justify-center;
 }
 
 .calc-btn-bold {
