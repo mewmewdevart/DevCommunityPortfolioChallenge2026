@@ -133,7 +133,6 @@ export const StartMenu: React.FC<StartMenuProps> = ({ onClose, apps }) => {
               if (e.key === 'ArrowRight' || e.key === 'Enter' || e.key === ' ') {
                 setActiveSubMenu('programs');
                 e.preventDefault();
-                // Defer focus to allow render
                 setTimeout(() => {
                   const firstItem = document.getElementById('submenu-programs-0');
                   firstItem?.focus();
@@ -163,7 +162,6 @@ export const StartMenu: React.FC<StartMenuProps> = ({ onClose, apps }) => {
                         setActiveSubMenu(null);
                         e.preventDefault();
                         e.stopPropagation();
-                        // Return focus to the parent item
                         programsItemRef.current?.focus();
                       }
                     }}

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../../../styles/globals.css";
 
 .retro-controls {
     @apply fixed bottom-0 left-0 w-full h-14 sm:h-16 bg-[#000] border-t-4 border-gray-700 z-50 flex items-center justify-center gap-4 sm:gap-12 select-none;

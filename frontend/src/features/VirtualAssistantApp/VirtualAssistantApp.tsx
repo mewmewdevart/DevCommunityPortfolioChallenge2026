@@ -86,9 +86,10 @@ export const VirtualAssistantApp = ({ isAutoOpened }: AppBaseProps & { isAutoOpe
               className="clippy__btn-link"
               aria-label="Keep Clippy open"
             >
-              Example: [Stay Open]
+              {/* Example: [Stay Open] */}
             </button>
           )}
+
           {/* If we want a next tip button */}
           {/* <button onClick={fetchNextTip} className="clippy__btn-link">
             {t('next')}

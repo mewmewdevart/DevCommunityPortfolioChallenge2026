@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../../../styles/globals.css";
 
 /* =====================================================
    BLOCK: TASKBAR
@@ -27,7 +28,7 @@
 }
 
 .taskbar__start-text {
-  @apply text-lg md:text-2xl tracking-wide text-(--dark-800) uppercase;
+  @apply text-lg tracking-wide text-(--dark-800) uppercase;
 }
 
 /* =====================================================
@@ -73,7 +74,7 @@
 }
 
 .taskbar__language-btn {
-  @apply hover:bg-(--blue-900) hover:text-(--gray-300) select-none bg-transparent border-none text-2xl p-0 flex items-center justify-center;
+  @apply hover:bg-(--blue-900) hover:text-(--gray-300) select-none bg-transparent border-none p-0 flex items-center justify-center;
 }
 
 @media (max-width: 768px) {

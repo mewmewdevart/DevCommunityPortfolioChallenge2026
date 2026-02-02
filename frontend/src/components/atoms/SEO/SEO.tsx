@@ -23,7 +23,6 @@ export const SEO: React.FC = () => {
                 "https://www.instagram.com/mewmewdevart/",
                 "https://mewmewdevart.itch.io/"
             ],
-            // For now, using a static string or a specific key if available
             "description": t('seo_description'),
             "knowsAbout": [
                 "Front-End Development",

@@ -19,7 +19,7 @@
 }
 
 .install-prompt__close {
-    @apply w-5 h-5 bg-(--gray-500) border-2 border-t-(--gray-300) border-l-(--gray-300) border-r-(--gray-700) border-b-(--gray-700) flex items-center justify-center text-black font-bold cursor-pointer;
+    @apply w-5 h-5 bg-(--gray-500) border-2 border-t-(--gray-300) border-l-(--gray-300) border-r-(--gray-700) border-b-(--gray-700) flex items-center justify-center text-(--dark-800) font-bold cursor-pointer;
     @apply hover:bg-(--gray-300);
 }
 

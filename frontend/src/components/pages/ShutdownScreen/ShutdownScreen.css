@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../../../styles/globals.css";
 
 .shutdown-screen {
     @apply fixed top-0 left-0 w-full h-[100dvh] bg-black z-9999 flex items-center justify-center cursor-none pb-[env(safe-area-inset-bottom)];

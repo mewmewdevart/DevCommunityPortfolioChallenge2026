@@ -1,9 +1,10 @@
 @import "tailwindcss";
+@import "../../../styles/globals.css";
 
 /* =========================
    BLOCK: CLOCK
 ========================= */
 
 .clock {
-    @apply h-full px-2 flex items-center justify-center min-h-20;
+    @apply h-full px-2 flex items-center justify-center min-h-20 text-lg;
 }
