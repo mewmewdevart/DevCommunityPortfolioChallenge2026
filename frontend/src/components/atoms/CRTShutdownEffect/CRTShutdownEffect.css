@@ -124,11 +124,11 @@
     animation: shut-x 0.2s ease-out forwards 0.4s;
 }
 
-.crt-(--gray-300)-bar {
+/* .crt-(--gray-300)-bar {
     @apply absolute top-1/2 left-0 right-0 h-1 bg-(--gray-300) z-30 opacity-0;
     transform: translateY(-50%);
     animation: white-bar-flash 0.4s linear forwards 0.3s;
-}
+} */
 
 @keyframes shut-y {
     to {

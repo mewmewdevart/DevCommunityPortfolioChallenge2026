@@ -106,8 +106,7 @@
 
 
 .game-canvas__chat-indicator {
-  @apply pointer-events-none absolute left-1/2 h-[45px] w-[55px] -translate-x-1/2 bg-no-repeat;
-  @apply bottom-[150%] mb-2.5 bg-[size:220px_45px] animate-[chat-anim_1s_steps(1)_infinite] z-(--z-overlay);
+  @apply pointer-events-none absolute left-1/2 h-[45px] w-[55px] -translate-x-1/2 bg-no-repeat bottom-[150%] mb-2.5 bg-[size:220px_45px] animate-[chat-anim_1s_steps(1)_infinite] z-(--z-overlay);
   image-rendering: pixelated;
 }
 
