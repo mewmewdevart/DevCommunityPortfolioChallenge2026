@@ -27,13 +27,7 @@ export const GameHUD: React.FC<HUDProps> = ({
 
   return (
     <div className="game-hud">
-      {/* Coordinates */}
-      {/* <div className="game-hud__coords" aria-hidden="true">
-        <span>
-          {Math.round(playerPos.x / TILE_WIDTH)},
-          {Math.round(playerPos.y / TILE_HEIGHT)}
-        </span>
-      </div> */}
+
 
       {/* Controls */}
       <div className="game-hud__controls">

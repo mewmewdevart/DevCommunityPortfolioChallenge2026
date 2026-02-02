@@ -20,7 +20,7 @@ const TIP_KEYS = [
   'clippy_tip_11',
   'clippy_tip_12',
   'clippy_tip_13',
-  // 'clippy_tip_14',
+
   'clippy_tip_15',
   'clippy_tip_16',
   'clippy_tip_17',
@@ -86,14 +86,12 @@ export const VirtualAssistantApp = ({ isAutoOpened }: AppBaseProps & { isAutoOpe
               className="clippy__btn-link"
               aria-label="Keep Clippy open"
             >
-              {/* Example: [Stay Open] */}
+
             </button>
           )}
 
           {/* If we want a next tip button */}
-          {/* <button onClick={fetchNextTip} className="clippy__btn-link">
-            {t('next')}
-          </button> */}
+
         </div>
 
         <div className="clippy__tail-border" aria-hidden="true" />

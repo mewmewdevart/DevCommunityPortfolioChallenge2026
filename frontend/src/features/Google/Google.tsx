@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from '@context/LanguageContext';
 import './Google.css';
-// import googleLogo from '@assets/icons/icon-internet-explorer.png';
+
 
 export const Google = () => {
   const { t } = useTranslation();
@@ -163,9 +163,7 @@ export const Google = () => {
                 <p>
                   GitHub: <a href="https://github.com/mewmewdevart" className="google-nav-link" target="_blank" rel="noopener noreferrer">github.com/mewmewdevart</a>
                 </p>
-                {/* <p>
-                  {t('label_website')}: <a href="https://mewmewdev.com" className="google-nav-link" target="_blank" rel="noopener noreferrer">mewmewdev.com</a>
-                </p> */}
+
               </div>
 
               <div className="google-footer">

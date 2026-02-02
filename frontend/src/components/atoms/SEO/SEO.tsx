@@ -13,7 +13,7 @@ export const SEO: React.FC = () => {
             "name": "Larissa Cristina Benedito",
             "alternateName": "MewMewDev",
             "jobTitle": "Front-End Software Engineer",
-            "image": "https://mewmewdevart.com/og-image.png",
+            "image": "https://mewmewdevart.com/banner.png",
             "url": "https://mewmewdevart.com",
             "sameAs": [
                 "https://www.linkedin.com/in/mewmewdevart/",
@@ -50,6 +50,11 @@ export const SEO: React.FC = () => {
             <title>{t('app_title', 'Retro Front-End Portfolio | Larissa Cristina Benedito')}</title>
             <meta name="description" content={t('seo_description')} />
             <meta name="keywords" content="retro portfolio, Windows 95, PlayStation 2, game, interactive curriculum" />
+
+            {/* Social Media Banner */}
+            <meta property="og:image" content="https://mewmewdevart.com/banner.png" />
+            <meta property="twitter:image" content="https://mewmewdevart.com/banner.png" />
+
             <script type="application/ld+json">
                 {JSON.stringify(personSchema)}
             </script>

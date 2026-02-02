@@ -1,13 +1,13 @@
 import React, { createContext, useContext, useCallback, useState, useRef, useEffect } from 'react';
 
-// Desktop Sounds
+
 import soundStartup from '@/assets/sounds/desktop/The Microsoft Sound.wav';
 import soundChord from '@/assets/sounds/desktop/CHORD.WAV';
 import soundDing from '@/assets/sounds/desktop/DING.WAV';
 import soundTada from '@/assets/sounds/desktop/TADA.WAV';
 import soundChimes from '@/assets/sounds/desktop/CHIMES.WAV';
 
-// Game Sounds
+
 import gameBgmCozy from '@/assets/sounds/game/bs-cozy-welcome-menu.mp3';
 import gameSfxCancel from '@/assets/sounds/game/Cancel.wav';
 import gameSfxClick from '@/assets/sounds/game/Click.wav';
@@ -20,7 +20,7 @@ import gameSfxCat from '@/assets/sounds/game/Cat_Meow.wav';
 import gameSfxPs2Startup from '@/assets/sounds/game/Play2Startup.wav';
 import gameSfxPs2Title from '@/assets/sounds/game/Play2Title.wav';
 
-// Generated Chiptune Sounds
+
 import sfxDesktopStartup from '@/assets/sounds/desktop/desktop_startup.wav';
 import sfxSystemShutdown from '@/assets/sounds/desktop/system_shutdown.wav';
 import sfxUiClick from '@/assets/sounds/desktop/ui_click.wav';
@@ -31,14 +31,14 @@ import sfxGameJump from '@/assets/sounds/game/game_jump.wav';
 import sfxGameCollect from '@/assets/sounds/game/game_collect.wav';
 
 export type SfxType =
-    // Desktop
+
     | 'startup'
     | 'click'
     | 'error'
     | 'hover'
     | 'success'
     | 'recycle'
-    // Game
+
     | 'game_cancel'
     | 'game_click'
     | 'game_confirm'
@@ -49,7 +49,7 @@ export type SfxType =
     | 'game_cat'
     | 'game_ps2_startup'
     | 'game_ps2_title'
-    // Chiptune
+
     | 'ui_click_retro'
     | 'ui_hover_retro'
     | 'ui_error'
@@ -61,9 +61,9 @@ export type SfxType =
 export type MusicType =
     | 'game_bgm_cozy';
 
-// Volume configuration (0.0 to 1.0)
+
 const SFX_VOLUMES: Record<SfxType, number> = {
-    // Desktop
+
     startup: 0.8,
     click: 0.6,
     error: 0.7,
@@ -71,7 +71,7 @@ const SFX_VOLUMES: Record<SfxType, number> = {
     success: 0.75,
     recycle: 0.7,
 
-    // Game
+
     game_cancel: 0.8,
     game_click: 0.85,
     game_confirm: 0.9,
@@ -83,7 +83,7 @@ const SFX_VOLUMES: Record<SfxType, number> = {
     game_ps2_startup: 0.8,
     game_ps2_title: 0.8,
 
-    // Chiptune
+
     ui_click_retro: 0.5,
     ui_hover_retro: 0.3,
     ui_error: 0.6,
@@ -102,7 +102,7 @@ interface SoundContextType {
     volume: number;
     setVolume: (vol: number) => void;
     audioUnlocked: boolean;
-    // Legacy support (deprecated)
+
     playSound: (type: SfxType) => void;
 }
 
@@ -121,11 +121,11 @@ export const SoundProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const [volume, setVolumeState] = useState(0.5);
     const [audioUnlocked, setAudioUnlocked] = useState(false);
 
-    // Refs for active audio elements
+
     const musicRef = useRef<HTMLAudioElement | null>(null);
     const pendingMusicRef = useRef<MusicType | null>(null);
 
-    // 1. Unlock Audio Listener
+
     useEffect(() => {
         const unlock = () => {
             setAudioUnlocked(true);

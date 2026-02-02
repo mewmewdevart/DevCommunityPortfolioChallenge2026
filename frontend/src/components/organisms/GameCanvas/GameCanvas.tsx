@@ -145,7 +145,7 @@ export const GameCanvas: React.FC<GameCanvasProps> = ({ onLoginRequest, onVideoG
           <button onClick={(e) => handleCanvasInteraction(e, null)} aria-label={t('game_interact_action')}>{t('game_interact_action')}</button>
         </div>
 
-        {/* <ControlsOverlay /> */}
+
 
         {gameStatus === 'start' && !showLevelSelection && (
           <div className="game-canvas__overlay game-canvas__overlay--start">
@@ -184,7 +184,7 @@ export const GameCanvas: React.FC<GameCanvasProps> = ({ onLoginRequest, onVideoG
             }}
           >
             <div
-              onClick={(e) => e.stopPropagation()} 
+              onClick={(e) => e.stopPropagation()}
               style={{ position: 'relative' }}
             >
               <button

@@ -139,14 +139,7 @@ const VideoGame: React.FC<VideoGameProps> = ({ onBack }) => {
     <main className="videogame-screen">
       <style>{dynamicStyles}</style>
 
-      {/* Back Button */}
-      {/* <button
-        onClick={onBack}
-        className="videogame-back-btn"
-        aria-label={t('videogame_back_aria')}
-      >
-        {t('videogame_back')}
-      </button> */}
+
 
       {/* Content Overlay */}
       <header className="videogame-content">

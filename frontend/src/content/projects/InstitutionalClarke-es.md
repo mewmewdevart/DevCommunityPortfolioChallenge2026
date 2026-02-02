@@ -2,7 +2,7 @@
 title: Clarke Energia – Sitio Institucional
 subtitle: Sitio Web Institucional para una Empresa del Sector Energético
 skills: ["React", "TypeScript", "Tailwind CSS", "Atomic Design", "Accesibilidad", "Rendimiento", "SEO"]
-banner: https://media.licdn.com/dms/image/v2/D4D2DAQGGLQ7lyUqvIA/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1726093785042?e=1770606000&v=beta&t=3XsHkRU5PSsXKgBSFnx_8v2uxi9s3BGeAEnjZ2qNBfU
+banner: https://github.com/mewmewdevart/DevCommunityPortfolioChallenge2026/blob/main/frontend/src/assets/images/projects/clarke.png
 link: https://clarke.com.br/
 ---
 

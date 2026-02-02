@@ -218,9 +218,7 @@ export const InternetExplorer = () => {
                 <p>
                   GitHub: <a href="https://github.com/mewmewdevart" className="ie-nav-link" target="_blank" rel="noopener noreferrer">github.com/mewmewdevart</a>
                 </p>
-                {/* <p>
-                  {t('label_website')}: <a href="https://mewmewdev.com" className="ie-nav-link" target="_blank" rel="noopener noreferrer">mewmewdev.com</a>
-                </p> */}
+
               </div>
 
               {/* Footer */}

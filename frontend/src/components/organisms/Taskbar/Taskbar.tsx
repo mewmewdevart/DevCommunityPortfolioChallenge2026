@@ -139,7 +139,7 @@ export const Taskbar: React.FC<TaskbarProps> = ({ availableApps }) => {
         e.stopPropagation();
       }}
     >
-      {/* START MENU */}
+
       <div className="taskbar__start-menu-wrapper" ref={startMenuRef}>
         {isStartOpen && (
           <div className="taskbar__start-popup">
@@ -180,7 +180,7 @@ export const Taskbar: React.FC<TaskbarProps> = ({ availableApps }) => {
 
       <div className="taskbar__divider" />
 
-      {/* WINDOW LIST */}
+
       <nav className="taskbar__windows" aria-label={t('running_apps') || "Running applications"}>
         {visibleWindows.map((win) => {
           const isTruncated = win.title.length > TITLE_CHAR_LIMIT;
@@ -225,7 +225,7 @@ export const Taskbar: React.FC<TaskbarProps> = ({ availableApps }) => {
 
       <div className="taskbar__divider" />
 
-      {/* SYSTEM TRAY */}
+
       <div className="taskbar__tray">
         <button
           onClick={toggleLanguage}

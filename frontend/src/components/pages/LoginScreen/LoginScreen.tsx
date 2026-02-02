@@ -40,7 +40,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin, onCancel }) =
                 aria-labelledby="login-title"
                 className="login-screen__window"
             >
-                {/* Title Bar */}
+
                 <div className="login-screen__title-bar">
                     <span id="login-title" className="login-screen__title">{t('login_title')}</span>
                     <div className="login-screen__help-wrapper">
@@ -68,7 +68,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin, onCancel }) =
                 </div>
 
                 <div className="login-screen__content">
-                    {/* Icon */}
+
                     <div className="login-screen__icon-wrapper">
                         <picture>
                             <source srcSet={MewIconProfileWebP} type="image/webp" />
@@ -84,7 +84,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin, onCancel }) =
                         </picture>
                     </div>
 
-                    {/* Form */}
+
                     <form id="login-form" onSubmit={handleSubmit} className="login-screen__form">
                         <p className="login-screen__desc">{t('login_desc')}</p>
 
@@ -111,7 +111,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin, onCancel }) =
                     </form>
                 </div>
 
-                {/* Buttons */}
+
                 <div className="login-screen__actions">
                     <WinButton type="submit" form="login-form" className="login-screen__btn">
                         {t('ok')}
