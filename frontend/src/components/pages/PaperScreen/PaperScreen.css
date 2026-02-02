@@ -59,9 +59,60 @@
 /* =========================
    TEXT
 ========================= */
+/* =========================
+   TEXT
+========================= */
 .paper-text {
   @apply absolute top-[4rem] left-12 right-6 bottom-8 overflow-y-auto outline-none;
   line-height: 32px;
+}
+
+.paper-title {
+  @apply text-xl md:text-2xl mb-4 font-bold text-(--gray-900);
+}
+
+.paper-intro {
+  @apply mb-4 text-base md:text-lg text-(--gray-800) leading-[32px];
+}
+
+.paper-section {
+  @apply mb-6;
+}
+
+.paper-section-title {
+  @apply text-lg font-bold text-(--gray-900) border-b border-(--gray-400) mb-2;
+}
+
+.paper-section-content {
+  @apply text-base text-(--gray-800) leading-relaxed mb-4;
+}
+
+.paper-item {
+  @apply mb-4;
+}
+
+.paper-role {
+  @apply font-bold text-(--gray-800);
+}
+
+.paper-company {
+  @apply text-sm italic text-(--gray-600);
+}
+
+.paper-description {
+  @apply text-base text-(--gray-800) mt-1;
+}
+
+.paper-education-item {
+  @apply mb-2;
+}
+
+.paper-contact-text {
+  @apply text-base text-(--gray-800);
+}
+
+.paper-link {
+  @apply text-(--blue-700) underline hover:text-(--blue-900);
 }
 
 /* =========================

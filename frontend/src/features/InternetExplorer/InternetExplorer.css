@@ -145,3 +145,22 @@
 .ie-project-title {
   @apply font-semibold;
 }
+
+/* =====================================================
+   RESUME
+   ===================================================== */
+.ie-resume-item {
+  @apply mb-4;
+}
+
+.ie-resume-role {
+  @apply font-bold text-lg sm:text-xl text-(--gray-900);
+}
+
+.ie-resume-company {
+  @apply text-base sm:text-lg italic text-(--gray-700);
+}
+
+.ie-resume-desc {
+  @apply text-base sm:text-lg text-(--gray-800) mt-1;
+}

@@ -22,6 +22,8 @@ export interface MemoryCardData {
     github?: string;
     linkToPlay?: string;
     linkToCode?: string;
+    language?: string;
+    baseId?: string;
 }
 
 const IMAGE_MAP: Record<string, { src: string; srcWebP: string }> = {
@@ -47,6 +49,11 @@ Object.keys(markdownFiles).forEach((path) => {
         const fileName = path.split('/').pop() || 'unknown';
         const id = fileName.replace('.md', '');
 
+        // Parse filename for language: Name-Lang.md
+        const langMatch = fileName.match(/^(.+)-([a-zA-Z]{2,5})\.md$/);
+        const itemBaseId = langMatch ? langMatch[1] : id;
+        const itemLanguage = langMatch ? langMatch[2] : 'en'; // Default to en if no match
+
         let imageResolved: string | undefined = undefined;
         let imageWebPResolved: string | undefined = undefined;
 
@@ -68,6 +75,8 @@ Object.keys(markdownFiles).forEach((path) => {
             github: frontmatter.github,
             linkToPlay: frontmatter.linkToPlay,
             linkToCode: frontmatter.github,
+            language: itemLanguage,
+            baseId: itemBaseId,
         });
     } catch (e) {
         console.warn(`Failed to parse memory card data from ${path}`, e);

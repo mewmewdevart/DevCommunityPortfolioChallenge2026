@@ -48,7 +48,6 @@ export const Google = () => {
 
   return (
     <div className="google-root">
-      {/* Address Bar */}
       <div className="google-address-bar">
         <label htmlFor="google-address-input" className="google-address-label">{t('address_label')}</label>
         <form onSubmit={simulateNavigation} className="google-address-form">
@@ -64,7 +63,6 @@ export const Google = () => {
         </form>
       </div>
 
-      {/* Content */}
       <div className="google-content">
         {loading && (
           <div className="google-loading-overlay">
@@ -77,7 +75,6 @@ export const Google = () => {
         {!loading && (
           <section>
             <div className="google-page-container">
-              {/* Header */}
               <div className="google-page-header">
                 <span className="google-page-welcome">{t('welcome_to')}</span>
                 <h1 className="google-page-title">
@@ -86,78 +83,91 @@ export const Google = () => {
                 <p className="google-page-subtitle">{t('frontend_portfolio')}</p>
               </div>
 
-              {/* Navigation */}
               <div className="google-page-nav">
-                <a href="#about" className="google-nav-link">
-                  {t('about')}
+                <a href="#summary" className="google-nav-link">
+                  {t('resume_summary_title')}
                 </a>
-                <a href="#skills" className="google-nav-link">
-                  {t('skills')}
+                <a href="#experience" className="google-nav-link">
+                  {t('resume_exp_title')}
                 </a>
-                <a href="#projects" className="google-nav-link">
-                  {t('projects')}
+                <a href="#education" className="google-nav-link">
+                  {t('resume_edu_title')}
                 </a>
                 <a href="#contact" className="google-nav-link">
                   {t('contact')}
                 </a>
               </div>
 
-              {/* About */}
-              <div id="about" className="google-section-box">
-                <h2 className="google-section-title">{t('about_me')}</h2>
+              <div id="summary" className="google-section-box">
+                <h2 className="google-section-title">{t('resume_summary_title')}</h2>
                 <p className="google-page-text">
-                  {t('about_description')}
+                  {t('resume_summary_content')}
                 </p>
               </div>
 
-              {/* Skills */}
-              <div id="skills" className="google-section-box">
-                <h2 className="google-section-title">{t('skills')}</h2>
-                <ul className="google-list">
-                  {skills.map((skill) => (
-                    <li key={skill}>{skill}</li>
-                  ))}
-                </ul>
+              <div id="experience" className="google-section-box">
+                <h2 className="google-section-title">{t('resume_exp_title')}</h2>
+
+                <div className="google-resume-item">
+                  <h3 className="google-resume-role">{t('resume_exp_job1_role')}</h3>
+                  <p className="google-resume-company">{t('resume_exp_job1_company')}</p>
+                  <p className="google-resume-desc">{t('resume_exp_job1_desc')}</p>
+                </div>
+
+                <div className="google-resume-item">
+                  <h3 className="google-resume-role">{t('resume_exp_job2_role')}</h3>
+                  <p className="google-resume-company">{t('resume_exp_job2_company')}</p>
+                  <p className="google-resume-desc">{t('resume_exp_job2_desc')}</p>
+                </div>
+
+                <div className="google-resume-item">
+                  <h3 className="google-resume-role">{t('resume_exp_job3_role')}</h3>
+                  <p className="google-resume-company">{t('resume_exp_job3_company')}</p>
+                  <p className="google-resume-desc">{t('resume_exp_job3_desc')}</p>
+                </div>
               </div>
 
-              {/* Projects */}
-              <div id="projects" className="google-section-box">
-                <h2 className="google-section-title">{t('projects')}</h2>
+              <div id="education" className="google-section-box">
+                <h2 className="google-section-title">{t('resume_edu_title')}</h2>
 
-                <ul className="google-project-list">
-                  {projects.map((project) => (
-                    <li key={project.id}>
-                      ➜{' '}
-                      {project.url ? (
-                        <a
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="google-nav-link"
-                        >
-                          {project.title}
-                        </a>
-                      ) : (
-                        <span className="google-project-title">
-                          {project.title}
-                        </span>
-                      )}
-                      {' — '}
-                      {project.description}
-                    </li>
-                  ))}
-                </ul>
+                <div className="google-resume-item">
+                  <h3 className="google-resume-role">{t('resume_edu_college1_course')}</h3>
+                  <p className="google-resume-company">{t('resume_edu_college1_name')} | {t('resume_edu_college1_date')}</p>
+                  <p className="google-resume-desc">{t('resume_edu_college1_desc')}</p>
+                </div>
+
+                <div className="google-resume-item">
+                  <h3 className="google-resume-role">{t('resume_edu_college2_course')}</h3>
+                  <p className="google-resume-company">{t('resume_edu_college2_name')} | {t('resume_edu_college2_date')}</p>
+                  <p className="google-resume-desc">{t('resume_edu_college2_desc')}</p>
+                </div>
               </div>
 
-              {/* Contact */}
+              <div id="volunteering" className="google-section-box">
+                <h2 className="google-section-title">{t('resume_vol_title')}</h2>
+                <div className="google-resume-item">
+                  <h3 className="google-resume-role">{t('resume_vol_role')}</h3>
+                  <p className="google-resume-company">{t('resume_vol_org')}</p>
+                  <p className="google-resume-desc">{t('resume_vol_desc')}</p>
+                </div>
+              </div>
+
               <div id="contact" className="google-section-box google-page-text">
                 <h2 className="google-section-title">{t('contact')}</h2>
-                <p>{t('label_email')}: mewmewdevart@gmail.com</p>
-                <p>GitHub: github.com/mewmewdevart</p>
-                <p>{t('label_website')}: mewmewdevart.com</p>
+                <p>
+                  {t('label_email')}: <a href="mailto:mewmewdevart@gmail.com" className="google-nav-link">mewmewdevart@gmail.com</a>
+                </p>
+                <p>
+                  Linkedin: <a href="https://linkedin.com/in/mewmewdevart" className="google-nav-link" target="_blank" rel="noopener noreferrer">linkedin.com/in/mewmewdevart</a>
+                </p>
+                <p>
+                  GitHub: <a href="https://github.com/mewmewdevart" className="google-nav-link" target="_blank" rel="noopener noreferrer">github.com/mewmewdevart</a>
+                </p>
+                {/* <p>
+                  {t('label_website')}: <a href="https://mewmewdev.com" className="google-nav-link" target="_blank" rel="noopener noreferrer">mewmewdev.com</a>
+                </p> */}
               </div>
 
-              {/* Footer */}
               <div className="google-footer">
                 {t('google_footer_copy')}
               </div>

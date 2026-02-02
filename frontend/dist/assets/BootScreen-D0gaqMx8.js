@@ -1,4 +1,0 @@
-import{r as l,j as r}from"./vendor-CGXhCyq3.js";import{u as w}from"./game-VbdS19V6.js";import"./i18n-CjG_VPcn.js";const b=({onComplete:s})=>{const{t}=w(),[u,i]=l.useState("");return l.useEffect(()=>{const c=[t("boot_1"),t("boot_2"),t("boot_3"),t("boot_4"),t("boot_5"),t("boot_6")," "];let n=0,a=!1;const d=setInterval(()=>{if(a)return;if(n>=c.length){clearInterval(d),a=!0,i(v=>v+`
-
-> `+t("boot_press_key"));const e=()=>{window.removeEventListener("keydown",e),window.removeEventListener("click",e),window.removeEventListener("touchstart",e),s()};window.addEventListener("keydown",e),window.addEventListener("click",e),window.addEventListener("touchstart",e);return}const o=c[n];o&&o!=="undefined"&&i(e=>e+(e?`
-`:"")+o),n++},600);return()=>{clearInterval(d)}},[s,t]),r.jsxs("div",{className:"boot-screen",children:[r.jsx("pre",{className:"boot-screen__text",children:u}),r.jsx("div",{className:"boot-screen__cursor",children:"_"})]})};export{b as BootScreen};

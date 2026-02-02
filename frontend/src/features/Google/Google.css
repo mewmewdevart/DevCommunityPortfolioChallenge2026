@@ -130,3 +130,22 @@
 .google-project-title {
   @apply font-semibold;
 }
+
+/* =====================================================
+   RESUME
+   ===================================================== */
+.google-resume-item {
+  @apply mb-4;
+}
+
+.google-resume-role {
+  @apply font-bold text-lg sm:text-xl text-(--gray-900);
+}
+
+.google-resume-company {
+  @apply text-base sm:text-lg italic text-(--gray-700);
+}
+
+.google-resume-desc {
+  @apply text-base sm:text-lg text-(--gray-800) mt-1;
+}

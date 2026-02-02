@@ -117,7 +117,6 @@ export const InternetExplorer = () => {
         </form>
       </div>
 
-      {/* Content */}
       <div className="ie-content">
         {loading && (
           <div className="ie-loading-overlay">
@@ -130,7 +129,6 @@ export const InternetExplorer = () => {
         {!loading && (
           <section>
             <div className="ie-page-container">
-              {/* Header */}
               <div className="ie-page-header">
                 <span className="ie-page-welcome">{t('welcome_to')}</span>
                 <h1 className="ie-page-title">
@@ -139,75 +137,90 @@ export const InternetExplorer = () => {
                 <p className="ie-page-subtitle">{t('frontend_portfolio')}</p>
               </div>
 
-              {/* Navigation */}
               <div className="ie-page-nav">
-                <a href="#about" className="ie-nav-link">
-                  {t('about')}
+                <a href="#summary" className="ie-nav-link">
+                  {t('resume_summary_title')}
                 </a>
-                <a href="#skills" className="ie-nav-link">
-                  {t('skills')}
+                <a href="#experience" className="ie-nav-link">
+                  {t('resume_exp_title')}
                 </a>
-                <a href="#projects" className="ie-nav-link">
-                  {t('projects')}
+                <a href="#education" className="ie-nav-link">
+                  {t('resume_edu_title')}
                 </a>
                 <a href="#contact" className="ie-nav-link">
                   {t('contact')}
                 </a>
               </div>
 
-              {/* About */}
-              <div id="about" className="ie-section-box">
-                <h2 className="ie-section-title">{t('about_me')}</h2>
+              <div id="summary" className="ie-section-box">
+                <h2 className="ie-section-title">{t('resume_summary_title')}</h2>
                 <p className="ie-page-text">
-                  {t('about_description')}
+                  {t('resume_summary_content')}
                 </p>
               </div>
 
-              {/* Skills */}
-              <div id="skills" className="ie-section-box">
-                <h2 className="ie-section-title">{t('skills')}</h2>
-                <ul className="ie-list">
-                  {skills.map((skill) => (
-                    <li key={skill}>{skill}</li>
-                  ))}
-                </ul>
+              <div id="experience" className="ie-section-box">
+                <h2 className="ie-section-title">{t('resume_exp_title')}</h2>
+
+                <div className="ie-resume-item">
+                  <h3 className="ie-resume-role">{t('resume_exp_job1_role')}</h3>
+                  <p className="ie-resume-company">{t('resume_exp_job1_company')}</p>
+                  <p className="ie-resume-desc">{t('resume_exp_job1_desc')}</p>
+                </div>
+
+                <div className="ie-resume-item">
+                  <h3 className="ie-resume-role">{t('resume_exp_job2_role')}</h3>
+                  <p className="ie-resume-company">{t('resume_exp_job2_company')}</p>
+                  <p className="ie-resume-desc">{t('resume_exp_job2_desc')}</p>
+                </div>
+
+                <div className="ie-resume-item">
+                  <h3 className="ie-resume-role">{t('resume_exp_job3_role')}</h3>
+                  <p className="ie-resume-company">{t('resume_exp_job3_company')}</p>
+                  <p className="ie-resume-desc">{t('resume_exp_job3_desc')}</p>
+                </div>
               </div>
 
-              {/* Projects */}
-              <div id="projects" className="ie-section-box">
-                <h2 className="ie-section-title">{t('projects')}</h2>
+              <div id="education" className="ie-section-box">
+                <h2 className="ie-section-title">{t('resume_edu_title')}</h2>
 
-                <ul className="ie-project-list">
-                  {projects.map((project) => (
-                    <li key={project.id}>
-                      ➜{' '}
-                      {project.url ? (
-                        <a
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="ie-nav-link"
-                        >
-                          {project.title}
-                        </a>
-                      ) : (
-                        <span className="ie-project-title">
-                          {project.title}
-                        </span>
-                      )}
-                      {' — '}
-                      {project.description}
-                    </li>
-                  ))}
-                </ul>
+                <div className="ie-resume-item">
+                  <h3 className="ie-resume-role">{t('resume_edu_college1_course')}</h3>
+                  <p className="ie-resume-company">{t('resume_edu_college1_name')} | {t('resume_edu_college1_date')}</p>
+                  <p className="ie-resume-desc">{t('resume_edu_college1_desc')}</p>
+                </div>
+
+                <div className="ie-resume-item">
+                  <h3 className="ie-resume-role">{t('resume_edu_college2_course')}</h3>
+                  <p className="ie-resume-company">{t('resume_edu_college2_name')} | {t('resume_edu_college2_date')}</p>
+                  <p className="ie-resume-desc">{t('resume_edu_college2_desc')}</p>
+                </div>
               </div>
 
-              {/* Contact */}
+
+              <div id="volunteering" className="ie-section-box">
+                <h2 className="ie-section-title">{t('resume_vol_title')}</h2>
+                <div className="ie-resume-item">
+                  <h3 className="ie-resume-role">{t('resume_vol_role')}</h3>
+                  <p className="ie-resume-company">{t('resume_vol_org')}</p>
+                  <p className="ie-resume-desc">{t('resume_vol_desc')}</p>
+                </div>
+              </div>
+
               <div id="contact" className="ie-section-box ie-page-text">
                 <h2 className="ie-section-title">{t('contact')}</h2>
-                <p>{t('label_email')}: mewmewdevart@gmail.com</p>
-                <p>GitHub: github.com/mewmewdevart</p>
-                <p>{t('label_website')}: mewmewdevart.com</p>
+                <p>
+                  {t('label_email')}: <a href="mailto:mewmewdevart@gmail.com" className="ie-nav-link">mewmewdevart@gmail.com</a>
+                </p>
+                <p>
+                  Linkedin: <a href="https://linkedin.com/in/mewmewdevart" className="ie-nav-link" target="_blank" rel="noopener noreferrer">linkedin.com/in/mewmewdevart</a>
+                </p>
+                <p>
+                  GitHub: <a href="https://github.com/mewmewdevart" className="ie-nav-link" target="_blank" rel="noopener noreferrer">github.com/mewmewdevart</a>
+                </p>
+                {/* <p>
+                  {t('label_website')}: <a href="https://mewmewdev.com" className="ie-nav-link" target="_blank" rel="noopener noreferrer">mewmewdev.com</a>
+                </p> */}
               </div>
 
               {/* Footer */}
