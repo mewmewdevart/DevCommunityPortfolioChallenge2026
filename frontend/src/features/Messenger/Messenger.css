@@ -8,7 +8,7 @@
 }
 
 .messenger-content {
-    @apply flex-1;
+    @apply flex-1 overflow-hidden;
 }
 
 /* =====================================================
@@ -268,7 +268,7 @@
 }
 
 .messenger-back-btn {
-    @apply px-3 py-0 h-8 bg-(--rose-500);
+    @apply px-3 py-0 h-8;
 }
 
 .messenger-message-item {

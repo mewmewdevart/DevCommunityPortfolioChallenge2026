@@ -188,7 +188,7 @@ export const GameCanvas: React.FC<GameCanvasProps> = ({ onLoginRequest, onVideoG
               style={{ position: 'relative' }}
             >
               <button
-                className="absolute top-4 right-4 z-[60] text-(--gray-300) rounded-full p-2 hover:bg-red-600 transition-colors shadow-lg"
+                className="absolute top-4 right-4 z-[60] text-(--gray-300) rounded-full p-2 transition-colors shadow-lg"
                 onClick={() => {
                   playSfx('game_cancel');
                   setIsPaperScreenOpen(false);

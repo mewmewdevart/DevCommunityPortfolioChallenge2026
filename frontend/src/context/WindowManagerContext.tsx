@@ -59,7 +59,6 @@ export const WindowManagerProvider: React.FC<{
     const [highestZIndex, setHighestZIndex] = useState(10);
     const [lastFocusedElements, setLastFocusedElements] = useState<Record<string, HTMLElement | null>>({});
 
-    // Reset windows when system crashes, shuts down, or resets
     useEffect(() => {
         if (isCrashed || isShutDown) {
             setWindows([]);
@@ -67,7 +66,6 @@ export const WindowManagerProvider: React.FC<{
         }
     }, [isCrashed, isShutDown]);
 
-    // Handle system reset (reboot/return to game)
     useEffect(() => {
         if (systemResetCount > 0) {
             setWindows([]);
@@ -177,7 +175,6 @@ export const WindowManagerProvider: React.FC<{
             setWindows((prev) => [...prev, newWindow]);
             setActiveWindowId(instanceId);
 
-            // Announce window opened for screen readers
             announce(`${app.title} opened`, 'polite');
         },
         [windows, highestZIndex, focusWindow, ASSISTANT_ID, MAX_WINDOWS, announce]

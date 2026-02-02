@@ -63,7 +63,6 @@ export const ChatView: React.FC<ChatViewProps> = ({
                 <WinButton className="messenger-back-btn" onClick={onBack}>{t('messenger_contacts')}</WinButton>
             </header>
 
-            {/* Conversation Log */}
             <div
                 className="messenger-chat__log"
                 ref={chatLogRef}

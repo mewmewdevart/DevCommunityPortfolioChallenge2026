@@ -30,11 +30,11 @@
 }
 
 .camera-controls-group {
-    @apply flex gap-1;
+    @apply flex gap-1 w-full;
 }
 
 .camera-btn-snap {
-    @apply font-bold px-4;
+    @apply font-bold w-full flex items-center justify-center;
 }
 
 .camera-icon-on {

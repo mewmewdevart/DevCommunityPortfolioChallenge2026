@@ -23,80 +23,80 @@ interface WindowProps {
 
 const TASKBAR_HEIGHT = 65;
 
-// const MenuDropdownContent: React.FC<{
-//   item: string;
-//   t: (key: any) => string;
-//   onAction: () => void;
-//   windowId: string;
-//   actions: { close: () => void; maximize: () => void; isMaximized: boolean };
-// }> = ({ item, t, onAction, windowId, actions }) => {
+const MenuDropdownContent: React.FC<{
+  item: string;
+  t: (key: any) => string;
+  onAction: () => void;
+  windowId: string;
+  actions: { close: () => void; maximize: () => void; isMaximized: boolean };
+}> = ({ item, t, onAction, windowId, actions }) => {
 
-//   useEffect(() => {
-//     const firstItem = document.getElementById(`menu-${windowId}-${item}-0`);
-//     if (firstItem) firstItem.focus();
-//   }, [item, windowId]);
+  useEffect(() => {
+    const firstItem = document.getElementById(`menu-${windowId}-${item}-0`);
+    if (firstItem) firstItem.focus();
+  }, [item, windowId]);
 
-//   const handleKeyDown = (e: React.KeyboardEvent) => {
-//     if (e.key === 'Escape') {
-//       onAction();
-//     }
-//   }
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      onAction();
+    }
+  }
 
-//   return (
-//     <>
-//       {item === 'file' && (
-//         <button
-//           id={`menu-${windowId}-${item}-0`}
-//           className="window__menu-dropdown-item"
-//           role="menuitem"
-//           onClick={(e) => {
-//             e.stopPropagation();
-//             actions.close();
-//             onAction();
-//           }}
-//           onKeyDown={handleKeyDown}
-//         >
-//           {t('close')}
-//         </button>
-//       )}
-//       {item === 'view' && (
-//         <button
-//           id={`menu-${windowId}-${item}-0`}
-//           className="window__menu-dropdown-item"
-//           role="menuitem"
-//           onClick={(e) => {
-//             e.stopPropagation();
-//             actions.maximize();
-//             onAction();
-//           }}
-//           onKeyDown={handleKeyDown}
-//         >
-//           {actions.isMaximized ? t('restore') : t('maximize')}
-//         </button>
-//       )}
-//       {item === 'help' && (
-//         <button
-//           id={`menu-${windowId}-${item}-0`}
-//           className="window__menu-dropdown-item"
-//           role="menuitem"
-//           onClick={(e) => {
-//             e.stopPropagation();
-//             alert(t('about_alert'));
-//             onAction();
-//           }}
-//           onKeyDown={handleKeyDown}
-//         >
-//           {t('about')}
-//         </button>
-//       )}
-//       {item === 'edit' && (
-//         <div className="window__menu-dropdown-item disabled" style={{ opacity: 0.5, cursor: 'default' }}>
-//           {t('no_actions')}
-//         </div>
-//       )}
-//     </>
-//   );
-// };
+  return (
+    <>
+      {item === 'file' && (
+        <button
+          id={`menu-${windowId}-${item}-0`}
+          className="window__menu-dropdown-item"
+          role="menuitem"
+          onClick={(e) => {
+            e.stopPropagation();
+            actions.close();
+            onAction();
+          }}
+          onKeyDown={handleKeyDown}
+        >
+          {t('close')}
+        </button>
+      )}
+      {item === 'view' && (
+        <button
+          id={`menu-${windowId}-${item}-0`}
+          className="window__menu-dropdown-item"
+          role="menuitem"
+          onClick={(e) => {
+            e.stopPropagation();
+            actions.maximize();
+            onAction();
+          }}
+          onKeyDown={handleKeyDown}
+        >
+          {actions.isMaximized ? t('restore') : t('maximize')}
+        </button>
+      )}
+      {item === 'help' && (
+        <button
+          id={`menu-${windowId}-${item}-0`}
+          className="window__menu-dropdown-item"
+          role="menuitem"
+          onClick={(e) => {
+            e.stopPropagation();
+            alert(t('about_alert'));
+            onAction();
+          }}
+          onKeyDown={handleKeyDown}
+        >
+          {t('about')}
+        </button>
+      )}
+      {item === 'edit' && (
+        <div className="window__menu-dropdown-item disabled" style={{ opacity: 0.5, cursor: 'default' }}>
+          {t('no_actions')}
+        </div>
+      )}
+    </>
+  );
+};
 
 export const Window: React.FC<WindowProps> = ({ data }) => {
   const { t } = useTranslation();
@@ -284,7 +284,7 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
                   role="menu"
                   onMouseLeave={() => setActiveMenu(null)}
                 >
-                  {/* <MenuDropdownContent
+                  <MenuDropdownContent
                     item={item}
                     t={t}
                     onAction={() => setActiveMenu(null)}
@@ -294,7 +294,7 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
                       maximize: () => maximizeWindow(data.id),
                       isMaximized: data.isMaximized
                     }}
-                  /> */}
+                  />
                 </div>
               )}
             </div>

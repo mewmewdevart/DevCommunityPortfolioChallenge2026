@@ -180,7 +180,7 @@ export const CameraApp = () => {
     setGbVariant(prev =>
       prev === 'blue' ? 'green' : prev === 'green' ? 'warm' : 'blue'
     );
-    setStatus(`${t('camera_palette')}: ${gbVariant.toUpperCase()}`);
+    setStatus(`${t('camera_palette')}: ${t(`camera_palette_${gbVariant}` as any).toUpperCase()}`);
   };
 
   const takePhoto = () => {
