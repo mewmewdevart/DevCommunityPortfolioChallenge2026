@@ -63,7 +63,7 @@
 }
 
 .messenger-user-status {
-    @apply p-2 flex items-center gap-3 mb-1;
+    @apply p-2 flex items-center gap-3;
 }
 
 .messenger-avatar-box {
@@ -79,8 +79,7 @@
 }
 
 .messenger-contact-list {
-    @apply flex-1 overflow-y-auto p-1 mx-1 mb-1 bg-(--gray-300);
-    @apply border-4 border-t-(--gray-700) border-l-(--gray-700) border-r-(--gray-300) border-b-(--gray-300);
+    @apply flex-1 overflow-y-auto p-1 mx-1 mb-1 bg-(--gray-300) border-4 border-t-(--gray-700) border-l-(--gray-700) border-r-(--gray-300) border-b-(--gray-300);
 }
 
 .messenger-group-header {
@@ -104,7 +103,7 @@
 }
 
 .messenger-contact-name {
-    @apply text-lg leading-none text-(--dark-800);
+    @apply text-lg leading-none text-(--dark-800) text-left;
 }
 
 .messenger-contact-item:hover .messenger-contact-name {
@@ -214,7 +213,7 @@
 }
 
 .messenger-group-title {
-    @apply text-lg uppercase text-(--dark-800);
+    @apply text-base uppercase text-(--dark-800);
 }
 
 .messenger-contact-list-container {
@@ -222,14 +221,13 @@
 }
 
 .messenger-avatar-small {
-    @apply w-5 h-5 border border-(--gray-700);
+    @apply w-8 h-8 border border-(--gray-700);
 }
 
 .messenger-contact-details {
     @apply flex flex-col;
 }
 
-/* Status dot modifiers */
 .messenger-status-dot--online {
     @apply bg-(--green-500);
 }
@@ -252,7 +250,7 @@
 }
 
 .messenger-avatar-medium {
-    @apply w-8 h-8 border border-(--gray-700);
+    @apply w-10 h-10 border border-(--gray-700);
 }
 
 .messenger-chat-user-details {
@@ -264,11 +262,11 @@
 }
 
 .messenger-chat-email {
-    @apply text-lg text-(--gray-700);
+    @apply text-base text-(--gray-700);
 }
 
 .messenger-back-btn {
-    @apply px-3 py-0 h-8;
+    @apply px-3 py-0 h-10;
 }
 
 .messenger-message-item {

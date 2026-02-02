@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { WinButton } from '@/components/atoms/WinButton/WinButton';
-import { IconRenderer } from '@/components/atoms/IconRenderer/IconRenderer';
 import { useTranslation } from '@/context/LanguageContext';
-import iconNotification from 'pixelarticons/svg/notification.svg';
 import type { Contact, Message } from '../types';
 
 interface ChatViewProps {
@@ -97,10 +95,10 @@ export const ChatView: React.FC<ChatViewProps> = ({
             {/* Toolbar & Input */}
             <footer className="messenger-toolbar">
                 <div className="messenger-toolbar__actions">
-                    <button className="messenger-toolbar__btn" title={t('messenger_nudge_action')} onClick={onNudge}>
+                    {/* <button className="messenger-toolbar__btn" title={t('messenger_nudge_action')} onClick={onNudge}>
                         <IconRenderer icon={iconNotification} size={16} className="messenger-icon" />
                     </button>
-                    <div className="messenger-toolbar-separator"></div>
+                    <div className="messenger-toolbar-separator"></div> */}
                     <button className="messenger-toolbar__btn" aria-label="Text format"><span className="messenger-toolbar-text-btn">A</span></button>
                     <button className="messenger-toolbar__btn" aria-label="Insert emoji"><span className="messenger-toolbar-emoji-btn">😊</span></button>
                 </div>

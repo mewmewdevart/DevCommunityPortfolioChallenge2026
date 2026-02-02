@@ -1,89 +1,104 @@
 <p align="right">
-  <a href="./README.pt-br.md">🇧🇷 Versão em Português Brasileiro</a>
+  <a href="./README.pt-br.md">🇧🇷 Leia em Português</a>
 </p>
-
 
 <div align="center">
+  <img src="https://github.com/user-attachments/assets/cd12393e-a49c-486d-bdc8-ee1407dcf371" width="120" height="120" alt="PortfolioWeb XP Logo" />
+  <h1>PortfolioWebXP / DevCommunityPortfolioChallenge2026</h1>
+  <p><strong>Interactive. Nostalgic. Accessible.</strong></p>
+  <p>A gamified portfolio experience built for the Google AI "New Year, New You" Challenge.</p>
 
-<img
-  width="120"
-  height="120"
-  alt="PortfolioWeb XP Logo"
-  src="https://github.com/user-attachments/assets/cd12393e-a49c-486d-bdc8-ee1407dcf371"
-/>
-
-# PortfolioWebXP / DevCommunityPortfolioChallenge2026
-
-**Interactive gamified portfolio showcasing work, skills, and personality.**
-*Developed for the “New Year, New You Portfolio” Challenge 2026 presented by Google AI.*
-
-<br />
-
-![Status](https://img.shields.io/badge/Status-In_Progress-6b9acf?style=for-the-badge&logo=headspace&logoColor=white)
-![Context](https://img.shields.io/badge/Context-Challenge-6b9acf?style=for-the-badge&logo=fiap&logoColor=white)
-
-<p align="center">
-  <img src="https://img.shields.io/github/last-commit/mewmewdevart/DevCommunityPortfolioChallenge2026?style=flat-square&color=black" alt="Last Commit">
-  <img src="https://img.shields.io/github/repo-size/mewmewdevart/DevCommunityPortfolioChallenge2026?style=flat-square&color=black" alt="Repo Size">
-  <img src="https://img.shields.io/github/license/mewmewdevart/DevCommunityPortfolioChallenge2026?style=flat-square&color=black" alt="License">
-</p>
-
+  <p>
+    <img src="https://img.shields.io/badge/Status-In_Progress-6b9acf?style=for-the-badge&logo=headspace&logoColor=white" alt="Status" />
+    <img src="https://img.shields.io/badge/Tech-React_19-blue?style=for-the-badge&logo=react&logoColor=white" alt="React" />
+    <img src="https://img.shields.io/badge/Style-Tailwind_v4-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind" />
+  </p>
 </div>
 
 ---
 
-## 🎮 Context
+## 👋 Introduction
 
-> "I still remember the first time I touched a computer and a video game. It felt like magic... Years later, as a front-end developer, I realized most portfolios don’t feel like that anymore."
+> *"Where did the fun go?"*
 
-This project answers the question: **Where did the fun go?**
+We build software for humans, yet most portfolios are static lists of links. This project reimagines the portfolio as an **immersive experience**. By blending the nostalgia of **Windows 95** with the interactivity of a **2D RPG**, we invite users to *explore* a developer's world rather than just read about it.
 
-Instead of a traditional static site, this is an **interactive 2D top-down game** and **simulated operating system**. You can explore a pixel-art room, interact with objects, and navigate a Windows 95-inspired desktop to discover my projects and skills in a playful, human way.
+It serves two purposes:
+1.  **For Recruiters & Visitors**: A memorable, engaging way to discover my skills and projects.
+2.  **For Developers**: A showcase of complex frontend architecture, custom system design, and strict accessibility standards.
 
 ## ✨ Key Features
 
--   **Level System**: Choose your immersion level — Full Game, Desktop Only, or simple Résumé.
--   **Interactive Room**: A 2D top-down environment where you can walk around and interact with objects (cats, bookshelf, computer, etc.).
--   **Simulated OS**: A fully functional "Windows 95" style desktop with:
-    -   **Taskbar & Start Menu**: Real navigation and multitasking.
-    -   **Window Manager**: Custom-built system for dragging, resizing, minimizing, and focusing windows.
-    -   **Applications**: functional apps like Notepad, Calculator, Media Player, and Paint.
--   **Game Console**: A "PlayStation 2" style interface ("Memory Card Screen") to browse projects.
--   **Accessibility First**: Fully keyboard navigable, screen-reader friendly (WCAG 2.1 AA/AAA targeting), and localized labels.
--   **Internationalization**: Full support for **English**, **Portuguese (BR)**, and **Spanish**.
+### 🖥️ Simulated Operating System
+A fully functional desktop environment built from scratch:
+-   **Window Manager**: Custom logic for drag-and-drop, resizing, minimizing, z-index stacking, and changing focus.
+-   **Multitasking**: Open multiple apps (Notepad, Paint, Calculator) simultaneously.
+-   **Taskbar**: Real-time state management of open applications and system tray utilities.
 
-## 🛠️ Tech Stack
+### 🎮 Gamified Navigation
+-   **2D Room**: A pixel-art environment where you control a character to walk around and interact with objects.
+-   **Memory Card Screen**: A PlayStation 2-inspired interface to browse project case studies.
+-   **Sound Design**: Context-sensitive sound effects and background music (with user controls) to enhance immersion.
 
-This project uses a modern, robust stack to ensure performance and maintainability:
+### ♿ Accessibility-First
+"Interactive" doesn't mean "inaccessible".
+-   **WCAG 2.1 Compliance**: High-contrast modes, focus management, and screen reader support.
+-   **Keyboard Navigation**: Full support for navigating the desktop grid, menus, and games without a mouse.
+-   **Reduced Motion**: Respects user system preferences.
 
--   **Core**: [React 18](https://react.dev/) + [Vite](https://vitejs.dev/)
--   **Language**: [TypeScript](https://www.typescriptlang.org/) (Strict Mode)
--   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) + BEM methodology
--   **State Management**: React Context (Global UI) + [XState](https://xstate.js.org/) (Complex interactions)
--   **I18n**: [react-i18next](https://react.i18next.com/)
--   **Testing**: [Vitest](https://vitest.dev/)
--   **Deployment**: Google Cloud Run
+## 🏗️ Technical Architecture
 
-## 🏗️ Architecture
+This project is not just a UI shell; it's a robust application built with modern engineering practices.
 
-The project follows a hybrid **Feature-Based** + **Atomic Design** architecture:
+### Tech Stack
+| Category | Technology | Reasoning |
+| :--- | :--- | :--- |
+| **Framework** | **React 19 + Vite** | High performance, latest hooks, and fast HMR. |
+| **Language** | **TypeScript** | Strict type safety for complex window/system state. |
+| **State** | **XState + Context** | State machines handle the complex logic of the OS (boot sequence, window states). |
+| **Styling** | **Tailwind CSS v4** | Utility-first for rapid UI dev, configured with BEM naming for structure. |
+| **Tests** | **Vitest** | Fast unit and component testing. |
+| **I18n** | **i18next** | Full internationalization support (EN/PT-BR/ES). |
 
-```
+### Performance & SEO
+-   **PWA Support**: The app is fully installable (Progressive Web App) with offline capabilities, ensuring it feels like a native OS.
+-   **Bundle Optimization**: We use code-splitting and dynamic imports (`React.lazy`) for all major applications (Calculator, Game, Paint). This ensures the initial load is blazing fast (under 200kb gzipped) despite the heavy assets.
+-   **SEO**: While being an SPA, we utilize `react-helmet-async` and structured JSON-LD data to ensure the portfolio is indexable and provides rich social sharing previews.
+
+### Project Structure
+We follow a hybrid **Feature-Based** architecture to keep concerns separated. This ensures that deleting a feature (like the Calculator) removes all its associated logic, assets, and styles instantly.
+
+```bash
 src/
-├── features/           # Domain-specific logic (e.g., Messenger, FileExplorer)
-├── components/         # Reusable UI (Atomic: atoms, molecules, organisms)
-├── hooks/              # Shared logic (useWindow, useFocusTrap)
-├── context/            # Global state (OSContext, SoundContext)
-├── pages/              # Route-level views (Desktop, VideoGame)
-└── styles/             # Global tokens and CSS resets
+├── features/           # Domain logic (e.g., Messenger, FileExplorer, Paint)
+│   ├── Calculator/     # Self-contained feature with its own assets/types/logic
+│   └── WindowManager/  # Core system logic
+├── components/         # Reusable Atomic UI (Buttons, Inputs, Modals)
+├── context/            # Global providers (OSContext, SoundContext)
+├── hooks/              # Custom hooks (useDraggable, useWindow)
+└── content/            # Data layer (projects markdown, registry)
 ```
 
-### Key Decisions
--   **Custom Window System**: Built from scratch to handle complex z-indexing and focus management without heavy third-party libraries.
--   **Accessibility**: High-contrast focus rings, `aria-live` regions for notifications, and roving tabindex for grid navigation.
--   **Pixel Art**: All assets were handcrafted to ensure a consistent, nostalgic aesthetic.
+## 🚀 How It Works
 
-## 🚀 Getting Started
+1.  **Boot Sequence**: The app initializes `OSContext`, loads user preferences, and simulates a BIOS boot screen.
+2.  **System Registry**: `AppRegistry.tsx` acts as the kernel, defining all available apps, their icons, default sizes, and capabilities.
+3.  **Window Factory**: When an app opens, the `WindowManager` creates an instance wrapped in a `WindowFrame`, injecting the specific feature component while handling global OS events.
+
+## 🛠️ Developer Experience
+
+### Adding Content (Extensibility)
+The project is **driven by data**. You don't need to edit React code to add a new project to the portfolio.
+1.  Go to `src/content/projects/`.
+2.  Create a Markdown file (e.g., `MyProject-en.md`).
+3.  Add frontmatter (Title, Tech Stack, Images).
+4.  The system automatically parses and renders it in the Game Console interface.
+
+### Theming & Styling
+We use **Tailwind v4** with a custom configuration. We combine it with **BEM** methodology in our CSS modules to ensure classes are readable and components are isolated.
+-   **Global Variables**: All colors and spacing use CSS variables for easy theming (e.g., `--win-gray`, `--win-blue`).
+
+## 🏁 Getting Started
 
 ### Prerequisites
 -   Node.js 18+
@@ -91,42 +106,31 @@ src/
 
 ### Installation
 
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/mewmewdevart/DevCommunityPortfolioChallenge2026.git
-    cd DevCommunityPortfolioChallenge2026
-    ```
+```bash
+# 1. Clone the repository
+git clone https://github.com/mewmewdevart/DevCommunityPortfolioChallenge2026.git
 
-2.  Install dependencies:
-    ```bash
-    cd frontend
-    npm install
-    ```
+# 2. Go to the frontend directory
+cd DevCommunityPortfolioChallenge2026/frontend
 
-3.  Run the development server:
-    ```bash
-    npm run dev
-    ```
+# 3. Install dependencies
+npm install
 
-4.  Open `http://localhost:5173` in your browser.
+# 4. Run the development server
+npm run dev
+```
+Open `http://localhost:5173` to start the experience.
 
-## 🤝 Contributing
+## 🤝 Contributing & License
 
-Feedback and contributions are welcome! Please feel free to open issues or submit pull requests.
+This project is open-source and built for the community.
+-   Found a bug? Open an issue.
+-   Want to add a "Doom" clone? Submit a PR!
 
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the **MIT License**.
 
 ---
 
-<br /> 
-<div align="center"> 
-  <sub>Made with 💜, lots of matte tea, by <strong>mewmewdevart</strong>.</sub> 
-</div> 
+<div align="center">
+  <sub>Built with 💜 and pixel precision by <strong>mewmewdevart</strong>.</sub>
+</div>

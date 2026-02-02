@@ -1,9 +1,9 @@
 import { lazy } from 'react';
 import type { AppDefinition } from '@interfaces/types';
 
-import iconCalculator from 'pixelarticons/svg/calculator.svg';
-import iconPaint from 'pixelarticons/svg/paint-bucket.svg';
-import iconLightbulb from 'pixelarticons/svg/lightbulb.svg';
+import iconCalculator from '@assets/icons/icon-calculator.png';
+import iconPaint from '@assets/icons/icon-paint.png';
+import iconClip from '@assets/icons/icon-clip.png';
 import iconFile from 'pixelarticons/svg/file.svg';
 import iconBug from 'pixelarticons/svg/bug.svg';
 
@@ -143,7 +143,7 @@ export const AppRegistry: AppDefinition[] = [
   {
     id: APP_IDS.ASSISTANT,
     title: 'Assistant',
-    icon: iconLightbulb,
+    icon: iconClip,
     component: VirtualAssistantApp,
     defaultSize: { width: 300, height: 100 },
     system: true,

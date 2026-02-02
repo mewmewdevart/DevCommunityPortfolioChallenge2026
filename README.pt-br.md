@@ -1,88 +1,104 @@
 <p align="right">
-  <a href="./README.md">🇺🇸 English Version</a>
+  <a href="./README.md">🇺🇸 Read in English</a>
 </p>
 
 <div align="center">
+  <img src="https://github.com/user-attachments/assets/cd12393e-a49c-486d-bdc8-ee1407dcf371" width="120" height="120" alt="PortfolioWeb XP Logo" />
+  <h1>PortfolioWebXP / DevCommunityPortfolioChallenge2026</h1>
+  <p><strong>Interativo. Nostálgico. Acessível.</strong></p>
+  <p>Uma experiência de portfólio gamificada criada para o Desafio Google AI "New Year, New You".</p>
 
-<img
-  width="120"
-  height="120"
-  alt="PortfolioWeb XP Logo"
-  src="https://github.com/user-attachments/assets/cd12393e-a49c-486d-bdc8-ee1407dcf371"
-/>
-
-# PortfolioWebXP / DevCommunityPortfolioChallenge2026
-
-**Portfólio gamificado interativo exibindo trabalhos, habilidades e personalidade.**
-*Desenvolvido para o desafio “New Year, New You Portfolio” 2026 apresentado pelo Google AI.*
-
-<br />
-
-![Status](https://img.shields.io/badge/Status-Em_Progresso-6b9acf?style=for-the-badge&logo=headspace&logoColor=white)
-![Contexto](https://img.shields.io/badge/Contexto-Desafio-6b9acf?style=for-the-badge&logo=fiap&logoColor=white)
-
-<p align="center">
-  <img src="https://img.shields.io/github/last-commit/mewmewdevart/DevCommunityPortfolioChallenge2026?style=flat-square&color=black" alt="Último Commit">
-  <img src="https://img.shields.io/github/repo-size/mewmewdevart/DevCommunityPortfolioChallenge2026?style=flat-square&color=black" alt="Tamanho do Repositório">
-  <img src="https://img.shields.io/github/license/mewmewdevart/DevCommunityPortfolioChallenge2026?style=flat-square&color=black" alt="Licença">
-</p>
-
+  <p>
+    <img src="https://img.shields.io/badge/Status-Em_Progresso-6b9acf?style=for-the-badge&logo=headspace&logoColor=white" alt="Status" />
+    <img src="https://img.shields.io/badge/Tech-React_19-blue?style=for-the-badge&logo=react&logoColor=white" alt="React" />
+    <img src="https://img.shields.io/badge/Style-Tailwind_v4-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind" />
+  </p>
 </div>
 
 ---
 
-## 🎮 Contexto
+## 👋 Introdução
 
-> "Ainda me lembro da primeira vez que toquei em um computador e em um videogame. Parecia mágica... Anos depois, como desenvolvedora front-end, percebi que a maioria dos portfólios não passa mais essa sensação."
+> *"Onde foi parar a diversão?"*
 
-Este projeto responde à pergunta: **Onde foi parar a diversão?**
+Desenvolvemos software para humanos, mas a maioria dos portfólios são apenas listas estáticas de links. Este projeto reimagina o portfólio como uma **experiência imersiva**. Ao misturar a nostalgia do **Windows 95** com a interatividade de um **RPG 2D**, convidamos os usuários a *explorar* o mundo de um desenvolvedor em vez de apenas ler sobre ele.
 
-Em vez de um site estático tradicional, este é um **jogo 2D interativo** e um **sistema operacional simulado**. Você pode explorar um quarto em pixel art, interagir com objetos e navegar em um desktop inspirado no Windows 95 para descobrir meus projetos e habilidades de uma forma lúdica e humana.
+Ele serve a dois propósitos:
+1.  **Para Recrutadores e Visitantes**: Uma maneira memorável e envolvente de descobrir minhas habilidades e projetos.
+2.  **Para Desenvolvedores**: Uma demonstração de arquitetura frontend complexa, design de sistemas personalizados e rigorosos padrões de acessibilidade.
 
 ## ✨ Funcionalidades Principais
 
--   **Sistema de Níveis**: Escolha seu nível de imersão — Jogo Completo, Apenas Desktop ou Currículo Simples.
--   **Quarto Interativo**: Um ambiente 2D onde você pode andar e interagir com objetos (gatos, estante, computador, etc.).
--   **SO Simulado**: Um desktop estilo "Windows 95" totalmente funcional com:
-    -   **Barra de Tarefas e Menu Iniciar**: Navegação real e multitarefa.
-    -   **Gerenciador de Janelas**: Sistema personalizado para arrastar, redimensionar, minimizar e focar janelas.
-    -   **Aplicativos**: Apps funcionais como Bloco de Notas, Calculadora, Reprodutor de Mídia e Paint.
--   **Console de Videogame**: Uma interface estilo "PlayStation 2" ("Tela de Memory Card") para navegar pelos projetos.
--   **Acessibilidade em Primeiro Lugar**: Totalmente navegável por teclado, amigável para leitores de tela (focando em WCAG 2.1 AA/AAA) e rótulos localizados.
--   **Internacionalização**: Suporte completo para **Inglês**, **Português (BR)** e **Espanhol**.
+### 🖥️ Sistema Operacional Simulado
+Um ambiente desktop totalmente funcional construído do zero:
+-   **Gerenciador de Janelas**: Lógica personalizada para arrastar, redimensionar, minimizar, empilhamento de z-index e mudança de foco.
+-   **Multitarefa**: Abra vários aplicativos (Bloco de Notas, Paint, Calculadora) simultaneamente.
+-   **Barra de Tarefas**: Gerenciamento em tempo real de aplicativos abertos e utilitários da bandeja do sistema.
 
-## 🛠️ Tech Stack
+### 🎮 Navegação Gamificada
+-   **Quarto 2D**: Um ambiente em pixel art onde você controla um personagem para andar e interagir com objetos.
+-   **Tela de Memory Card**: Uma interface inspirada no PlayStation 2 para navegar pelos estudos de caso dos projetos.
+-   **Design de Som**: Efeitos sonoros sensíveis ao contexto e música de fundo (com controles do usuário) para aumentar a imersão.
 
-Este projeto usa uma stack moderna e robusta para garantir desempenho e manutenibilidade:
+### ♿ Acessibilidade em Primeiro Lugar
+"Interativo" não significa "inacessível".
+-   **Conformidade WCAG 2.1**: Modos de alto contraste, gerenciamento de foco e suporte a leitores de tela.
+-   **Navegação por Teclado**: Suporte total para navegar na grade da área de trabalho, menus e jogos sem mouse.
+-   **Movimento Reduzido**: Respeita as preferências do sistema do usuário.
 
--   **Core**: [React 18](https://react.dev/) + [Vite](https://vitejs.dev/)
--   **Linguagem**: [TypeScript](https://www.typescriptlang.org/) (Modo Estrito)
--   **Estilização**: [Tailwind CSS v4](https://tailwindcss.com/) + Metodologia BEM
--   **Gerenciamento de Estado**: React Context (UI Global) + [XState](https://xstate.js.org/) (Interações Complexas)
--   **I18n**: [react-i18next](https://react.i18next.com/)
--   **Testes**: [Vitest](https://vitest.dev/)
--   **Deploy**: Google Cloud Run
+## 🏗️ Arquitetura Técnica
 
-## 🏗️ Arquitetura
+Este projeto não é apenas uma casca de UI; é uma aplicação robusta construída com práticas modernas de engenharia.
 
-O projeto segue uma arquitetura híbrida de **Baseada em Features** + **Atomic Design**:
+### Tech Stack
+| Categoria | Tecnologia | Motivação |
+| :--- | :--- | :--- |
+| **Framework** | **React 19 + Vite** | Alta performance, hooks mais recentes e HMR rápido. |
+| **Linguagem** | **TypeScript** | Tipagem estrita para segurança na lógica complexa de estado do sistema. |
+| **Estado** | **XState + Context** | Máquinas de estado lidam com a lógica complexa do SO (boot, janelas). |
+| **Estilo** | **Tailwind CSS v4** | Utility-first para desenvolvimento rápido, configurado com BEM para estrutura. |
+| **Testes** | **Vitest** | Testes unitários e de componentes rápidos. |
+| **I18n** | **i18next** | Suporte total a internacionalização (EN/PT-BR/ES). |
 
-```
+### Performance e SEO
+-   **Suporte a PWA**: O aplicativo é totalmente instalável (Progressive Web App) com capacidades offline, garantindo que pareça um SO nativo.
+-   **Otimização de Bundle**: Usamos code-splitting e importações dinâmicas (`React.lazy`) para todos os principais aplicativos (Calculadora, Jogo, Paint). Isso garante que o carregamento inicial seja extremamente rápido (menos de 200kb gzipped) apesar dos assets pesados.
+-   **SEO**: Apesar de ser uma SPA, utilizamos `react-helmet-async` e dados estruturados JSON-LD para garantir que o portfólio seja indexável e forneça prévias ricas para compartilhamento social.
+
+### Estrutura do Projeto
+Seguimos uma arquitetura híbrida **Baseada em Features** para manter as responsabilidades separadas. Isso garante que excluir uma feature (como a Calculadora) remova toda a sua lógica, assets e estilos instantaneamente.
+
+```bash
 src/
-├── features/           # Lógica específica do domínio (ex: Messenger, FileExplorer)
-├── components/         # UI Reutilizável (Atomic: atoms, molecules, organisms)
-├── hooks/              # Lógica compartilhada (useWindow, useFocusTrap)
-├── context/            # Estado global (OSContext, SoundContext)
-├── pages/              # Views de nível de rota (Desktop, VideoGame)
-└── styles/             # Tokens globais e resets CSS
+├── features/           # Lógica de domínio (ex: Messenger, FileExplorer, Paint)
+│   ├── Calculator/     # Feature contida com seus próprios assets/tipos/lógica
+│   └── WindowManager/  # Lógica central do sistema
+├── components/         # UI Atômica Reutilizável (Botões, Inputs, Modais)
+├── context/            # Provedores globais (OSContext, SoundContext)
+├── hooks/              # Hooks customizados (useDraggable, useWindow)
+└── content/            # Camada de dados (markdown de projetos, registro)
 ```
 
-### Decisões Chave
--   **Sistema de Janelas Personalizado**: Construído do zero para lidar com z-index complexo e gerenciamento de foco sem bibliotecas pesadas de terceiros.
--   **Acessibilidade**: Anéis de foco de alto contraste, regiões `aria-live` para notificações e roving tabindex para navegação em grade.
--   **Pixel Art**: Todos os assets foram feitos à mão para garantir uma estética nostálgica consistente.
+## 🚀 Como Funciona
 
-## 🚀 Como Começar
+1.  **Sequência de Boot**: O app inicializa o `OSContext`, carrega preferências do usuário e simula uma tela de boot da BIOS.
+2.  **Registro do Sistema**: `AppRegistry.tsx` atua como o kernel, definindo todos os apps disponíveis, ícones, tamanhos padrão e capacidades.
+3.  **Fábrica de Janelas**: Quando um app abre, o `WindowManager` cria uma instância envolvida em um `WindowFrame`, injetando o componente da feature específica enquanto lida com eventos globais do SO.
+
+## 🛠️ Experiência do Desenvolvedor
+
+### Adicionando Conteúdo (Extensibilidade)
+O projeto é **orientado a dados**. Você não precisa editar código React para adicionar um novo projeto ao portfólio.
+1.  Vá para `src/content/projects/`.
+2.  Crie um arquivo Markdown (ex: `MeuProjeto-ptBR.md`).
+3.  Adicione o frontmatter (Título, Stack, Imagens).
+4.  O sistema analisa e renderiza automaticamente na interface do Console.
+
+### Temas e Estilo
+Usamos **Tailwind v4** com uma configuração personalizada. Combinamos com a metodologia **BEM** em nossos módulos CSS para garantir que as classes sejam legíveis e os componentes isolados.
+-   **Variáveis Globais**: Todas as cores e espaçamentos usam variáveis CSS para fácil tematização (ex: `--win-gray`, `--win-blue`).
+
+## 🏁 Como Começar
 
 ### Pré-requisitos
 -   Node.js 18+
@@ -90,42 +106,31 @@ src/
 
 ### Instalação
 
-1.  Clone o repositório:
-    ```bash
-    git clone https://github.com/mewmewdevart/DevCommunityPortfolioChallenge2026.git
-    cd DevCommunityPortfolioChallenge2026
-    ```
+```bash
+# 1. Clone o repositório
+git clone https://github.com/mewmewdevart/DevCommunityPortfolioChallenge2026.git
 
-2.  Instale as dependências:
-    ```bash
-    cd frontend
-    npm install
-    ```
+# 2. Vá para o diretório frontend
+cd DevCommunityPortfolioChallenge2026/frontend
 
-3.  Rode o servidor de desenvolvimento:
-    ```bash
-    npm run dev
-    ```
+# 3. Instale as dependências
+npm install
 
-4.  Abra `http://localhost:5173` no seu navegador.
+# 4. Rode o servidor de desenvolvimento
+npm run dev
+```
+Abra `http://localhost:5173` para iniciar a experiência.
 
-## 🤝 Contribuindo
+## 🤝 Contribuição e Licença
 
-Feedbacks e contribuições são bem-vindos! Sinta-se à vontade para abrir issues ou enviar pull requests.
+Este projeto é open-source e feito para a comunidade.
+-   Encontrou um bug? Abra uma issue.
+-   Quer adicionar um clone de "Doom"? Envie um PR!
 
-1.  Faça um Fork do Projeto
-2.  Crie sua Feature Branch (`git checkout -b feature/AppIncrivel`)
-3.  Commit suas mudanças (`git commit -m 'Adiciona AppIncrivel'`)
-4.  Push para a Branch (`git push origin feature/AppIncrivel`)
-5.  Abra um Pull Request
-
-## 📄 Licença
-
-Distribuído sob a Licença MIT. Veja `LICENSE` para mais informações.
+Distribuído sob a **Licença MIT**.
 
 ---
 
-<br /> 
-<div align="center"> 
-  <sub>Feito com 💜, muito chá mate, por <strong>mewmewdevart</strong>.</sub> 
-</div> 
+<div align="center">
+  <sub>Feito com 💜 e precisão de pixel por <strong>mewmewdevart</strong>.</sub>
+</div>
