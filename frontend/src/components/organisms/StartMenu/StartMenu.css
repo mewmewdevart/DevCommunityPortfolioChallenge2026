@@ -1,16 +1,12 @@
 @import "tailwindcss";
 @import "../../../styles/globals.css";
 
-/* =========================
-   BLOCK: START MENU
-========================= */
+
 .start-menu {
   @apply absolute bottom-2.5 md:bottom-1 left-0 flex z-9999 min-h-75;
 }
 
-/* =========================
-   ELEMENT: SIDEBAR
-========================= */
+
 
 .start-menu__sidebar {
   @apply w-10 md:w-12 bg-(--blue-900) text-(--gray-300) flex items-end justify-center relative h-auto border-l-4 border-l-(--gray-300) border-t-4 border-t-(--gray-300);
@@ -28,9 +24,7 @@
   @apply transform -rotate-90 text-xl md:text-2xl font-bold tracking-widest mb-24 whitespace-nowrap;
 }
 
-/* =========================
-   ELEMENT: CONTENT AREA
-========================= */
+
 
 .start-menu__content {
   @apply bg-(--gray-500) flex-col min-h-75 p-1 relative h-full border-t-4 border-t-(--gray-300) border-r-4 border-b-4 border-b-(--dark-800) border-r-(--dark-800)
@@ -57,9 +51,7 @@
   @apply -ml-4;
 }
 
-/* =========================
-   ELEMENT: SUBMENU
-========================= */
+
 .start-menu__submenu {
   @apply absolute md:left-full -bottom-40 md:min-w-50 p-1 flex-col md:border-t-4 md:border-l-4 md:border-t-(--gray-300) md:border-l-(--gray-300) md:border-r-4 md:border-b-4 md:border-b-(--dark-800) md:border-r-(--dark-800) z-10000 bg-(--gray-500) max-h-[calc(100vh-80px)] overflow-y-auto top-auto left-[50%] border-t-4 border-l-4 border-t-(--gray-300) border-l-(--gray-300) border-r-4 border-b-4 border-b-(--dark-800) border-r-(--dark-800);
 }

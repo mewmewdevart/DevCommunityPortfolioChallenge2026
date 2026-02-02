@@ -1,87 +1,47 @@
 @import "../../../styles/globals.css";
 
-/* =====================================================
-   BLOCK: DESKTOP ICON
-   ===================================================== */
+
 
 .desktop-icon {
-  /* Positioning & Layout */
-  @apply absolute top-0 left-0 w-25 flex flex-col items-center cursor-default z-10 p-[var(--space-1)] bg-transparent border-none;
-  /* Added padding to prevent border clip */
 
-  /* Interaction */
-  @apply touch-none outline-none;
-  /* Focus handled visually by --selected */
+  @apply absolute top-0 left-0 w-25 flex flex-col items-center cursor-default z-10 p-[var(--space-1)] bg-transparent border-none touch-none outline-none;
+
 }
 
-/* Focus visible state */
 .desktop-icon:focus-visible {
   @apply outline-2 outline-dotted outline-(--gray-300) bg-blue-900/50;
 }
 
-
-
-/* =====================================================
-   MODIFIERS
-   ===================================================== */
-
-/* State: Selected */
 .desktop-icon--selected {
   @apply z-20;
 }
 
-/* State: Dragging */
+
 .desktop-icon--dragging {
   @apply opacity-70 z-[100];
 }
-
-/* =====================================================
-   ELEMENT: IMAGE WRAPPER
-   ===================================================== */
 
 .desktop-icon__img-wrapper {
   @apply relative w-16 h-16 mb-[var(--space-1)];
 }
 
-/* =====================================================
-   ELEMENT: IMAGE (ICON)
-   ===================================================== */
-
 .desktop-icon__img {
-  @apply w-full h-full object-contain;
-
-  /* Smooth transition for selection effect */
-  @apply transition-[filter] duration-150 ease-out;
+  @apply w-full h-full object-contain transition-[filter] duration-150 ease-out;
 }
 
-/* Visual Effect: When Selected, darken/tint the icon */
 .desktop-icon--selected .desktop-icon__img {
   @apply grayscale brightness-110 contrast-125;
 }
-
-/* =====================================================
-   ELEMENT: LABEL CONTAINER
-   ===================================================== */
 
 .desktop-icon__label {
   @apply text-center max-w-full;
 }
 
-/* =====================================================
-   ELEMENT: TEXT
-   ===================================================== */
-
 .desktop-icon__text {
-  /* Font & Color */
-  @apply font-(--font-tiny) text-(--gray-300) text-lg leading-tight px-[2px] border border-transparent;
 
-  /* Text Truncation */
-  @apply line-clamp-2 overflow-hidden;
-
-  @apply transition-colors duration-150 ease-out;
+  @apply font-(--font-tiny) text-(--gray-300) text-lg leading-tight px-[2px] border border-transparent line-clamp-2 overflow-hidden transition-colors duration-150 ease-out;
 }
 
-/* Visual Effect: When Selected, text has background and border */
 .desktop-icon--selected .desktop-icon__text {
   @apply bg-(--dark-600) text-(--gray-300) border-[var(--border-thick)] border-dashed border-(--warm-300);
 }

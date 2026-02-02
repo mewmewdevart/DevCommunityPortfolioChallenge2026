@@ -114,7 +114,7 @@ export const CalculatorApp = () => {
 
   return (
     <div className="calculator-container">
-      {/* Display */}
+
       <div className="calculator-display">
         {display}
       </div>

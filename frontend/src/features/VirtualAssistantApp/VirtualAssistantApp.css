@@ -1,25 +1,19 @@
 @import "../../styles/globals.css";
 
-/* =====================================================
-   BLOCK: CLIPPY CONTAINER
-   ===================================================== */
+
 
 .clippy {
   @apply relative w-full h-full flex flex-col items-center justify-end p-4 text-lg bg-transparent;
 }
 
-/* =====================================================
-   ELEMENT: SPEECH BUBBLE
-   ===================================================== */
+
 
 .clippy__bubble {
   @apply shadow-[4px_4px_0_var(--dark-800)];
   @apply relative w-full max-w-xs bg-(--warm-300) border-b-2 p-4 min-h-30 flex flex-col justify-between mb-4 z-10;
 }
 
-/* =====================================================
-   ELEMENT: BUBBLE TEXT
-   ===================================================== */
+
 
 .clippy__text {
   @apply font-(--font-tiny) text-(--dark-800);
@@ -30,9 +24,7 @@
   @apply italic opacity-70;
 }
 
-/* =====================================================
-   ELEMENT: BUTTON
-   ===================================================== */
+
 
 .clippy__btn {
   @apply self-end px-3 py-1 text-lg font-bold uppercase bg-(--gray-300) border-4 border-t-(--gray-300) border-l-(--gray-300) border-r-(--dark-800) border-b-(--dark-800) active:border-t-(--dark-800) active:border-l-(--dark-800) active:border-r-(--gray-300) active:border-b-(--gray-300) shadow-none;
@@ -50,9 +42,7 @@
   @apply text-xs underline text-blue-800 hover:text-blue-600 bg-transparent border-none p-0;
 }
 
-/* =====================================================
-   ELEMENT: SPEECH BUBBLE TAIL (The Triangle)
-   ===================================================== */
+
 .clippy__tail-border {
   @apply absolute -bottom-3 right-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-[12px] border-t-(--dark-800);
 }
@@ -61,9 +51,7 @@
   @apply absolute -bottom-2.5 right-[33px] w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[10px] border-t-(--warm-300);
 }
 
-/* =====================================================
-   ELEMENT: CHARACTER IMAGE
-   ===================================================== */
+
 
 .clippy__character-wrapper {
   @apply flex relative mr-4;

@@ -1,16 +1,16 @@
 @import "../../styles/globals.css";
 
-/* Container */
+
 .paint-container {
   @apply flex flex-col h-full bg-(--gray-500) select-none;
 }
 
-/* Body */
+
 .paint-body {
   @apply flex flex-1 overflow-hidden;
 }
 
-/* Toolbar */
+
 .paint-toolbar {
   @apply w-12 bg-(--gray-500) border-r border-(--gray-700) flex flex-col gap-1 items-center overflow-y-auto pr-1;
 }
@@ -35,7 +35,7 @@
   @apply w-4 bg-(--dark-800);
 }
 
-/* Canvas Container */
+
 .paint-canvas-container {
   @apply flex-1 bg-(--gray-700) p-[2px] overflow-auto relative flex items-center justify-center touch-none;
 }
@@ -48,7 +48,7 @@
   @apply bg-(--gray-300) block touch-none;
 }
 
-/* Footer */
+
 .paint-footer {
   @apply min-h-10 border-t border-(--gray-300) p-1 flex items-center gap-2 bg-(--gray-500) flex-wrap sm:flex-nowrap;
 }

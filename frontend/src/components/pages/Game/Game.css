@@ -1,9 +1,7 @@
 @import "tailwindcss";
 @import "../../../styles/globals.css";
 
-/* =========================
-   BLOCK: GAME
-========================= */
+
 
 .game {
     @apply antialiased bg-(--dark-800) h-[100dvh] pb-[env(safe-area-inset-bottom)];

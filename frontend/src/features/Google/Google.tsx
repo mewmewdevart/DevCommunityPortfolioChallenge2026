@@ -174,7 +174,7 @@ export const Google = () => {
         )}
       </div>
 
-      {/* Status Bar */}
+
       <div className="google-status-bar">
         {loading ? t('status_opening') : t('status_done')}
       </div>

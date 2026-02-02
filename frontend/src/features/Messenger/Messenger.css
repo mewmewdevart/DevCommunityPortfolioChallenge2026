@@ -1,8 +1,6 @@
 @import "../../styles/globals.css";
 
-/* =====================================================
-   ROOT
-   ===================================================== */
+
 .messenger {
     @apply h-full w-full font-(--font-tiny) select-none bg-(--gray-500) flex flex-col;
 }
@@ -11,9 +9,7 @@
     @apply flex-1 overflow-hidden;
 }
 
-/* =====================================================
-   LOGIN VIEW
-   ===================================================== */
+
 .messenger-login {
     @apply flex flex-col items-center justify-center h-full bg-(--gray-500) p-8 font-(--font-tiny);
 }
@@ -55,9 +51,7 @@
     @apply flex items-center justify-center pt-4;
 }
 
-/* =====================================================
-   CONTACTS VIEW
-   ===================================================== */
+
 .messenger-contacts {
     @apply flex flex-col h-full bg-(--gray-500) font-(--font-tiny);
 }
@@ -122,9 +116,7 @@
     @apply h-14 mx-1 mb-1 bg-(--warm-100) border border-(--gray-700) flex items-center justify-center text-lg text-(--gray-700) shadow-inner;
 }
 
-/* =====================================================
-   CHAT VIEW
-   ===================================================== */
+
 .messenger-chat {
     @apply flex flex-col h-full bg-(--gray-500) font-(--font-tiny);
 }
@@ -181,9 +173,7 @@
     @apply border-t border-(--gray-700) border-b border-(--gray-300);
 }
 
-/* =====================================================
-   ADDITIONAL UTILITIES
-   ===================================================== */
+
 .messenger-checkbox {
     @apply accent-(--blue-900);
 }
@@ -240,7 +230,7 @@
     @apply bg-(--gray-500);
 }
 
-/* Chat header layout */
+
 .messenger-chat__user-row {
     @apply flex items-center gap-2;
 }

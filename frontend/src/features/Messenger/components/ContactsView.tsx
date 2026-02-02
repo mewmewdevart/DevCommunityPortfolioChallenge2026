@@ -14,7 +14,7 @@ export const ContactsView: React.FC<ContactsViewProps> = ({ onOpenChat }) => {
     const { t } = useTranslation();
     return (
         <div className="messenger-contacts">
-            {/* Header / My Status */}
+
             <header className="messenger-user-status">
                 <div className="messenger-avatar-box">
                     <IconRenderer icon={iconUser} size={32} className="messenger-user-icon" />
@@ -29,7 +29,7 @@ export const ContactsView: React.FC<ContactsViewProps> = ({ onOpenChat }) => {
                 </div>
             </header>
 
-            {/* List */}
+
             <section className="messenger-contact-list" aria-label={t('contact_list') || "Contact list"}>
                 <div className="messenger-group-header">
                     <IconRenderer icon={iconChevronDown} size={16} className="messenger-group-chevron" />
@@ -62,7 +62,7 @@ export const ContactsView: React.FC<ContactsViewProps> = ({ onOpenChat }) => {
                 </div>
             </section>
 
-            {/* Ad Banner Placeholder */}
+
             <aside className="messenger-ad-banner" aria-label="Advertisement">
                 {t('messenger_ad')}
             </aside>

@@ -39,7 +39,7 @@
 }
 
 .world-entity__love-icon {
-    /* Dimensions from .game-canvas__chat-indicator */
+
     @apply absolute -top-[45px] h-[45px] w-[55px] bg-contain bg-center bg-no-repeat z-50;
     left: calc(50% - 27.5px);
     transform-origin: bottom center;

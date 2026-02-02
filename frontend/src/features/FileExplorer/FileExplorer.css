@@ -1,15 +1,11 @@
 @import "../../styles/globals.css";
 
-/* =====================================================
-     FILE EXPLORER BASE
-     ===================================================== */
+
 .file-explorer {
   @apply flex flex-col h-full w-full;
 }
 
-/* =====================================================
-     TOOLBAR
-     ===================================================== */
+
 .file-explorer-toolbar {
   @apply flex items-center gap-1 p-1 border-b border-(--gray-700) bg-(--gray-500);
 }
@@ -22,9 +18,7 @@
   @apply ml-auto px-2 py-0 h-5 flex items-center;
 }
 
-/* =====================================================
-     GRID / CONTENT
-     ===================================================== */
+
 .file-explorer-grid {
   @apply flex-1 p-2 grid content-start gap-4 overflow-auto bg-(--gray-300);
   grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
@@ -34,9 +28,7 @@
   @apply col-span-full text-center text-lg mt-4 text-(--gray-700);
 }
 
-/* =====================================================
-     ITEM
-     ===================================================== */
+
 .file-item {
   @apply flex flex-col items-center gap-1 p-1 border border-transparent text-(--dark-800);
 }
@@ -87,9 +79,7 @@
 }
 
 
-/* =====================================================
-     STATUS BAR
-     ===================================================== */
+
 .file-explorer-status {
   @apply bg-(--gray-500) border-t border-(--gray-300) p-1 shadow-[inset_0_1px_0_var(--gray-700)];
 }

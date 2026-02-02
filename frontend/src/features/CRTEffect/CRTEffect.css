@@ -102,15 +102,3 @@
         opacity: 0.0279;
     }
 }
-
-/* Optional: Slight curvature vignette */
-/* .crt-vignette {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 9998;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.4) 100%);
-} */

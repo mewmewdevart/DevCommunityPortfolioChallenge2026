@@ -1,9 +1,6 @@
 @import "tailwindcss";
 @import "../../../styles/globals.css";
 
-/* =========================
-   BLOCK: ERROR-BOUNDARY
-========================= */
 
 .error-boundary {
     @apply w-full h-screen bg-(--blue-900) text-(--gray-300) flex flex-col items-center justify-center px-8 gap-4;

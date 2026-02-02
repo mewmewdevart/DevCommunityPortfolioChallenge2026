@@ -1,8 +1,6 @@
 @import "../../styles/globals.css";
 
-/* =====================================================
-   ROOT
-   ===================================================== */
+
 .pdf-root {
     @apply w-full h-full flex flex-col bg-(--gray-300) overflow-y-auto;
 }
@@ -15,9 +13,7 @@
     @apply p-4;
 }
 
-/* =====================================================
-   HEADER BAR
-   ===================================================== */
+
 .pdf-header-bar {
     @apply bg-(--gray-500) border-b border-(--gray-300) p-1 flex gap-2 text-lg shrink-0 sticky top-0 z-10;
 }
@@ -26,9 +22,7 @@
     @apply self-center text-(--gray-700) truncate;
 }
 
-/* =====================================================
-   CONTENT
-   ===================================================== */
+
 .pdf-content-container {
     @apply flex flex-col gap-6;
 }
@@ -57,9 +51,7 @@
     @apply w-full h-auto object-cover max-h-[300px];
 }
 
-/* =====================================================
-   SECTIONS
-   ===================================================== */
+
 .pdf-section-title {
     @apply text-lg uppercase text-(--gray-700) mb-2 border-b;
 }
@@ -76,9 +68,7 @@
     @apply text-(--dark-800) leading-relaxed text-lg;
 }
 
-/* =====================================================
-   FOOTER / LINKS
-   ===================================================== */
+
 .pdf-footer {
     @apply flex justify-center;
 }
@@ -87,9 +77,7 @@
     @apply inline-block px-4 py-2 bg-(--blue-900) text-(--gray-300) text-lg hover:bg-(--blue-700) active:translate-y-px;
 }
 
-/* =====================================================
-   STATUS BAR
-   ===================================================== */
+
 .pdf-status-bar {
     @apply bg-(--gray-500) border-t border-(--gray-300) px-2 py-0.5 flex justify-between text-(--gray-700) shadow-[0_-1px_0_var(--gray-700)] shrink-0 z-20;
 }

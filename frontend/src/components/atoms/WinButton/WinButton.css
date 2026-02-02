@@ -1,45 +1,30 @@
 @import "../../../styles/globals.css";
 
-/* ===============================
-     BASE
-     =============================== */
+
 .win-btn-base {
-  @apply select-none outline-none text-lg font-(--font-tiny) ;
-  @apply focus-visible:outline-2 focus-visible:outline-dotted focus-visible:outline-offset-[-4px] focus-visible:outline-(--dark-800);
+  @apply select-none outline-none text-lg font-(--font-tiny) focus-visible:outline-2 focus-visible:outline-dotted focus-visible:outline-offset-[-4px] focus-visible:outline-(--dark-800);
 }
 
-
-/* ===============================
-     NORMAL — RAISED
-     =============================== */
 .win-btn-normal-raised {
   @apply bg-(--gray-500) border-4 border-t-(--gray-300) border-l-(--gray-300) border-r-(--gray-700) border-b-(--gray-700) p-1 active:border-(--gray-700) active:border-r-(--gray-300) active:border-b-(--gray-300) active:border-l-(--gray-700) active:border-t-(--gray-700);
 }
 
-/* ===============================
-     NORMAL — SUNKEN
-     =============================== */
+
 .win-btn-normal-sunken {
   @apply bg-(--gray-500) border-4 border-(--dark-800) border-r-(--gray-300) border-b-(--gray-300) border-l-(--dark-800) border-t-(--dark-800) p-1;
 }
 
-/* ===============================
-     MENU
-     =============================== */
+
 .win-btn-menu {
   @apply w-full text-left px-4 py-1 flex items-center gap-2 hover:bg-(--blue-900) hover:text-(--gray-300);
 }
 
-/* ===============================
-     TASKBAR — INACTIVE (raised)
-     =============================== */
+
 .win-btn-taskbar-inactive {
-  @apply  text-(--dark-800) bg-(--gray-500) border-4 p-1 h-10 min-w-10 border-t-(--gray-300) border-l-(--gray-300) border-r-(--gray-700) border-b-(--gray-700) active:border-t-(--gray-700) active:border-l-(--gray-700) active:border-r-(--gray-300) active:border-b-(--gray-300);
+  @apply text-(--dark-800) bg-(--gray-500) border-4 p-1 h-10 min-w-10 border-t-(--gray-300) border-l-(--gray-300) border-r-(--gray-700) border-b-(--gray-700) active:border-t-(--gray-700) active:border-l-(--gray-700) active:border-r-(--gray-300) active:border-b-(--gray-300);
 }
 
-/* ===============================
-     TASKBAR — ACTIVE (sunken)
-     =============================== */
+
 .win-btn-taskbar-active {
-  @apply  text-(--dark-800) bg-(--gray-500) border-4 p-1 h-10 min-w-10 border-t-(--gray-700) border-l-(--gray-700) border-r-(--gray-300) border-b-(--gray-300)
+  @apply text-(--dark-800) bg-(--gray-500) border-4 p-1 h-10 min-w-10 border-t-(--gray-700) border-l-(--gray-700) border-r-(--gray-300) border-b-(--gray-300)
 }

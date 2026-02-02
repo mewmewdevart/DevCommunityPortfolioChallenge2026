@@ -26,7 +26,7 @@
 }
 
 .shutdown-dialog__content {
-    @apply  px-4;
+    @apply px-4;
 }
 
 .shutdown-dialog__options {
@@ -47,7 +47,7 @@
 
 .shutdown-dialog__radio-input {
     @apply w-4 h-4 relative appearance-none rounded-full border-2 border-(--dark-800) bg-(--gray-300);
-    /* Inset shadow for depth */
+
     box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.5), 1px 1px 0px rgba(255, 255, 255, 0.5);
 }
 

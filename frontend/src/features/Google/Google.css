@@ -1,15 +1,11 @@
 @import "../../styles/globals.css";
 
-/* =====================================================
-   ROOT
-   ===================================================== */
+
 .google-root {
   @apply flex flex-col h-full w-full bg-(--gray-300);
 }
 
-/* =====================================================
-   ADDRESS BAR
-   ===================================================== */
+
 .google-address-bar {
   @apply flex items-center gap-2 p-1 bg-(--gray-500) text-lg sm:text-base;
 }
@@ -26,16 +22,12 @@
   @apply w-full h-6 p-1 outline-none bg-(--gray-300) text-lg sm:text-base;
 }
 
-/* =====================================================
-   CONTENT
-   ===================================================== */
+
 .google-content {
   @apply flex-1 relative border-t border-(--gray-700);
 }
 
-/* =====================================================
-   LOADING OVERLAY
-   ===================================================== */
+
 .google-loading-overlay {
   @apply absolute inset-0 z-10 flex items-center justify-center bg-(--gray-300);
 }
@@ -44,16 +36,12 @@
   @apply text-lg sm:text-base;
 }
 
-/* =====================================================
-   STATUS BAR
-   ===================================================== */
+
 .google-status-bar {
   @apply p-1 border-t border-(--gray-700) text-xs sm:text-lg;
 }
 
-/* =====================================================
-   PAGE CONTENT (Simulated)
-   ===================================================== */
+
 .google-page-container {
   @apply bg-(--gray-300) p-3 sm:p-6 space-y-4 sm:space-y-6 break-words overflow-hidden flex flex-col gap-6;
 }
@@ -74,9 +62,7 @@
   @apply text-lg sm:text-lg;
 }
 
-/* =====================================================
-   NAVIGATION
-   ===================================================== */
+
 .google-page-nav {
   @apply flex flex-wrap justify-center gap-2 sm:gap-4 text-lg sm:text-lg;
 }
@@ -87,16 +73,12 @@
   }
 }
 
-/* =====================================================
-   LINKS
-   ===================================================== */
+
 .google-nav-link {
   @apply underline text-(--blue-900) hover:text-(--rose-700) break-all;
 }
 
-/* =====================================================
-   SECTIONS
-   ===================================================== */
+
 .google-section-box {
   @apply border border-(--gray-500) p-3 sm:p-4;
 }
@@ -105,9 +87,7 @@
   @apply font-bold mb-2 text-base sm:text-lg;
 }
 
-/* =====================================================
-   TEXT CONTENT
-   ===================================================== */
+
 .google-page-text {
   @apply leading-relaxed text-lg sm:text-lg break-words;
 }
@@ -120,9 +100,7 @@
   @apply space-y-2 text-lg sm:text-lg break-words;
 }
 
-/* =====================================================
-   FOOTER
-   ===================================================== */
+
 .google-footer {
   @apply text-center text-(--gray-600) text-xs sm:text-lg;
 }
@@ -131,9 +109,7 @@
   @apply font-semibold;
 }
 
-/* =====================================================
-   RESUME
-   ===================================================== */
+
 .google-resume-item {
   @apply mb-4;
 }

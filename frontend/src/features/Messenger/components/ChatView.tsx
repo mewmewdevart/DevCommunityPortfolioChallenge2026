@@ -47,7 +47,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
 
     return (
         <div className={`messenger-chat ${isNudged ? 'messenger-chat--nudged' : ''}`}>
-            {/* Top Info Bar */}
+
             <header className="messenger-chat__header">
                 <div className="messenger-chat__user-row">
                     <div className="messenger-avatar-wrapper">
@@ -92,13 +92,10 @@ export const ChatView: React.FC<ChatViewProps> = ({
                 <div ref={chatEndRef} />
             </div>
 
-            {/* Toolbar & Input */}
+
             <footer className="messenger-toolbar">
                 <div className="messenger-toolbar__actions">
-                    {/* <button className="messenger-toolbar__btn" title={t('messenger_nudge_action')} onClick={onNudge}>
-                        <IconRenderer icon={iconNotification} size={16} className="messenger-icon" />
-                    </button>
-                    <div className="messenger-toolbar-separator"></div> */}
+
                     <button className="messenger-toolbar__btn" aria-label="Text format"><span className="messenger-toolbar-text-btn">A</span></button>
                     <button className="messenger-toolbar__btn" aria-label="Insert emoji"><span className="messenger-toolbar-emoji-btn">😊</span></button>
                 </div>
@@ -127,7 +124,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
                 </div>
             </footer>
 
-            {/* Status Bar */}
+
             <div className="messenger-status-bar" role="status">
                 {isTyping ? `${activeContact.name} ${t('messenger_typing')}` : `${t('messenger_last_msg')} ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`}
             </div>

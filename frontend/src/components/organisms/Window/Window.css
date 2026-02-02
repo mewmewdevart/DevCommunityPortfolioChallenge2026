@@ -1,9 +1,7 @@
 @import "tailwindcss";
 @import "../../../styles/globals.css";
 
-/* =========================
-   BLOCK: WINDOW
-========================= */
+
 
 .window {
   @apply flex flex-col bg-(--gray-300) border-4 border-t-(--dark-800) border-l-(--dark-800) border-r-(--dark-800) border-b-(--dark-800) shadow-md outline-none pt-1 pr-0 pb-0 pl-1;
@@ -21,9 +19,7 @@
   @apply outline-none border-none bg-transparent shadow-none;
 }
 
-/* =========================
-   ELEMENT: TITLE BAR
-   ========================= */
+
 
 .window__title-bar {
   @apply flex items-center justify-between select-none touch-none h-12.5 px-1 py-2 text-(--gray-300);
@@ -53,9 +49,7 @@
   @apply text-(--dark-800) w-6 h-6;
 }
 
-/* =========================
-   ELEMENT: MENU BAR
-   ========================= */
+
 
 .window__menu {
   @apply flex gap-4 px-2 py-1 bg-(--gray-500) border-b border-(--gray-700) select-none;
@@ -71,9 +65,7 @@
   @apply outline-2 outline-(--gray-300) shadow-[0_0_0_4px_black] z-100;
 }
 
-/* =========================
-   ELEMENT: CONTENT
-   ========================= */
+
 
 .window__content {
   @apply relative flex-1 overflow-auto bg-(--gray-300) border-l border-r border-b border-(--gray-700);
@@ -87,9 +79,7 @@
   @apply flex items-center justify-center h-full w-full;
 }
 
-/* =========================
-   ELEMENT: RESIZE HANDLE
-   ========================= */
+
 
 .window__resize-handle {
   @apply absolute bottom-0 right-0 w-6 h-6 cursor-se-resize z-50;
@@ -99,9 +89,7 @@
   @apply absolute bottom-1 right-1 pointer-events-none;
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-   ========================= */
+
 
 @media (max-width: 1024px) {
   .window__title-bar {

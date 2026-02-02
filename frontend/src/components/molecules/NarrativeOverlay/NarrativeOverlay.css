@@ -1,23 +1,16 @@
 @import "tailwindcss";
 @import "../../../styles/globals.css";
 
-/* ================================
-   OVERLAY ROOT
-================================ */
+
 .narrative-overlay {
     @apply text-lg fixed inset-0 w-screen h-screen flex items-end justify-center pointer-events-none z-[999];
 }
 
-/* ================================
-   WRAPPER (ANCHOR BOTTOM)
-================================ */
+
 .narrative-overlay__wrapper {
     @apply flex items-end w-full max-w-[1280px] px-4 pb-4 pb-14 lg:pb-0;
 }
 
-/* ================================
-   CHARACTER
-================================ */
 .narrative-overlay__character-container {
     @apply hidden lg:flex items-end self-end pointer-events-none;
 }
@@ -29,36 +22,28 @@
     @apply bg-blend-multiply;
 }
 
-/* ================================
-   DIALOGUE BOX
-================================ */
+
 .narrative-overlay__dialogue-box {
     @apply relative bg-(--dark-800) w-full lg:max-w-[600px] h-[11rem] pointer-events-auto;
 }
 
-/* ================================
-   CONTENT LAYOUT
-================================ */
+
 .narrative-overlay__content {
     @apply flex flex-col justify-between w-full h-full p-4;
 }
 
-/* ================================
-   TEXT
-================================ */
+
 .narrative-overlay__name {
-    /* absolute bottom-44 w-40 text-lg -left-16 z-0 flex justify-end pr-2    */
+
     @apply bg-(--blue-500) absolute text-lg w-40 -left-10 pl-14 bottom-44 -z-1;
 
 }
 
 .narrative-overlay__text {
-    @apply text-(--gray-300) font-medium text-left tracking-[0.03em] overflow-y-auto pr-2;
-    @apply drop-shadow-[1px_1px_0_var(--dark-800)];
+    @apply text-(--gray-300) font-medium text-left tracking-[0.03em] overflow-y-auto pr-2 drop-shadow-[1px_1px_0_var(--dark-800)];
     font-size: clamp(1rem, 1.1vw + 0.8rem, 1.25rem);
 }
 
-/* Scrollbar */
 .narrative-overlay__text::-webkit-scrollbar {
     width: 4px;
 }
@@ -67,21 +52,17 @@
     background-color: var(--dark-600);
 }
 
-/* ================================
-   ACTIONS
-================================ */
+
 .narrative-overlay__actions {
     @apply flex flex-row justify-end gap-3 pt-3;
 }
 
-/* ================================
-   BUTTONS
-================================ */
+
 .narrative-overlay__btn {
     @apply px-3 py-3 text-lg font-bold uppercase tracking-[0.08em] min-h-[3rem] transition-all duration-200;
 }
 
-/* Primary */
+
 .narrative-overlay__btn--primary {
     @apply bg-(--blue-700) text-(--gray-300);
 }
@@ -94,7 +75,7 @@
     @apply translate-y-0.5 bg-(--blue-900);
 }
 
-/* Secondary */
+
 .narrative-overlay__btn--secondary {
     @apply bg-(--dark-500) text-(--gray-300);
 }
@@ -107,9 +88,7 @@
     @apply translate-y-0.5 bg-(--dark-700);
 }
 
-/* ================================
-   CURSOR
-================================ */
+
 .narrative-overlay__cursor {
     @apply animate-pulse;
 }

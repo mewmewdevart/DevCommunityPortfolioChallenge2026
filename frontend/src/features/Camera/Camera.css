@@ -1,15 +1,11 @@
 @import "../../styles/globals.css";
 
-/* =====================================================
-   ROOT
-   ===================================================== */
+
 .camera-container {
     @apply flex flex-col h-full bg-(--gray-500) p-1 select-none;
 }
 
-/* =====================================================
-   DISPLAY AREA
-   ===================================================== */
+
 .camera-display {
     @apply flex-1 bg-(--dark-800) border-4 border-(--gray-600) border-b-(--gray-300) border-r-(--gray-300) flex items-center justify-center mb-2 overflow-hidden relative;
 }
@@ -22,9 +18,7 @@
     @apply absolute text-(--gray-300) text-lg opacity-50;
 }
 
-/* =====================================================
-   CONTROLS
-   ===================================================== */
+
 .camera-controls {
     @apply flex justify-between bg-(--gray-500) p-1 border border-t-(--gray-300) border-l-(--gray-300) border-r-(--gray-600) border-b-(--gray-600);
 }
@@ -45,9 +39,7 @@
     @apply text-(--red-600);
 }
 
-/* =====================================================
-   STATUS BAR
-   ===================================================== */
+
 .camera-status-bar {
     @apply mt-1 text-lg text-(--gray-600) px-1 truncate font-(--font-tiny);
 }

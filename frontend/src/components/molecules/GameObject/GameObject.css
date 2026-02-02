@@ -2,11 +2,9 @@
 @import "../../../styles/globals.css";
 
 .game-object {
-    @apply absolute;
-    @apply transition-all duration-[var(--duration-normal)] ease-[var(--ease-default)];
+    @apply absolute transition-all duration-[var(--duration-normal)] ease-[var(--ease-default)];
     image-rendering: pixelated;
 }
-
 
 .game-object__image {
     @apply w-full h-full object-contain;
@@ -20,20 +18,17 @@
 
 .game-object--catJoao .game-object__sprite,
 .game-object--catMaria .game-object__sprite {
-    @apply absolute left-0 bottom-0 h-full w-full bg-no-repeat;
+    @apply absolute left-0 bottom-0 h-full w-full bg-no-repeat bg-[size:400%_100%] bg-[position:0_0] animate-[cat-anim_0.8s_step-end_infinite];
     image-rendering: pixelated;
-    @apply bg-[size:400%_100%] bg-[position:0_0];
     will-change: background-image, background-position;
-    @apply animate-[cat-anim_0.8s_step-end_infinite];
 }
 
 .game-object__love-icon {
-    /* Dimensions from .game-canvas__chat-indicator */
-    @apply absolute -top-[45px] h-[45px] w-[55px] bg-contain bg-center bg-no-repeat z-50;
+
+    @apply absolute -top-[45px] h-[45px] w-[55px] bg-contain bg-center bg-no-repeat z-50 animate-[pop-anim_0.3s_ease-out];
     left: calc(50% - 24px);
     transform-origin: bottom center;
     image-rendering: pixelated;
-    @apply animate-[pop-anim_0.3s_ease-out];
 }
 
 @keyframes cat-anim {

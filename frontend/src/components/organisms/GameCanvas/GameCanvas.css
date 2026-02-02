@@ -1,9 +1,7 @@
 @import "tailwindcss";
 @import "../../../styles/globals.css";
 
-/* =====================================================
-   ROOT CANVAS
-===================================================== */
+
 .game-canvas {
   @apply relative flex h-screen w-screen items-center justify-center overflow-hidden bg-[var(--dark-800)];
 }
@@ -21,9 +19,7 @@
   @apply pointer-events-none absolute left-[var(--space-4)] top-[var(--space-4)] z-50 rounded border border-[var(--warm-100)] bg-[var(--dark-800)] px-[var(--space-3)] py-[var(--space-1)] font-bold text-[var(--text-xs)] text-[var(--warm-100)] -translate-y-2 opacity-0 transition-all duration-300;
 }
 
-/* =====================================================
-   GAME AREA
-===================================================== */
+
 .game-canvas__area {
   @apply relative h-full w-full outline-none;
   @apply touch-none bg-transparent transition-transform duration-[var(--duration-slow)] ease-[var(--ease-in-out)];
@@ -38,9 +34,7 @@
   image-rendering: pixelated;
 }
 
-/* =====================================================
-   WORLD LAYERS
-===================================================== */
+
 .game-canvas__static-layer,
 .game-canvas__dynamic-layer {
   @apply pointer-events-none absolute inset-0 h-full w-full;
@@ -58,9 +52,7 @@
   @apply z-3;
 }
 
-/* =====================================================
-   PATH INDICATORS
-===================================================== */
+
 .game-canvas__path-dot {
   @apply pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 rounded-full;
   @apply bg-[var(--warm-100)] w-5 h-5 z-5;
@@ -76,9 +68,7 @@
   @apply pointer-events-none absolute bg-[var(--dark-500)] z-15;
 }
 
-/* =====================================================
-   PLAYER
-===================================================== */
+
 .game-canvas__player {
   @apply absolute overflow-visible z-(--z-window) scale-120;
   @apply transition-all duration-150 ease-linear;
@@ -114,9 +104,7 @@
   }
 }
 
-/* =====================================================
-   CHAT INDICATOR
-===================================================== */
+
 .game-canvas__chat-indicator {
   @apply pointer-events-none absolute left-1/2 h-[45px] w-[55px] -translate-x-1/2 bg-no-repeat;
   @apply bottom-[150%] mb-2.5 bg-[size:220px_45px] animate-[chat-anim_1s_steps(1)_infinite] z-(--z-overlay);
@@ -145,9 +133,7 @@
   }
 }
 
-/* =====================================================
-   OVERLAYS
-===================================================== */
+
 .game-canvas__overlay {
   @apply fixed inset-0 z-50 flex items-center justify-center;
 }
@@ -160,9 +146,7 @@
   background-color: color-mix(in srgb, var(--dark-800), transparent 20%);
 }
 
-/* =====================================================
-   ACCESSIBILITY
-===================================================== */
+
 .game-canvas__sr-text {
   @apply sr-only;
 }

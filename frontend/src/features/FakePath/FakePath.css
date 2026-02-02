@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
-/* =========================
-   BLOCK: FAKE PATH (BSOD TRIGGER)
-========================= */
+
 
 .fakepath {
     @apply h-full w-full p-2 text-lg overflow-hidden select-none;

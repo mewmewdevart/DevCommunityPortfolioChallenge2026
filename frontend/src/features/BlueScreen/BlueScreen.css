@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
-/* =====================================================
-   BLOCK: BLUE SCREEN
-   ===================================================== */
+
 
 .blue-screen {
     @apply fixed inset-0 bg-(--blue-900) text-(--gray-300) p-10 flex flex-col justify-center items-center select-none cursor-none;

@@ -76,7 +76,7 @@
     }
 }
 
-/* Main Action Button  */
+
 .game-menu__start-btn {
     @apply text-lg md:text-4xl text-(--gray-300) bg-transparent border-none focus-visible:outline-2 focus-visible:outline-dotted focus-visible:outline-(--gray-300) focus-visible:outline-offset-8 min-w-[44px] px-5 py-3 touch-manipulation;
 }
@@ -149,15 +149,13 @@
     }
 }
 
-/* =========================================================
-   LEVEL SELECTION — LAYOUT
-   ========================================================= */
+
 
 .game-menu--level-select {
     @apply min-h-screen gap-4 bg-(--dark-800)/10 backdrop-blur-sm px-4;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    /* iOS smooth scroll */
+
 }
 
 
@@ -169,9 +167,7 @@
     @apply flex flex-col items-center justify-center gap-4 transition-all duration-200 hover:scale-110 active:scale-[0.98];
 }
 
-/* =========================================================
-   LEVEL SELECTION — CONTENT
-   ========================================================= */
+
 
 .level-selection__image {
     width: 160px;
@@ -190,25 +186,19 @@
     @apply text-lg md:text-xl lg:text-2xl text-(--gray-300);
 }
 
-/* =========================================================
-   TITLES
-   ========================================================= */
+
 
 .game-menu__title--level-select {
     @apply font-bold text-(--gray-300) text-2xl lg:text-3xl;
 }
 
-/* =========================================================
-   ACCESSIBILITY / FOCUS
-   ========================================================= */
+
 
 .level-selection__item:focus-visible {
     @apply outline-2 outline-(--gray-300) outline-offset-2;
 }
 
-/* =========================================================
-   FOOTER / SOCIAL
-   ========================================================= */
+
 
 .game-menu__footer {
     @apply flex flex-col items-center justify-center gap-2 text-lg text-(--gray-300);
@@ -218,9 +208,7 @@
     @apply flex items-center gap-0 text-center;
 }
 
-/* =========================================================
-   SOCIAL LINKS (SPRITE BASED)
-   ========================================================= */
+
 
 .game-menu__social-link {
     @apply relative block overflow-hidden rounded-lg transition-transform duration-200 focus-visible:outline-2 focus-visible:outline-(--gray-300) focus-visible:outline-offset-4 scale-60;
@@ -238,7 +226,7 @@
     background-repeat: no-repeat;
     background-position: 0 0;
     transition: background-position 0s;
-    /* instant frame switch */
+
 }
 
 .game-menu__social-link:hover .game-menu__social-sprite,
@@ -246,9 +234,7 @@
     background-position: -90px 0;
 }
 
-/* =========================================================
-   CREDITS
-   ========================================================= */
+
 
 .game-menu__credits-text {
     @apply absolute bottom-4 text-center text-lg text-(--gray-500);

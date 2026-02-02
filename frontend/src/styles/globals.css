@@ -20,8 +20,8 @@ body {
   cursor: url('../assets/icons/cursor/cursor_pointer.png'), auto;
 }
 
-/* Custom Cursor for interactive elements */
-/* Custom Cursor for interactive elements */
+
+
 a,
 button,
 label,
@@ -57,7 +57,7 @@ input[type="file"]::file-selector-button,
   cursor: url('../assets/icons/cursor/cursor_hand_pointer.png'), pointer !important;
 }
 
-/* Text Selection */
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -67,31 +67,31 @@ textarea,
   cursor: url('../assets/icons/cursor/cursor_type.png'), text !important;
 }
 
-/* Move */
+
 .move,
 [draggable="true"] {
   cursor: url('../assets/icons/cursor/cursor_move.png'), move !important;
 }
 
-/* Wait/Loading */
+
 .wait,
 .loading {
   cursor: url('../assets/icons/cursor/cursor_wait.png'), wait !important;
 }
 
-/* Not Allowed / Disabled */
+
 :disabled,
 .disabled,
 .window__menu .not-allowed {
   cursor: url('../assets/icons/cursor/cursor_cancel.png'), not-allowed !important;
 }
 
-/* Help */
+
 .help {
   cursor: url('../assets/icons/cursor/cursor_alert.png'), help !important;
 }
 
-/* Zoom */
+
 .zoom-in {
   cursor: url('../assets/icons/cursor/cursor_zoom_in.png'), zoom-in !important;
 }
@@ -100,12 +100,12 @@ textarea,
   cursor: url('../assets/icons/cursor/cursor_zoom_out.png'), zoom-out !important;
 }
 
-/* Grab */
+
 .grab {
   cursor: url('../assets/icons/cursor/cursor_hand_grab.png'), grab !important;
 }
 
-/* Resize - Arrows */
+
 .resize-n {
   cursor: url('../assets/icons/cursor/cursor_arrow_up.png'), n-resize !important;
 }
@@ -122,7 +122,7 @@ textarea,
   cursor: url('../assets/icons/cursor/cursor_arrow_right.png'), e-resize !important;
 }
 
-/* Resize - Divide/Maximize/Minimize */
+
 .resize-col,
 .resize-row {
   cursor: url('../assets/icons/cursor/cursor_divide.png'), col-resize !important;
@@ -143,19 +143,17 @@ textarea,
 
 .no-scrollbar {
   scrollbar-width: none;
-  /* Firefox */
+
   -ms-overflow-style: none;
-  /* IE / Edge */
+
 }
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
-  /* Chrome / Safari */
+
 }
 
-/* =====================================================
-   CRT EFFECT
-   ===================================================== */
+
 
 body.crt-enabled::before {
   content: "";
@@ -220,9 +218,7 @@ body.crt-enabled::after {
   }
 }
 
-/* =====================================================
-   ANIMATIONS
-   ===================================================== */
+
 
 @keyframes sp-wobble {
   0% {
@@ -250,26 +246,24 @@ body.crt-enabled::after {
   animation: sp-wobble 0.3s infinite linear;
 }
 
-/* =====================================================
-   REDUCED MOTION PREFERENCE (WCAG 2.3.3)
-   ===================================================== */
+
 
 @media (prefers-reduced-motion: reduce) {
 
-  /* Disable CRT flicker animation */
+
   body.crt-enabled::after {
     animation: none;
     opacity: 0.1;
   }
 
-  /* Disable all custom animations */
+
   .animate-sp-wobble,
   .animate-pulse,
   .vhs-flicker {
     animation: none !important;
   }
 
-  /* Reduce any transition durations */
+
   *,
   *::before,
   *::after {

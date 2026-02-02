@@ -1,4 +1,4 @@
-import{r as g,j as e,u as E,R as O}from"./vendor-CGXhCyq3.js";import{u as C,c as N}from"./game-BD-K9wUi.js";import{b as V}from"./index-BiW8pBaH.js";import"./i18n-CjG_VPcn.js";const Q=`---
+import{r as g,j as e,u as E,R as O}from"./vendor-CGXhCyq3.js";import{u as C,c as N}from"./game-BD-K9wUi.js";import{b as V}from"./index-CXS4LzyZ.js";import"./i18n-CjG_VPcn.js";const Q=`---
 title: Double Vision
 size: 54KB
 image: memory-card_doubleVision.png

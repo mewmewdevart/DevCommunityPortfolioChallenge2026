@@ -1,16 +1,12 @@
 @import "tailwindcss";
 @import "../../../styles/globals.css";
 
-/* =====================================================
-   BLOCK: TASKBAR
-   ===================================================== */
+
 .taskbar {
   @apply fixed bottom-0 left-0 right-0 h-[var(--space-16)] bg-(--gray-500) border-t-[var(--border-thick)] border-(--dark-800) shadow-[inset_0_1px_0_var(--gray-500)] flex items-center p-[var(--space-1)] pl-2 gap-2 z-[999] select-none touch-none;
 }
 
-/* =====================================================
-   ELEMENT: START MENU
-   ===================================================== */
+
 .taskbar__start-menu-wrapper {
   @apply relative;
 }
@@ -31,16 +27,12 @@
   @apply text-lg tracking-wide text-(--dark-800) uppercase;
 }
 
-/* =====================================================
-   ELEMENT: DIVIDER
-   ===================================================== */
+
 .taskbar__divider {
   @apply w-1 h-12.5 border-2 border-(--gray-700);
 }
 
-/* =====================================================
-   ELEMENT: WINDOWS LIST
-   ===================================================== */
+
 .taskbar__windows {
   @apply flex-1 flex items-center gap-2 overflow-x-auto h-full;
   @apply [scrollbar-width:none] [-ms-overflow-style:none];
@@ -66,9 +58,7 @@
   @apply absolute left-20 bottom-4 bg-(--warm-300) text-(--dark-800) px-2 py-1 text-lg whitespace-nowrap h-12.5 flex justify-center items-center z-[10000] pointer-events-none;
 }
 
-/* =====================================================
-   ELEMENT: TRAY
-   ===================================================== */
+
 .taskbar__tray {
   @apply bg-(--gray-500) border-4 border-t-(--gray-700) border-l-(--gray-700) border-r-(--gray-300) border-b-(--gray-300) flex items-center justify-center gap-1 h-12.5 w-fit px-2;
 }

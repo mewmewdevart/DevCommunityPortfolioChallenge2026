@@ -64,7 +64,7 @@ export const InternetExplorer = () => {
 
   return (
     <div className="ie-root">
-      {/* Toolbar */}
+
       <div className="ie-toolbar">
         <WinButton className="ie-toolbar-btn" title={t('ie_back')}>
           <IconRenderer icon={iconArrowLeft} size={16} />
@@ -101,7 +101,7 @@ export const InternetExplorer = () => {
         </WinButton>
       </div>
 
-      {/* Address Bar */}
+
       <div className="ie-address-bar">
         <label htmlFor="ie-address-input" className="ie-address-label">{t('address_label')}</label>
         <form onSubmit={simulateNavigation} className="ie-address-form">
@@ -221,7 +221,7 @@ export const InternetExplorer = () => {
 
               </div>
 
-              {/* Footer */}
+
               <div className="ie-footer">
                 {t('ie_footer_copy')}
               </div>
@@ -230,7 +230,7 @@ export const InternetExplorer = () => {
         )}
       </div>
 
-      {/* Status Bar */}
+
       <div className="ie-status-bar">
         {loading ? t('status_opening') : t('status_done')}
       </div>

@@ -90,7 +90,7 @@ export const VirtualAssistantApp = ({ isAutoOpened }: AppBaseProps & { isAutoOpe
             </button>
           )}
 
-          {/* If we want a next tip button */}
+
 
         </div>
 

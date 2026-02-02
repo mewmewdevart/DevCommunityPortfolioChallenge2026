@@ -27,7 +27,7 @@
     @apply absolute top-0 left-0 right-0 bg-(--dark-800);
     height: 50vh;
     transform: translateUnsafeY(-100%);
-    /* Start off-screen */
+
     animation: shut-vertical 0.4s ease-in forwards;
     animation-delay: 0.1s;
 }
@@ -36,7 +36,7 @@
     @apply absolute bottom-0 left-0 right-0 bg-(--dark-800);
     height: 50vh;
     transform: translateY(100%);
-    /* Start off-screen */
+
     animation: shut-vertical 0.4s ease-in forwards;
     animation-delay: 0.1s;
 }
@@ -47,7 +47,7 @@
     transform: translateX(-100%);
     animation: shut-horizontal 0.4s ease-out forwards;
     animation-delay: 0.5s;
-    /* Wait for vertical to finish */
+
 }
 
 .crt-shutdown__right {
@@ -58,10 +58,7 @@
     animation-delay: 0.5s;
 }
 
-/* 
-   Revised Animation approach for "CRT Turn Off":
-   We essentially want to preserve the "light" in the middle and close the darkness around it.
-*/
+
 
 @keyframes crt-flash {
     0% {
@@ -82,27 +79,11 @@
         transform: translateY(-100%);
     }
 
-    /* For top */
-    /* Handled by specific classes usually, but let's do customized */
+
+
 }
 
-/* 
-   ACTUAL IMPLEMENTATION: 
-   Use a single element with a "hole" via scale? 
-   No, sticking to the classic: 
-   1. Flash
-   2. Background becomes black (but content visible?) - No.
-   
-   Let's do the "Beam" effect:
-   - A container that is bright white/content color.
-   - We scale it down?
-   
-   Simpler visual trick:
-   Animate `mask-image` or `clip-path` on the whole screen?
-   
-   Since we are an overlay, we can just animate TWO black divs closing in vertically,
-   then TWO black divs closing in horizontally.
-*/
+
 
 .crt-shutter-y {
     @apply absolute left-0 right-0 bg-(--dark-800) z-10;
