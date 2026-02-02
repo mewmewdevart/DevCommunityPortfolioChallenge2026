@@ -326,40 +326,7 @@ export const WindowManagerProvider: React.FC<{
         windowsRef.current = windows;
     }, [windows]);
 
-    useEffect(() => {
-        const INTERVAL = 180000;
-        const DISPLAY_DURATION = 10000;
-
-        let openTimeout: ReturnType<typeof setTimeout>;
-        let closeTimeout: ReturnType<typeof setTimeout>;
-
-        const scheduleNext = () => {
-            openTimeout = setTimeout(() => {
-                const assistantApp = appsRef.current.find(a => a.id === ASSISTANT_ID);
-                const alreadyOpen = windowsRef.current.some(w => w.id === ASSISTANT_ID);
-
-                if (assistantApp && !alreadyOpen) {
-                    openWindowRef.current(assistantApp);
-
-                    closeTimeout = setTimeout(() => {
-                        closeWindowRef.current(ASSISTANT_ID);
-                        scheduleNext();
-                    }, DISPLAY_DURATION);
-                } else {
-                    scheduleNext();
-                }
-            }, INTERVAL);
-        };
-
-        scheduleNext();
-
-        return () => {
-            clearTimeout(openTimeout);
-            clearTimeout(closeTimeout);
-        };
-    }, [ASSISTANT_ID]);
-
-    // Handle URL opening
+    // URL opening logic
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
         const appIdToOpen = params.get('open');

@@ -177,8 +177,6 @@ export const StartMenu: React.FC<MenuProps> = ({
         </button>
       </nav>
 
-      {/* Navigation buttons removed - moved to LevelSelectionScreen */}
-
       <section className="game-menu__header">
         <picture>
           <source srcSet={logoGameWebP} type="image/webp" />

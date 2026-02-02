@@ -12,18 +12,18 @@ import { AnnouncementProvider } from '@/context/AnnouncementContext';
 import { SoundProvider } from '@/context/SoundContext';
 import { SettingsProvider, useSettings } from '@/context/SettingsContext';
 import { CRTEffect } from '@/features/CRTEffect/CRTEffect';
-import { ReloadPrompt } from '@pages/ReloadPrompt/ReloadPrompt';
+import { ReloadPrompt } from '@/components/pages/ReloadPrompt/ReloadPrompt';
 import { SkipNavigation, type AppMode } from '@/components/molecules/SkipNavigation/SkipNavigation';
 import './App.css';
 
 // Lazy load heavy components
-const Desktop = React.lazy(() => import('@pages/Desktop/Desktop').then(module => ({ default: module.Desktop })));
-const BootScreen = React.lazy(() => import('@pages/BootScreen/BootScreen').then(module => ({ default: module.BootScreen })));
-const LoginScreen = React.lazy(() => import('@pages/LoginScreen/LoginScreen').then(module => ({ default: module.LoginScreen })));
-const VideoGame = React.lazy(() => import('@pages/VideoGameScreen/VideoGameScreen').then(module => ({ default: module.VideoGame })));
-const Game = React.lazy(() => import('@pages/Game/Game').then(module => ({ default: module.Game })));
-const ShutdownScreen = React.lazy(() => import('@pages/ShutdownScreen/ShutdownScreen').then(module => ({ default: module.ShutdownScreen })));
-const PaperScreen = React.lazy(() => import('@pages/PaperScreen/PaperScreen').then(module => ({ default: module.PaperFold })));
+const Desktop = React.lazy(() => import('@/components/pages/Desktop/Desktop').then(module => ({ default: module.Desktop })));
+const BootScreen = React.lazy(() => import('@/components/pages/BootScreen/BootScreen').then(module => ({ default: module.BootScreen })));
+const LoginScreen = React.lazy(() => import('@/components/pages/LoginScreen/LoginScreen').then(module => ({ default: module.LoginScreen })));
+const VideoGame = React.lazy(() => import('@/components/pages/VideoGameScreen/VideoGameScreen').then(module => ({ default: module.VideoGame })));
+const Game = React.lazy(() => import('@/components/pages/Game/Game').then(module => ({ default: module.Game })));
+const ShutdownScreen = React.lazy(() => import('@/components/pages/ShutdownScreen/ShutdownScreen').then(module => ({ default: module.ShutdownScreen })));
+const PaperScreen = React.lazy(() => import('@/components/pages/PaperScreen/PaperScreen').then(module => ({ default: module.PaperFold })));
 
 type SystemState = 'game' | 'boot' | 'login' | 'desktop' | 'videogame' | 'shutdown_transition' | 'paper';
 

@@ -42,13 +42,13 @@ export const SPRITES: Record<string, SpriteAsset | string> = {
   walkUp: { png: walkUp, webp: walkUpWebP },
   walkLeft: { png: walkLeft, webp: walkLeftWebP },
   walkRight: { png: walkRight, webp: walkRightWebP },
-  computer: { png: computerIcon }, // GIF logic might vary but keeping object structure
+  computer: { png: computerIcon }, 
   picture: { png: pictureIcon, webp: pictureIconWebP },
   picture2: { png: pictureIcon2, webp: pictureIcon2WebP },
-  videoGame: { png: videoGameIcon }, // GIF
+  videoGame: { png: videoGameIcon }, 
   carpet: { png: carpetIcon, webp: carpetIconWebP },
   bed: { png: bedIcon, webp: bedIconWebP },
-  wall: { png: `https://upload.wikimedia.org/wikipedia/commons/5/50/Black_colour.jpg` }, // External
+  wall: { png: `https://upload.wikimedia.org/wikipedia/commons/5/50/Black_colour.jpg` },
   chatIndicator: { png: iconTalk, webp: iconTalkWebP },
   loveIcon: { png: iconLove, webp: iconLoveWebP },
   catJoao: { png: CatJoaoIdle, webp: CatJoaoIdleWebP },
@@ -56,9 +56,8 @@ export const SPRITES: Record<string, SpriteAsset | string> = {
   backpack: { png: backPackSheet, webp: backPackSheetWebP },
 };
 
-// Preload all player sprites to prevent flickering on first use
+
 export const preloadPlayerSprites = (): void => {
-  // Casting to SpriteAsset for safety inside this specific helper
   const assets = [
     SPRITES.player,
     SPRITES.walkUp,

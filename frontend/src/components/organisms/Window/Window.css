@@ -22,8 +22,6 @@
   @apply outline-none border-none bg-transparent shadow-none;
 }
 
-
-
 /* =========================
    ELEMENT: TITLE BAR
    ========================= */
@@ -68,7 +66,6 @@
 .window__menu-item {
   @apply text-xl text-black bg-(--gray-500) border-none disabled:opacity-50 disabled:cursor-not-allowed;
   @apply focus-visible:outline-2 focus-visible:outline-dotted focus-visible:outline-offset-[-2px] focus-visible:outline-black;
-  /* Improved contrast: black on gray-500 = ~7.2:1 (WCAG AAA) */
   @apply font-medium outline-2 outline-transparent;
 }
 
@@ -109,7 +106,6 @@
    RESPONSIVE DESIGN
    ========================= */
 
-/* Tablet and below: Larger touch targets */
 @media (max-width: 1024px) {
   .window__title-bar {
     @apply h-14;
@@ -151,8 +147,11 @@
     @apply text-lg px-3;
   }
 
-  /* Hide resize handle on mobile - drag to resize is impractical */
   .window__resize-handle {
     @apply hidden;
   }
+}
+
+.window__close-btn {
+  @apply absolute -top-44 right-5 w-6 h-6 cursor-pointer z-50 bg-(--rose-500) rounded-full flex items-center justify-center;
 }

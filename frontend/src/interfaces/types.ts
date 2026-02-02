@@ -12,8 +12,6 @@ export interface AppBaseProps {
   windowId: string;
 }
 
-
-
 export interface ProjectData {
   title: string;
   subtitle: string;
@@ -48,8 +46,6 @@ export interface WindowState {
   size: { width: number; height: number };
 }
 
-
-
 export type AppComponent =
   | ComponentType<AppBaseProps>
   | LazyExoticComponent<ComponentType<AppBaseProps>>;
@@ -67,8 +63,6 @@ export interface AppDefinition {
   };
   system?: boolean;
 }
-
-
 
 export interface SystemStateContextType {
   isCrashed: boolean;

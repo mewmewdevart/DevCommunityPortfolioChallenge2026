@@ -68,6 +68,7 @@ export type TranslationKeys =
     | 'boot_4'
     | 'boot_5'
     | 'boot_6'
+    | 'boot_press_key'
     | 'errorBoundary_title'
     | 'errorBoundary_desc'
     | 'errorBoundary_restart'

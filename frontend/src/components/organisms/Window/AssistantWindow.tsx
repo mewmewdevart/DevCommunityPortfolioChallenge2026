@@ -7,6 +7,8 @@ import { useOS } from '@context/OSContext';
 import { useDraggable } from '@/hooks/desktop/useDraggable';
 import { LoadingSpinner } from '@/components/atoms/LoadingSpinner/LoadingSpinner';
 
+import './Window.css';
+
 interface AssistantWindowProps {
     data: WindowState;
 }

@@ -10,7 +10,7 @@ import { GameHUD } from '@organisms/GameHUD/GameHUD';
 import { useTranslation } from '@context/LanguageContext';
 import { useGameLogic } from '@/hooks/game/useGameLogic';
 import { NarrativeOverlay } from '@/components/molecules/NarrativeOverlay/NarrativeOverlay';
-import { PaperFold } from '@/pages/PaperScreen/PaperScreen';
+import { PaperFold } from '@/components/pages/PaperScreen/PaperScreen';
 import { GameMap } from './GameMap';
 import { useSound } from '@/context/SoundContext';
 
@@ -57,7 +57,7 @@ export const GameCanvas: React.FC<GameCanvasProps> = ({ onLoginRequest, onVideoG
   } = useGameLogic();
 
   const { playMusic, stopMusic, playSfx } = useSound();
-    
+
   // Start BGM on mount
   React.useEffect(() => {
     playMusic('game_bgm_cozy');

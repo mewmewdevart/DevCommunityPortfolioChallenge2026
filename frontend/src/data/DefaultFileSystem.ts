@@ -3,7 +3,7 @@ import matter from 'gray-matter';
 
 import SueTheRealBanner from '@assets/images/projects/sue-the-real.png';
 import type { FileSystemItem, ProjectData } from '@interfaces/types';
-import { APP_IDS } from './AppRegistry';
+import { APP_IDS } from './appIds';
 
 const validateProjectMetadata = (data: unknown): { success: true; data: ProjectData } | { success: false; error: string } => {
   if (!data || typeof data !== 'object') {
@@ -101,21 +101,22 @@ export const DEFAULT_FS: Record<string, FileSystemItem> = {
     appId: APP_IDS.FAKEPATH,
   },
 
-  sue_project_file: {
-    id: 'sue_project_file',
-    parentId: 'projects',
-    name: 'Sue_The_Real.pdf',
-    type: 'file',
-    appId: APP_IDS.PDF_VIEWER,
-    content: {
-      title: 'Sue The Real',
-      subtitle: 'Landing Page Web',
-      banner: SueTheRealBanner,
-      skills: ['React', 'Tailwind', 'Wordpress', 'SEO', 'Acessibilidade', 'Figma'],
-      description: 'Lorem ipsum dolor sit amet...',
-      link: 'https://suethereal.com',
-    } as ProjectData,
-  },
+  // The user can add more projects here too :)
+  // sue_project_file: {
+  //   id: 'sue_project_file',
+  //   parentId: 'projects',
+  //   name: 'Sue_The_Real.pdf',
+  //   type: 'file',
+  //   appId: APP_IDS.PDF_VIEWER,
+  //   content: {
+  //     title: 'Sue The Real',
+  //     subtitle: 'Landing Page Web',
+  //     banner: SueTheRealBanner,
+  //     skills: ['React', 'Tailwind', 'Wordpress', 'SEO', 'Acessibilidade', 'Figma'],
+  //     description: 'Lorem ipsum dolor sit amet...',
+  //     link: 'https://suethereal.com',
+  //   } as ProjectData,
+  // },
 
   ...generatedProjectFiles
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { IconRenderer } from '@atoms/IconRenderer/IconRenderer';
 import iconHome from 'pixelarticons/svg/home.svg';
 import iconEye from 'pixelarticons/svg/eye.svg';
-import iconExpand from 'pixelarticons/svg/expand.svg';
+import iconFullscreen from 'pixelarticons/svg/expand.svg';
 import iconSoundOn from 'pixelarticons/svg/volume-3.svg';
 import iconSoundOff from 'pixelarticons/svg/volume-x.svg';
 import { type Vector2 } from '@interfaces/types';
@@ -86,7 +86,7 @@ export const GameHUD: React.FC<HUDProps> = ({
           title={t('game_fullscreen')}
           aria-label={t('game_fullscreen')}
         >
-          <IconRenderer icon={iconExpand} />
+          <IconRenderer icon={iconFullscreen} />
         </button>
       </div>
     </div>

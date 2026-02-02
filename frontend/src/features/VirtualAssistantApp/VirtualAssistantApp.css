@@ -23,7 +23,7 @@
 
 .clippy__text {
   @apply font-(--font-tiny) text-(--dark-800);
-  @apply leading-snug text-lg mb-3;
+  @apply leading-snug text-base mb-3;
 }
 
 .clippy__text--loading {
@@ -40,6 +40,14 @@
 
 .clippy__btn:disabled {
   @apply opacity-50 cursor-not-allowed;
+}
+
+.clippy__actions {
+  @apply flex gap-2 justify-end items-center mt-2;
+}
+
+.clippy__btn-link {
+  @apply text-xs underline text-blue-800 hover:text-blue-600 cursor-pointer bg-transparent border-none p-0;
 }
 
 /* =====================================================

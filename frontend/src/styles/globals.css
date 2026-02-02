@@ -76,7 +76,7 @@ textarea,
 /* Not Allowed / Disabled */
 :disabled,
 .disabled,
-.not-allowed {
+.window__menu .not-allowed {
   cursor: url('../assets/icons/cursor/cursor_cancel.png'), not-allowed !important;
 }
 

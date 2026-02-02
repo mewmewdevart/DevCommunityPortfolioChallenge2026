@@ -16,12 +16,7 @@ import {
     TOP_WALL_ROWS,
 } from '@/interfaces/constants';
 
-// Defines the props for StaticMap.
-// It deliberately does NOT include player or dynamic data.
-// Optimization: This component is memoized and should only render ONCE unless the map changes.
-// Defines the props for StaticMap.
-// It deliberately does NOT include player or dynamic data.
-// Optimization: This component is memoized and should only render ONCE unless the map changes.
+
 export const StaticMap: React.FC = memo(() => {
     return (
         <div className="game-canvas__static-layer">

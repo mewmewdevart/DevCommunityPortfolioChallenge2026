@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+.login-screen {
+    @apply min-h-[100dvh] w-screen bg-(--blue-900) flex items-center justify-center font-(--pixelify-sans) p-4 pb-[env(safe-area-inset-bottom)];
+}
+
+.login-screen__window {
+    @apply flex flex-col gap-2 w-full max-w-[500px] bg-(--gray-500) border-l-4 border-l-(--gray-300) border-t-4 border-t-(--gray-300) border-r-4 border-r-(--dark-800) border-b-4 border-b-(--dark-800);
+}
+
+.login-screen__title-bar {
+    @apply min-h-12.5 bg-(--blue-900) text-(--gray-300) px-2 py-1 flex justify-between items-center text-xl;
+}
+
+.login-screen__title {
+    @apply font-bold tracking-wider uppercase;
+}
+
+.login-screen__help-btn {
+    @apply bg-(--gray-300) text-black w-4 h-4 flex items-center justify-center text-lg border border-t-(--gray-300) border-l-(--gray-300) border-r-black border-b-black;
+}
+
+.login-screen__content {
+    @apply flex gap-4 p-4 items-start flex-wrap sm:flex-nowrap;
+}
+
+.login-screen__icon-wrapper {
+    @apply w-16 h-16 flex-shrink-0 mx-auto hidden sm:block;
+}
+
+.login-screen__icon {
+    @apply w-full h-full object-contain;
+}
+
+.login-screen__form {
+    @apply flex-1 flex flex-col gap-4 w-full;
+}
+
+.login-screen__desc {
+    @apply text-lg;
+}
+
+.login-screen__grid {
+    @apply grid grid-cols-1 sm:grid-cols-[90px_1fr] gap-2 items-center;
+}
+
+.login-screen__label {
+    @apply text-lg;
+}
+
+.login-screen__input {
+    @apply px-1 border-2 bg-(--gray-300) outline-none w-full;
+}
+
+.login-screen__actions {
+    @apply flex justify-end gap-2 mb-6 px-4;
+}
+
+.login-screen__btn {
+    @apply w-[100px];
+}
+
+.login-screen__tooltip {
+    @apply absolute top-full right-0 mt-2 w-64 p-2 bg-(--warm-300) border-4 border-black text-black text-lg z-50;
+}
+
+.login-screen__help-wrapper {
+    @apply relative;
+}

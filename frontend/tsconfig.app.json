@@ -46,7 +46,7 @@
         "./src/components/organisms/*"
       ],
       "@pages/*": [
-        "./src/pages/*"
+        "src/components/pages/*"
       ],
       "@styles/*": [
         "./src/styles/*"

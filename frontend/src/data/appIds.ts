@@ -1,0 +1,16 @@
+export const APP_IDS = {
+    COMPUTER: 'computer',
+    TRASH: 'recycle_bin',
+    PROJECTS: 'projects',
+    EXPLORER: 'internet_explorer',
+    PAINT: 'paint',
+    CALCULATOR: 'calculator',
+    NOTEPAD: 'notepad',
+    WELCOME: 'welcome',
+    MESSENGER: 'messenger',
+    CAMERA: 'camera',
+    GOOGLE: 'google',
+    ASSISTANT: 'assistant',
+    PDF_VIEWER: 'pdf_viewer',
+    FAKEPATH: 'virus_installer',
+} as const;

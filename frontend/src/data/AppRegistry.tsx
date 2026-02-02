@@ -29,25 +29,9 @@ const CameraApp = lazy(() => import('@features/Camera/Camera').then(m => ({ defa
 const Google = lazy(() => import('@features/Google/Google').then(m => ({ default: m.Google })));
 const VirtualAssistantApp = lazy(() => import('@/features/VirtualAssistantApp/VirtualAssistantApp').then(m => ({ default: m.VirtualAssistantApp })));
 const FakeVirusPayload = lazy(() => import('@/features/FakePath/FakePath').then(m => ({ default: m.FakePath })));
-const AboutPortfolio = lazy(() => import('@/features/AboutPortfolio/AboutPortfolio').then(m => ({ default: m.AboutPortfolio })));
 
-export const APP_IDS = {
-  COMPUTER: 'computer',
-  TRASH: 'recycle_bin',
-  PROJECTS: 'projects',
-  EXPLORER: 'internet_explorer',
-  PAINT: 'paint',
-  CALCULATOR: 'calculator',
-  NOTEPAD: 'notepad',
-  WELCOME: 'welcome',
-  MESSENGER: 'messenger',
-  CAMERA: 'camera',
-  GOOGLE: 'google',
-  ASSISTANT: 'assistant',
-  PDF_VIEWER: 'pdf_viewer',
-  FAKEPATH: 'virus_installer',
-  ABOUT_PORTFOLIO: 'about_portfolio',
-} as const;
+import { APP_IDS } from './appIds';
+export { APP_IDS };
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const AppRegistry: AppDefinition[] = [
@@ -120,7 +104,7 @@ export const AppRegistry: AppDefinition[] = [
   },
   {
     id: APP_IDS.GOOGLE,
-    title: 'Google',
+    title: 'Google Chrome',
     icon: googleIcon,
     component: Google,
     defaultSize: { width: 300, height: 500 },
@@ -152,15 +136,6 @@ export const AppRegistry: AppDefinition[] = [
     title: 'Welcome',
     icon: welcomeIcon,
     component: Welcome,
-    defaultSize: { width: 400, height: 400 },
-    system: true,
-    visibility: { desktop: true, programs: false },
-  },
-  {
-    id: APP_IDS.ABOUT_PORTFOLIO,
-    title: 'About This Portfolio',
-    icon: welcomeIcon,
-    component: AboutPortfolio,
     defaultSize: { width: 700, height: 550 },
     system: true,
     visibility: { desktop: true, programs: true },

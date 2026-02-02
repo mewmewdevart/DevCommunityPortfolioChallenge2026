@@ -1,17 +1,8 @@
 @import "tailwindcss";
 
-/* =========================
-   BLOCK: WELCOME APP
-========================= */
-
 .welcome {
-    @apply p-4 flex flex-col items-center h-full text-center;
-    @apply bg-(--gray-500);
+    @apply flex flex-col h-full w-full p-4 bg-(--gray-500) text-center;
 }
-
-/* =========================
-   ELEMENT: HEADER
-========================= */
 
 .welcome__header {
     @apply mb-4;
@@ -25,14 +16,24 @@
     @apply text-lg;
 }
 
-/* =========================
-   ELEMENT: CONTENT BOX
-========================= */
+.welcome__tabs {
+    @apply flex gap-1 px-2 pt-2 bg-(--gray-500) border-b-2 border-(--gray-700) w-full overflow-x-auto;
+    @apply flex-shrink-0;
+}
+
+.welcome__tab {
+    @apply px-4 py-2 text-base bg-(--gray-500) border-2 border-t-(--gray-300) border-l-(--gray-300) border-r-(--gray-700) border-b-(--gray-700) cursor-pointer whitespace-nowrap;
+    @apply hover:bg-(--gray-300);
+}
+
+.welcome__tab--active {
+    @apply bg-(--gray-300) border-b-0 relative top-[2px] z-10;
+}
 
 .welcome__content {
-    @apply text-left w-full text-lg flex flex-col gap-2 p-4 overflow-y-auto;
-    @apply bg-(--gray-300);
+    @apply flex-1 overflow-y-auto w-full flex flex-col gap-2 p-4 bg-(--gray-300);
     @apply border-4 border-t-(--gray-700) border-l-(--gray-700) border-r-(--gray-300) border-b-(--gray-300);
+    min-height: 0;
 }
 
 .welcome__text {
@@ -45,4 +46,48 @@
 
 .welcome__footer {
     @apply mt-4 text-(--gray-700);
+}
+
+.welcome__section {
+    @apply mb-6 text-left;
+}
+
+.welcome__heading {
+    @apply text-2xl font-bold mb-3 text-(--dark-800);
+}
+
+.welcome__subheading {
+    @apply text-xl font-bold mb-2 mt-4 text-(--dark-700);
+}
+
+.welcome__code {
+    @apply bg-(--dark-800) text-(--green-300) p-4 rounded font-(--font-tiny) text-lg overflow-x-auto my-2 block;
+}
+
+.welcome__badge {
+    @apply inline-block px-3 py-1 bg-(--blue-700) text-white text-lg rounded mr-2 mb-2;
+}
+
+.welcome__metric {
+    @apply flex justify-between items-center p-3 bg-(--blue-900) text-white rounded mb-2;
+}
+
+.welcome__metric-label {
+    @apply font-bold;
+}
+
+.welcome__metric-value {
+    @apply text-xl;
+}
+
+.welcome__link {
+    @apply text-(--blue-700) underline cursor-pointer;
+    @apply hover:text-(--blue-900);
+}
+
+
+@media (max-width: 640px) {
+    .welcome__content {
+        padding-bottom: 2rem;
+    }
 }

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from '@/context/LanguageContext';
+import { useOS } from '@/context/OSContext';
+import type { AppBaseProps } from '@/interfaces/types';
 import ClipImage from "@assets/images/clipGif.gif";
 
 import './VirtualAssistantApp.css';
-// ORGANIZAR OS TEXTOS DO CLICK PARA FAZER SENTIDO COM A LOGICA DO SISTEMA OPERACIONAL
+
 const TIP_KEYS = [
   'clippy_tip_1',
   'clippy_tip_2',
@@ -18,27 +20,53 @@ const TIP_KEYS = [
   'clippy_tip_11',
   'clippy_tip_12',
   'clippy_tip_13',
-  'clippy_tip_14',
+  // 'clippy_tip_14',
   'clippy_tip_15',
   'clippy_tip_16',
   'clippy_tip_17',
 ] as const;
 
-export const VirtualAssistantApp = () => {
+export const VirtualAssistantApp = ({ isAutoOpened }: AppBaseProps & { isAutoOpened?: boolean }) => {
   const { t } = useTranslation();
+  const { closeWindow, getAppById } = useOS();
 
-  const currentKey = TIP_KEYS[0];
-  const loading = false;
+  const [currentKey, setCurrentKey] = useState<typeof TIP_KEYS[number]>(() => {
+    return TIP_KEYS[Math.floor(Math.random() * TIP_KEYS.length)];
+  });
 
-  // fetchNextTip removed as it was unused (commented out in JSX)
+  const [loading, setLoading] = useState(false);
+  const [isPinned, setIsPinned] = useState(!isAutoOpened);
 
-  React.useEffect(() => {
-    // Logic to auto change tip if needed, or if it was handled by fetchNextTip which is now removed,
-    // we should check if we need to keep the effect.
-    // The original code had fetchNextTip called by button.
-    // If button is gone, maybe we want auto-rotation? 
-    // For now, I will just restore the state variables so the render doesn't break.
+  const fetchNextTip = useCallback(() => {
+    setLoading(true);
+    setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * TIP_KEYS.length);
+      setCurrentKey(TIP_KEYS[randomIndex]);
+      setLoading(false);
+    }, 1000);
   }, []);
+
+
+  useEffect(() => {
+    if (isPinned) {
+      const interval = setInterval(fetchNextTip, 60000);
+      return () => clearInterval(interval);
+    }
+  }, [fetchNextTip, isPinned]);
+
+  useEffect(() => {
+    if (isAutoOpened && !isPinned) {
+      const timer = setTimeout(() => {
+        closeWindow('assistant');
+      }, 15000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isAutoOpened, isPinned, closeWindow]);
+
+  const handlePin = () => {
+    setIsPinned(true);
+  };
 
   return (
     <div className="clippy">
@@ -51,14 +79,21 @@ export const VirtualAssistantApp = () => {
           {loading ? t('clippy_thinking') : t(currentKey)}
         </p>
 
-        {/* <button
-          onClick={fetchNextTip}
-          disabled={loading}
-          className="clippy__btn"
-          aria-label={t('clippy_next_tip')}
-        >
-          {t('next')}
-        </button> */}
+        <div className="clippy__actions">
+          {!isPinned && (
+            <button
+              onClick={handlePin}
+              className="clippy__btn-link"
+              aria-label="Keep Clippy open"
+            >
+              Example: [Stay Open]
+            </button>
+          )}
+          {/* If we want a next tip button */}
+          {/* <button onClick={fetchNextTip} className="clippy__btn-link">
+            {t('next')}
+          </button> */}
+        </div>
 
         <div className="clippy__tail-border" aria-hidden="true" />
         <div className="clippy__tail-fill" aria-hidden="true" />

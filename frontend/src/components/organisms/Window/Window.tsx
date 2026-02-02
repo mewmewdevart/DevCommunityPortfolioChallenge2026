@@ -10,14 +10,10 @@ import { IconRenderer } from '@atoms/IconRenderer/IconRenderer';
 import { LoadingSpinner } from '@/components/atoms/LoadingSpinner/LoadingSpinner';
 import { AssistantWindow } from './AssistantWindow';
 
-import MinusIcon from "@assets/icons/mini_icon_min.png";
-import MinusIconWebP from "@assets/icons/mini_icon_min.webp";
-import ResizeIcon from "@assets/icons/mini_icon_resize.png";
-import ResizeIconWebP from "@assets/icons/mini_icon_resize.webp";
-import SquareIcon from "@assets/icons/icon-window-maximize.png";
-import SquareIconWebP from "@assets/icons/icon-window-maximize.webp";
-import CloseIcon from "@assets/icons/icon-window-close.png";
-import CloseIconWebP from "@assets/icons/icon-window-close.webp";
+import MinusIcon from 'pixelarticons/svg/minus.svg';
+import ExpandIcon from 'pixelarticons/svg/expand.svg';
+import RestoreIcon from 'pixelarticons/svg/duplicate.svg';
+import CloseIcon from 'pixelarticons/svg/close.svg';
 
 import './Window.css';
 
@@ -27,81 +23,80 @@ interface WindowProps {
 
 const TASKBAR_HEIGHT = 65;
 
-const MenuDropdownContent: React.FC<{
-  item: string;
-  t: (key: any) => string;
-  onAction: () => void;
-  windowId: string;
-  actions: { close: () => void; maximize: () => void; isMaximized: boolean };
-}> = ({ item, t, onAction, windowId, actions }) => {
+// const MenuDropdownContent: React.FC<{
+//   item: string;
+//   t: (key: any) => string;
+//   onAction: () => void;
+//   windowId: string;
+//   actions: { close: () => void; maximize: () => void; isMaximized: boolean };
+// }> = ({ item, t, onAction, windowId, actions }) => {
 
-  // Auto-focus first item on mount
-  useEffect(() => {
-    const firstItem = document.getElementById(`menu-${windowId}-${item}-0`);
-    if (firstItem) firstItem.focus();
-  }, [item, windowId]);
+//   useEffect(() => {
+//     const firstItem = document.getElementById(`menu-${windowId}-${item}-0`);
+//     if (firstItem) firstItem.focus();
+//   }, [item, windowId]);
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      onAction(); // Close menu
-    }
-  }
+//   const handleKeyDown = (e: React.KeyboardEvent) => {
+//     if (e.key === 'Escape') {
+//       onAction();
+//     }
+//   }
 
-  return (
-    <>
-      {item === 'file' && (
-        <button
-          id={`menu-${windowId}-${item}-0`}
-          className="window__menu-dropdown-item"
-          role="menuitem"
-          onClick={(e) => {
-            e.stopPropagation();
-            actions.close();
-            onAction();
-          }}
-          onKeyDown={handleKeyDown}
-        >
-          {t('close')}
-        </button>
-      )}
-      {item === 'view' && (
-        <button
-          id={`menu-${windowId}-${item}-0`}
-          className="window__menu-dropdown-item"
-          role="menuitem"
-          onClick={(e) => {
-            e.stopPropagation();
-            actions.maximize();
-            onAction();
-          }}
-          onKeyDown={handleKeyDown}
-        >
-          {actions.isMaximized ? t('restore') : t('maximize')}
-        </button>
-      )}
-      {item === 'help' && (
-        <button
-          id={`menu-${windowId}-${item}-0`}
-          className="window__menu-dropdown-item"
-          role="menuitem"
-          onClick={(e) => {
-            e.stopPropagation();
-            alert(t('about_alert'));
-            onAction();
-          }}
-          onKeyDown={handleKeyDown}
-        >
-          {t('about')}
-        </button>
-      )}
-      {item === 'edit' && (
-        <div className="window__menu-dropdown-item disabled" style={{ opacity: 0.5, cursor: 'default' }}>
-          {t('no_actions')}
-        </div>
-      )}
-    </>
-  );
-};
+//   return (
+//     <>
+//       {item === 'file' && (
+//         <button
+//           id={`menu-${windowId}-${item}-0`}
+//           className="window__menu-dropdown-item"
+//           role="menuitem"
+//           onClick={(e) => {
+//             e.stopPropagation();
+//             actions.close();
+//             onAction();
+//           }}
+//           onKeyDown={handleKeyDown}
+//         >
+//           {t('close')}
+//         </button>
+//       )}
+//       {item === 'view' && (
+//         <button
+//           id={`menu-${windowId}-${item}-0`}
+//           className="window__menu-dropdown-item"
+//           role="menuitem"
+//           onClick={(e) => {
+//             e.stopPropagation();
+//             actions.maximize();
+//             onAction();
+//           }}
+//           onKeyDown={handleKeyDown}
+//         >
+//           {actions.isMaximized ? t('restore') : t('maximize')}
+//         </button>
+//       )}
+//       {item === 'help' && (
+//         <button
+//           id={`menu-${windowId}-${item}-0`}
+//           className="window__menu-dropdown-item"
+//           role="menuitem"
+//           onClick={(e) => {
+//             e.stopPropagation();
+//             alert(t('about_alert'));
+//             onAction();
+//           }}
+//           onKeyDown={handleKeyDown}
+//         >
+//           {t('about')}
+//         </button>
+//       )}
+//       {item === 'edit' && (
+//         <div className="window__menu-dropdown-item disabled" style={{ opacity: 0.5, cursor: 'default' }}>
+//           {t('no_actions')}
+//         </div>
+//       )}
+//     </>
+//   );
+// };
 
 export const Window: React.FC<WindowProps> = ({ data }) => {
   const { t } = useTranslation();
@@ -119,7 +114,6 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
   const isActive = activeWindowId === data.id;
   const [activeMenu, setActiveMenu] = React.useState<string | null>(null);
 
-  // Close menu when clicking outside
   useEffect(() => {
     const closeMenu = () => setActiveMenu(null);
     if (activeMenu) {
@@ -230,10 +224,7 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
             aria-label={t('minimize')}
             onClick={() => minimizeWindow(data.id)}
           >
-            <picture>
-              <source srcSet={MinusIconWebP} type="image/webp" />
-              <img src={MinusIcon} className="window__action-icon" alt="" />
-            </picture>
+            <img src={MinusIcon} className="window__action-icon" alt="" />
           </WinButton>
 
           <WinButton
@@ -241,15 +232,9 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
             onClick={() => maximizeWindow(data.id)}
           >
             {data.isMaximized ? (
-              <picture>
-                <source srcSet={ResizeIconWebP} type="image/webp" />
-                <img src={ResizeIcon} className="window__action-icon" alt="" />
-              </picture>
+              <img src={RestoreIcon} className="window__action-icon" alt="" />
             ) : (
-              <picture>
-                <source srcSet={SquareIconWebP} type="image/webp" />
-                <img src={SquareIcon} className="window__action-icon" alt="" />
-              </picture>
+              <img src={ExpandIcon} className="window__action-icon" alt="" />
             )}
           </WinButton>
 
@@ -257,10 +242,7 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
             aria-label={t('close')}
             onClick={() => closeWindow(data.id)}
           >
-            <picture>
-              <source srcSet={CloseIconWebP} type="image/webp" />
-              <img src={CloseIcon} className="window__action-icon" alt="" />
-            </picture>
+            <img src={CloseIcon} className="window__action-icon" alt="" />
           </WinButton>
         </div>
       </div>
@@ -270,7 +252,7 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
           {menuItems.map((item) => (
             <div key={item} style={{ position: 'relative' }} role="none">
               <button
-                className={`window__menu-item ${activeMenu === item ? 'window__menu-item--active' : ''}`}
+                className={`window__menu-item not-allowed ${activeMenu === item ? 'window__menu-item--active' : ''}`}
                 role="menuitem"
                 aria-haspopup="true"
                 aria-expanded={activeMenu === item}
@@ -283,13 +265,11 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
                 }}
                 onKeyDown={(e) => {
                   if (e.key === 'ArrowDown' && activeMenu === item) {
-                    // If menu is already open, move focus to first item
                     const firstItem = document.getElementById(`menu-${data.id}-${item}-0`);
                     firstItem?.focus();
                     e.preventDefault();
                   }
                   if (e.key === 'ArrowDown' && !activeMenu) {
-                    // Open menu and focus first item
                     setActiveMenu(item);
                     e.preventDefault();
                   }
@@ -304,7 +284,7 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
                   role="menu"
                   onMouseLeave={() => setActiveMenu(null)}
                 >
-                  <MenuDropdownContent
+                  {/* <MenuDropdownContent
                     item={item}
                     t={t}
                     onAction={() => setActiveMenu(null)}
@@ -314,7 +294,7 @@ export const Window: React.FC<WindowProps> = ({ data }) => {
                       maximize: () => maximizeWindow(data.id),
                       isMaximized: data.isMaximized
                     }}
-                  />
+                  /> */}
                 </div>
               )}
             </div>
