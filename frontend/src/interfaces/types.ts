@@ -19,6 +19,8 @@ export interface ProjectData {
   skills: string[];
   description: string;
   link?: string;
+  itemLanguage?: string;
+  itemBaseId?: string;
 }
 
 export interface FileSystemItem {

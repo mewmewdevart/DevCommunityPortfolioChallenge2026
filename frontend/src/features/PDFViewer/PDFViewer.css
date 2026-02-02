@@ -30,7 +30,15 @@
    CONTENT
    ===================================================== */
 .pdf-content-container {
-    @apply p-6 flex flex-col gap-6;
+    @apply flex flex-col gap-6;
+}
+
+.pdf-content-container .pdf-section-title,
+.pdf-content-container header,
+.pdf-content-container .pdf-banner-box,
+.pdf-content-container .pdf-description,
+.pdf-content-container .pdf-skills-list {
+    @apply mx-4;
 }
 
 .pdf-title {
@@ -72,7 +80,7 @@
    FOOTER / LINKS
    ===================================================== */
 .pdf-footer {
-    @apply mt-4;
+    @apply flex justify-center;
 }
 
 .pdf-link-btn {

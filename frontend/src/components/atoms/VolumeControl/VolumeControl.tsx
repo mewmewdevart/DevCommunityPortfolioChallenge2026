@@ -1,15 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useSound } from '@context/SoundContext';
 import { useTranslation } from '@context/LanguageContext';
+import iconSoundOn from 'pixelarticons/svg/volume-3.svg';
+import iconSoundOff from 'pixelarticons/svg/volume-x.svg';
+import { IconRenderer } from '@atoms/IconRenderer/IconRenderer';
 import './VolumeControl.css';
-
-const SpeakerIcon = () => (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="volume-control__icon">
-        <path d="M3 9V15H7L12 20V4L7 9H3Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-        <path d="M15.5 8.5C16.5 9.5 17 10.5 17 12C17 13.5 16.5 14.5 15.5 15.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M19 5C21 7 22 9.5 22 12C22 14.5 21 17 19 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-);
 
 export const VolumeControl: React.FC = () => {
     const { volume, setVolume } = useSound();
@@ -70,7 +65,11 @@ export const VolumeControl: React.FC = () => {
                 aria-haspopup="true"
                 aria-expanded={isOpen}
             >
-                <SpeakerIcon />
+                <IconRenderer
+                    icon={volume > 0 ? iconSoundOn : iconSoundOff}
+                    size={18}
+                    className="volume-control__icon"
+                />
             </button>
         </div>
     );

@@ -26,6 +26,20 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ content }) => {
 
   const project = content as ProjectData;
 
+  const formatText = (text: string) => {
+    return text.split('\n').map((line, i) => (
+      <React.Fragment key={i}>
+        {line.split(/(\*\*.*?\*\*)/).map((part, j) => {
+          if (part.startsWith('**') && part.endsWith('**')) {
+            return <strong key={j}>{part.slice(2, -2)}</strong>;
+          }
+          return part;
+        })}
+        <br />
+      </React.Fragment>
+    ));
+  };
+
   return (
     <div className="pdf-root">
       <div className="pdf-header-bar">
@@ -75,7 +89,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ content }) => {
             {t('pdf_experience_details')}
           </h3>
           <p className="pdf-description">
-            {project.description}
+            {formatText(project.description)}
           </p>
         </section>
 

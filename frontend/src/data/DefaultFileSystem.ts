@@ -53,6 +53,12 @@ Object.keys(markdownFiles).forEach((path) => {
     const fileName = path.split('/').pop() || 'unknown';
     const id = fileName.replace('.md', '');
 
+    // Parse filename for language: Name-Lang.md
+    // e.g. SueTheReal-ptBR.md -> base=SueTheReal, lang=ptBR
+    const langMatch = fileName.match(/^(.+)-([a-zA-Z]{2,5})\.md$/);
+    const itemBaseId = langMatch ? langMatch[1] : id;
+    const itemLanguage = langMatch ? langMatch[2] : undefined;
+
     generatedProjectFiles[id] = {
       id,
       parentId: 'projects',
@@ -66,6 +72,8 @@ Object.keys(markdownFiles).forEach((path) => {
         skills: metadata.skills,
         description: body,
         link: metadata.link,
+        itemBaseId,
+        itemLanguage,
       } as ProjectData,
     };
   } catch {

@@ -35,7 +35,7 @@
    ELEMENT: DIVIDER
    ===================================================== */
 .taskbar__divider {
-  @apply w-1 h-12.5 border-l border-r border-(--gray-300);
+  @apply w-1 h-12.5 border-2 border-(--gray-700);
 }
 
 /* =====================================================

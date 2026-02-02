@@ -9,7 +9,7 @@ import MemoryCardItem from '@/components/molecules/MemoryCardItem/MemoryCardItem
 import InfoPanel from '@/components/organisms/InfoPanel/InfoPanel';
 
 import RetroControls from '@/components/molecules/RetroControls/RetroControls';
-import { CRTShutdownEffect } from '@/components/atoms/CRTShutdownEffect';
+import { CRTShutdownEffect } from '@/components/atoms/CRTShutdownEffect/CRTShutdownEffect';
 
 import './MemoryCardScreen.css';
 
@@ -23,39 +23,32 @@ const MemoryCardScreen: React.FC<MemoryCardScreenProps> = ({ onBack }) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const isHandlingRef = useRef(false);
 
-    // Transition State
     const [isExiting, setIsExiting] = useState(false);
 
-    // We keep these for the hook, even if not fully used for logic anymore
     const [viewMode, setViewMode] = useState<'grid' | 'detail'>('grid');
     const [isGenerating, setIsGenerating] = useState(false);
 
 
     const gridRef = useRef<HTMLDivElement>(null);
 
-    // Intercept Back Navigation
     const handleBack = () => {
         if (isExiting) return;
         playSfx('system_shutdown');
         setIsExiting(true);
-        // Match animation duration (approx 700ms)
         setTimeout(() => {
             if (onBack) onBack();
         }, 700);
     };
-
-    // Custom Hook for Navigation Logic (Arrow Keys, Wrapping)
     useMemoryCardNavigation({
         cards: MEMORY_CARDS,
         selectedIndex,
         setSelectedIndex,
         viewMode,
         setViewMode,
-        onBack: handleBack, // Use intercepted handler
+        onBack: handleBack,
     });
 
 
-    // "Enter" / "Select" Logic
     const handleInteraction = () => {
         playSfx('click');
         const card = MEMORY_CARDS[selectedIndex];
@@ -63,7 +56,6 @@ const MemoryCardScreen: React.FC<MemoryCardScreenProps> = ({ onBack }) => {
         if (card.linkToPlay) {
             window.open(card.linkToPlay, '_blank');
         } else if (card.type === 'empty') {
-            // Simulate a "generating" or "checking" process
             if (isHandlingRef.current) return;
             isHandlingRef.current = true;
             setIsGenerating(true);
@@ -104,7 +96,7 @@ const MemoryCardScreen: React.FC<MemoryCardScreenProps> = ({ onBack }) => {
                 />
             </div>
 
-            {/* 3. SCROLLABLE CARD GRID */}
+            {/* SCROLLABLE CARD GRID */}
             <div className="relative z-10 flex-1 overflow-y-auto overflow-x-hidden flex justify-center items-start pt-4 pb-24 scrollbar-hide">
                 <div
                     ref={gridRef}
@@ -122,7 +114,7 @@ const MemoryCardScreen: React.FC<MemoryCardScreenProps> = ({ onBack }) => {
                 </div>
             </div>
 
-            {/* 4. FOOTER CONTROLS */}
+            {/* FOOTER CONTROLS */}
             <RetroControls
                 onSelect={handleInteraction}
                 onBack={handleBack}
