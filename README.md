@@ -7,6 +7,10 @@
   <h1>PortfolioWebXP / DevCommunityPortfolioChallenge2026</h1>
   <p><strong>Interactive. Nostalgic. Accessible.</strong></p>
   <p>A gamified portfolio experience built for the Google AI "New Year, New You" Challenge.</p>
+  
+<p align="center">
+<a href="https://devcommunityportfoliochallenge2026-574008284484.us-central1.run.app/">Play the Project</a>
+</p>
 
   <p>
     <img src="https://img.shields.io/badge/Status-In_Progress-6b9acf?style=for-the-badge&logo=headspace&logoColor=white" alt="Status" />
@@ -15,7 +19,6 @@
   </p>
 </div>
 
----
 
 ## 👋 Introduction
 
@@ -129,7 +132,6 @@ This project is open-source and built for the community.
 
 Distributed under the **MIT License**.
 
----
 
 <div align="center">
   <sub>Built with 💜 and pixel precision by <strong>mewmewdevart</strong>.</sub>
